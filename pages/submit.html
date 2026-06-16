@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit a finding — EthosCheck</title>
+  <meta name="description" content="Submit a new ethical finding to EthosCheck. All submissions reviewed before publishing.">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">
+    <div class="logo-mark">
+      <svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="5"/><path d="M8 5v3l2 2"/></svg>
+    </div>
+    EthosCheck
+  </a>
+  <div class="nav-links">
+    <a href="index.html" class="hide-mobile">Search</a>
+    <a href="about.html" class="hide-mobile">About</a>
+    <a href="submit.html" class="nav-btn">Submit a finding</a>
+  </div>
+</nav>
+
+<main>
+  <div class="static-content">
+    <h1>Submit a finding</h1>
+    <p>Help keep EthosCheck accurate and up to date. All submissions are reviewed before publishing. Findings must describe something that has already happened or is currently ongoing — not future targets or promises.</p>
+
+    <div id="submit-form">
+      <div class="form-group">
+        <label class="form-label" for="f-entity">Company, product, or government name</label>
+        <input class="form-input" id="f-entity" type="text" placeholder="e.g. Tesco Ireland" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="f-category">Category</label>
+        <select class="form-select" id="f-category">
+          <option value="">Select a category…</option>
+          <option>Environment</option>
+          <option>Labour & human rights</option>
+          <option>Tax</option>
+          <option>Animal welfare</option>
+          <option>Political & lobbying</option>
+          <option>Supply chain</option>
+          <option>Data & privacy</option>
+          <option>Corruption & planning</option>
+          <option>Housing & human rights</option>
+          <option>State agency scandals</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="f-finding">Finding</label>
+        <textarea class="form-textarea" id="f-finding" placeholder="Describe what has been reported in plain terms. Describe past or current conduct only — not what a company says it will do."></textarea>
+        <div class="form-hint">Stick to verified facts. No opinion, no speculation.</div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="f-source">Source</label>
+        <input class="form-input" id="f-source" type="text" placeholder="e.g. https://thejournal.ie/... or Amnesty International 2023" />
+        <div class="form-hint">Must be a credible public source — news outlet, NGO report, government record, court document, or academic research.</div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="f-email">Your email <span style="font-weight:400;color:var(--text3)">(optional — only used if we need to follow up)</span></label>
+        <input class="form-input" id="f-email" type="email" placeholder="you@example.com" />
+      </div>
+
+      <button class="form-submit" onclick="handleSubmit()">Submit finding</button>
+    </div>
+
+    <div id="submit-success" class="hidden" style="padding:2rem 0">
+      <p style="font-size:16px;font-weight:500;margin-bottom:.5rem">Thank you — submission received.</p>
+      <p style="color:var(--text2)">We'll review it before publishing. If you included your email we'll let you know when it goes live.</p>
+      <a href="index.html" style="color:var(--accent);font-size:14px;margin-top:1rem;display:inline-block">← Back to search</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>EthosCheck — built in Ireland. Track record only — no pledges, no PR.
+    <a href="about.html">About</a> · <a href="submit.html">Submit a finding</a>
+  </p>
+</footer>
+
+<script>
+async function handleSubmit() {
+  const entity   = document.getElementById("f-entity").value.trim();
+  const category = document.getElementById("f-category").value;
+  const finding  = document.getElementById("f-finding").value.trim();
+  const source   = document.getElementById("f-source").value.trim();
+  const email    = document.getElementById("f-email").value.trim();
+
+  if (!entity || !category || !finding || !source) {
+    alert("Please fill in all required fields (name, category, finding, and source).");
+    return;
+  }
+
+  const btn = document.querySelector(".form-submit");
+  btn.disabled = true;
+  btn.textContent = "Submitting…";
+
+  try {
+    // POST to backend API when it's live
+    // const res = await fetch("/api/submit", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ entity, category, finding, source, email }) });
+    // For now — show success
+    await new Promise(r => setTimeout(r, 600));
+    document.getElementById("submit-form").classList.add("hidden");
+    document.getElementById("submit-success").classList.remove("hidden");
+  } catch (err) {
+    alert("Something went wrong. Please try again.");
+    btn.disabled = false;
+    btn.textContent = "Submit finding";
+  }
+}
+</script>
+
+</body>
+</html>
