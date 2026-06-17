@@ -1,0 +1,45 @@
+body { background: #141414 !important; color: #ffffff !important; }
+nav { background: #141414 !important; border-color: rgba(255,255,255,0.18) !important; }
+.browse-card { background: #141414 !important; border-color: rgba(255,255,255,0.18) !important; }
+.browse-card:hover { background: #1e1e1c !important; }
+.cat-toggle { background: #141414 !important; }
+.cat-toggle:hover { background: #1e1e1c !important; }
+.cat-block { border-color: rgba(255,255,255,0.18) !important; }
+.struct-card { background: #141414 !important; border-color: rgba(255,255,255,0.18) !important; }
+.product-card { background: #141414 !important; border-color: rgba(255,255,255,0.18) !important; }
+.search-input { background: #141414 !important; color: #ffffff !important; border-color: rgba(255,255,255,0.18) !important; }
+.result-notice { background: #1e1e1c !important; }
+.ai-block { background: #1e1e1c !important; }
+.finding { border-color: rgba(255,255,255,0.18) !important; }
+.finding p { color: #ffffff !important; }
+.suggest-block { border-color: rgba(255,255,255,0.18) !important; }
+.suggest-btn { color: #ffffff !important; border-color: rgba(255,255,255,0.18) !important; }
+.suggest-btn:hover { background: #1e1e1c !important; }
+.nav-btn { color: #ffffff !important; border-color: rgba(255,255,255,0.18) !important; }
+.nav-btn:hover { background: #1e1e1c !important; }
+.chip { color: #a8a89e !important; border-color: rgba(255,255,255,0.18) !important; }
+.chip:hover { background: #1e1e1c !important; color: #ffffff !important; }
+.chip.active { background: #ffffff !important; color: #141414 !important; }
+.logo { color: #ffffff !important; }
+.result-name { color: #ffffff !important; }
+.result-sub { color: #a8a89e !important; }
+.cat-title { color: #ffffff !important; }
+.browse-card-name { color: #ffffff !important; }
+.browse-card-sub { color: #a8a89e !important; }
+.section-label { color: #6a6a62 !important; }
+.struct-card-note { color: #a8a89e !important; }
+.hero h1 { color: #ffffff !important; }
+.hero p { color: #a8a89e !important; }
+.accent { color: #4caf74 !important; }
+.alt-block { background: #0d2b1a !important; }
+.badge-env { background: #0a2e1a !important; color: #5dd49a !important; }
+.badge-labour { background: #0a1e38 !important; color: #6ab4f5 !important; }
+.badge-tax { background: #2e1e08 !important; color: #f5c060 !important; }
+.badge-animal { background: #162608 !important; color: #8dd45a !important; }
+.badge-political { background: #2e0a18 !important; color: #f57ab0 !important; }
+.badge-supply { background: #2e1208 !important; color: #f5906a !important; }
+.badge-housing { background: #160e30 !important; color: #a08af5 !important; }
+.badge-data { background: #082030 !important; color: #60d4f5 !important; }
+footer { border-color: rgba(255,255,255,0.18) !important; color: #6a6a62 !important; }
+footer a { color: #6a6a62 !important; }
+.dark-mode-btn { color: #a8a89e !important; border-color: rgba(255,255,255,0.18) !important; }
