@@ -3,9 +3,26 @@
  * Search, routing, filter, AI search, toggle logic.
  */
 
+// ── Apply theme before page renders to avoid flash ───────
+(function() {
+  const saved = localStorage.getItem("ethoscheck-theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  if (saved === "dark" || (!saved && prefersDark)) {
+    document.documentElement.classList.add("dark-mode");
+  }
+})();
+
 const App = (() => {
 
   let activeFilter = "all";
+
+  // ── Dark mode toggle ────────────────────────────────────
+  function toggleDarkMode() {
+    const isDark = document.documentElement.classList.toggle("dark-mode");
+    const btn = document.getElementById("dark-mode-btn");
+    if (btn) btn.textContent = isDark ? "☀️ Light" : "🌙 Dark";
+    localStorage.setItem("ethoscheck-theme", isDark ? "dark" : "light");
+  }
 
   // ── Search ──────────────────────────────────────────────
   function search(query) {
@@ -52,9 +69,8 @@ const App = (() => {
       return;
     }
 
-    if (resultsEl) resultsEl.innerHTML = Render.fullEntry(entry);
+    if (resultsEl) resultsEl.innerHTML = Render.fullEntry(entry, matchKey);
 
-    // Bind clickable names in corporate structure to search
     document.querySelectorAll(".struct-card-name[data-search]").forEach(el => {
       el.addEventListener("click", () => search(el.dataset.search));
     });
@@ -93,6 +109,32 @@ const App = (() => {
     if (!body) return;
     const open = body.classList.toggle("open");
     if (chev) { open ? chev.classList.add("open") : chev.classList.remove("open"); }
+  }
+
+  // ── Newsletter subscribe ────────────────────────────────
+  function subscribeNewsletter() {
+    const email = document.getElementById("nl-email");
+    if (!email || !email.value.includes("@")) {
+      alert("Please enter a valid email address."); return;
+    }
+    email.value = "";
+    email.placeholder = "Thanks — you're subscribed!";
+    email.disabled = true;
+    const btn = email.nextElementSibling;
+    if (btn) { btn.disabled = true; btn.textContent = "Done"; }
+  }
+
+  // ── Copy link ───────────────────────────────────────────
+  function copyLink() {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      const btns = document.querySelectorAll(".share-btn");
+      const copyBtn = Array.from(btns).find(b => b.textContent.includes("Copy"));
+      if (copyBtn) {
+        const orig = copyBtn.innerHTML;
+        copyBtn.textContent = "Copied!";
+        setTimeout(() => { copyBtn.innerHTML = orig; }, 1500);
+      }
+    });
   }
 
   // ── AI search ───────────────────────────────────────────
@@ -138,7 +180,7 @@ Present findings as a factual list. Each finding is a short paragraph starting w
     }
   }
 
-  // ── Entry page (entry.html) ─────────────────────────────
+  // ── Entry page ──────────────────────────────────────────
   function loadEntryPage() {
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
@@ -152,7 +194,7 @@ Present findings as a factual list. Each finding is a short paragraph starting w
 
     const entry = DB[id];
     document.title = `${entry.name} — EthosCheck`;
-    container.innerHTML = Render.fullEntry(entry);
+    container.innerHTML = Render.fullEntry(entry, id);
 
     document.querySelectorAll(".struct-card-name[data-search]").forEach(el => {
       el.addEventListener("click", () => {
@@ -165,52 +207,33 @@ Present findings as a factual list. Each finding is a short paragraph starting w
   function init() {
     renderBrowse();
 
+    // Set dark mode button text on load
+    const btn = document.getElementById("dark-mode-btn");
+    if (btn) {
+      const isDark = document.documentElement.classList.contains("dark-mode");
+      btn.textContent = isDark ? "☀️ Light" : "🌙 Dark";
+    }
+
     const input = document.getElementById("search-input");
     if (input) {
       input.addEventListener("keydown", e => { if (e.key === "Enter") _runSearch(input.value); });
-
-      // Handle ?q= param on index page
       const params = new URLSearchParams(window.location.search);
       const q = params.get("q");
       if (q) { input.value = q; _runSearch(q); }
     }
 
-    // Entry page
     if (document.getElementById("entry-container")) loadEntryPage();
 
-    // Nav active state
     const page = window.location.pathname.split("/").pop() || "index.html";
     document.querySelectorAll(".nav-links a").forEach(a => {
       if (a.getAttribute("href") === page) a.classList.add("active");
     });
   }
 
-  return { init, search, setFilter, toggleCat, aiSearch };
+  return { init, search, setFilter, toggleCat, toggleDarkMode, aiSearch, subscribeNewsletter, copyLink };
 
 })();
 
-// Expose toggleCat globally for inline onclick in rendered HTML
 function toggleCat(id) { App.toggleCat(id); }
 
 document.addEventListener("DOMContentLoaded", App.init);
-
-// ── Dark mode toggle ──────────────────────────────────────
-App.toggleDarkMode = function() {
-  const isDark = document.body.classList.toggle("dark-mode");
-  const btn = document.getElementById("dark-mode-btn");
-  if (btn) btn.textContent = isDark ? "☀️ Light" : "🌙 Dark";
-  localStorage.setItem("ethoscheck-theme", isDark ? "dark" : "light");
-};
-
-// Apply saved theme on load
-(function() {
-  const saved = localStorage.getItem("ethoscheck-theme");
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  if (saved === "dark" || (!saved && prefersDark)) {
-    document.body.classList.add("dark-mode");
-    document.addEventListener("DOMContentLoaded", function() {
-      const btn = document.getElementById("dark-mode-btn");
-      if (btn) btn.textContent = "☀️ Light";
-    });
-  }
-})();
