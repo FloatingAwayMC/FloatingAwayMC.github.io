@@ -6,8 +6,9 @@
 // ── Apply theme before page renders to avoid flash ───────
 (function() {
   const saved = localStorage.getItem("ethoscheck-theme");
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  if (saved === "dark" || (!saved && prefersDark)) {
+  if (saved === "light") {
+    document.documentElement.classList.add("light-mode");
+  } else if (saved === "dark") {
     document.documentElement.classList.add("dark-mode");
   }
 })();
@@ -16,13 +17,26 @@ const App = (() => {
 
   let activeFilter = "all";
 
-  // ── Dark mode toggle ────────────────────────────────────
-  function toggleDarkMode() {
-    const isDark = document.documentElement.classList.toggle("dark-mode");
+ function toggleDarkMode() {
+  const html = document.documentElement;
+  const isDark = html.classList.contains("dark-mode") ||
+    (!html.classList.contains("light-mode") &&
+     window.matchMedia("(prefers-color-scheme: dark)").matches);
+
+  if (isDark) {
+    html.classList.remove("dark-mode");
+    html.classList.add("light-mode");
     const btn = document.getElementById("dark-mode-btn");
-    if (btn) btn.textContent = isDark ? "☀️ Light" : "🌙 Dark";
-    localStorage.setItem("ethoscheck-theme", isDark ? "dark" : "light");
+    if (btn) btn.textContent = "🌙 Dark";
+    localStorage.setItem("ethoscheck-theme", "light");
+  } else {
+    html.classList.remove("light-mode");
+    html.classList.add("dark-mode");
+    const btn = document.getElementById("dark-mode-btn");
+    if (btn) btn.textContent = "☀️ Light";
+    localStorage.setItem("ethoscheck-theme", "dark");
   }
+}
 
   // ── Search ──────────────────────────────────────────────
   function search(query) {
