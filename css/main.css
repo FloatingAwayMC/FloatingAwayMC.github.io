@@ -17,7 +17,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  html:not(.light-mode) {
     --bg: #141414;
     --bg2: #1e1e1c;
     --bg3: #252522;
@@ -300,14 +300,14 @@ main { max-width: 780px; margin: 0 auto; padding: 0 1.5rem; }
 .badge-data { background: #e6f7fb; color: #0a5470; }
 
 @media (prefers-color-scheme: dark) {
-  .badge-env { background: #0a2e1a; color: #5dd49a; }
-  .badge-labour { background: #0a1e38; color: #6ab4f5; }
-  .badge-tax { background: #2e1e08; color: #f5c060; }
-  .badge-animal { background: #162608; color: #8dd45a; }
-  .badge-political { background: #2e0a18; color: #f57ab0; }
-  .badge-supply { background: #2e1208; color: #f5906a; }
-  .badge-housing { background: #160e30; color: #a08af5; }
-  .badge-data { background: #082030; color: #60d4f5; }
+  html:not(.light-mode) .badge-env { background: #0a2e1a; color: #5dd49a; }
+  html:not(.light-mode) .badge-labour { background: #0a1e38; color: #6ab4f5; }
+  html:not(.light-mode) .badge-tax { background: #2e1e08; color: #f5c060; }
+  html:not(.light-mode) .badge-animal { background: #162608; color: #8dd45a; }
+  html:not(.light-mode) .badge-political { background: #2e0a18; color: #f57ab0; }
+  html:not(.light-mode) .badge-supply { background: #2e1208; color: #f5906a; }
+  html:not(.light-mode) .badge-housing { background: #160e30; color: #a08af5; }
+  html:not(.light-mode) .badge-data { background: #082030; color: #60d4f5; }
 }
 
 /* ── Static pages (about, submit) ── */
