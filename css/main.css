@@ -1,5 +1,6 @@
 /* EthosCheck — main.css */
 /* Design: clean, minimal, Wikipedia-inspired. Track record only. */
+/* Dark mode is handled entirely by JavaScript — no media queries */
 
 :root {
   --bg: #ffffff;
@@ -16,27 +17,25 @@
   --radius-lg: 12px;
 }
 
-@media (prefers-color-scheme: dark) {
-  html:not(.light-mode) {
-    --bg: #141414;
-    --bg2: #1e1e1c;
-    --bg3: #252522;
-    --text: #ffffff;
-    --text2: #c8c8c0;
-    --text3: #6a6a62;
-    --border: rgba(255,255,255,0.08);
-    --border2: rgba(255,255,255,0.18);
-    --accent: #4caf74;
-    --accent-bg: #0d2b1a;
-  }
+html.dark-mode {
+  --bg: #141414;
+  --bg2: #1e1e1c;
+  --bg3: #252522;
+  --text: #ffffff;
+  --text2: #c8c8c0;
+  --text3: #6a6a62;
+  --border: rgba(255,255,255,0.08);
+  --border2: rgba(255,255,255,0.18);
+  --accent: #4caf74;
+  --accent-bg: #0d2b1a;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 16px; }
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-  background: var(--bg) !important;
-  color: var(--text) !important;
+  background: var(--bg);
+  color: var(--text);
   line-height: 1.6;
   min-height: 100vh;
   transition: background 0.2s, color 0.2s;
@@ -290,7 +289,7 @@ main { max-width: 780px; margin: 0 auto; padding: 0 1.5rem; }
   color: var(--accent); background: var(--accent-bg); font-family: inherit;
 }
 
-/* ── Badge colours ── */
+/* ── Badge colours — light mode ── */
 .badge-env { background: #e1f5ee; color: #0a5c32; }
 .badge-labour { background: #e6f1fb; color: #134d8a; }
 .badge-tax { background: #faeeda; color: #7a4a08; }
@@ -300,18 +299,17 @@ main { max-width: 780px; margin: 0 auto; padding: 0 1.5rem; }
 .badge-housing { background: #f0edfe; color: #3e2a9e; }
 .badge-data { background: #e6f7fb; color: #0a5470; }
 
-@media (prefers-color-scheme: dark) {
-  html:not(.light-mode) .badge-env { background: #0a2e1a; color: #5dd49a; }
-  html:not(.light-mode) .badge-labour { background: #0a1e38; color: #6ab4f5; }
-  html:not(.light-mode) .badge-tax { background: #2e1e08; color: #f5c060; }
-  html:not(.light-mode) .badge-animal { background: #162608; color: #8dd45a; }
-  html:not(.light-mode) .badge-political { background: #2e0a18; color: #f57ab0; }
-  html:not(.light-mode) .badge-supply { background: #2e1208; color: #f5906a; }
-  html:not(.light-mode) .badge-housing { background: #160e30; color: #a08af5; }
-  html:not(.light-mode) .badge-data { background: #082030; color: #60d4f5; }
-}
+/* ── Badge colours — dark mode ── */
+html.dark-mode .badge-env { background: #0a2e1a; color: #5dd49a; }
+html.dark-mode .badge-labour { background: #0a1e38; color: #6ab4f5; }
+html.dark-mode .badge-tax { background: #2e1e08; color: #f5c060; }
+html.dark-mode .badge-animal { background: #162608; color: #8dd45a; }
+html.dark-mode .badge-political { background: #2e0a18; color: #f57ab0; }
+html.dark-mode .badge-supply { background: #2e1208; color: #f5906a; }
+html.dark-mode .badge-housing { background: #160e30; color: #a08af5; }
+html.dark-mode .badge-data { background: #082030; color: #60d4f5; }
 
-/* ── Static pages (about, submit) ── */
+/* ── Static pages ── */
 .static-content { padding: 3rem 0; max-width: 640px; }
 .static-content h1 { font-size: 28px; font-weight: 600; letter-spacing: -.02em; margin-bottom: 1rem; }
 .static-content h2 { font-size: 17px; font-weight: 600; margin: 2rem 0 .5rem; }
@@ -351,16 +349,7 @@ footer a { color: var(--text3); text-decoration: underline; }
 .loading { font-size: 13px; color: var(--text3); display: flex; align-items: center; gap: 8px; padding: 1rem 0; }
 .hidden { display: none !important; }
 
-/* ── Responsive ── */
-@media (max-width: 600px) {
-  .nav-links .hide-mobile { display: none; }
-  .hero { padding: 2rem 0 1.5rem; }
-  .browse-grid { grid-template-columns: 1fr 1fr; }
-  .suggest-block { flex-direction: column; align-items: flex-start; }
-  .structure-grid { grid-template-columns: 1fr; }
-  .product-grid { grid-template-columns: 1fr; }
-}
-/* ── Dark mode toggle ── */
+/* ── Dark mode toggle button ── */
 .dark-mode-btn {
   font-size: 13px;
   padding: 5px 12px;
@@ -376,47 +365,13 @@ footer a { color: var(--text3); text-decoration: underline; }
   background: var(--bg2);
   color: var(--text);
 }
-/* ── Dark mode overrides ── */
-html.light-mode {
-  --bg: #ffffff !important;
-  --bg2: #f7f7f5 !important;
-  --bg3: #eeede9 !important;
-  --text: #1a1a1a !important;
-  --text2: #555550 !important;
-  --text3: #888880 !important;
-  --border: rgba(0,0,0,0.09) !important;
-  --border2: rgba(0,0,0,0.18) !important;
-  --accent: #1a6b3c !important;
-  --accent-bg: #e8f5ee !important;
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .nav-links .hide-mobile { display: none; }
+  .hero { padding: 2rem 0 1.5rem; }
+  .browse-grid { grid-template-columns: 1fr 1fr; }
+  .suggest-block { flex-direction: column; align-items: flex-start; }
+  .structure-grid { grid-template-columns: 1fr; }
+  .product-grid { grid-template-columns: 1fr; }
 }
-
-html.dark-mode {
-  --bg: #141414 !important;
-  --bg2: #1e1e1c !important;
-  --bg3: #252522 !important;
-  --text: #ffffff !important;
-  --text2: #c8c8c0 !important;
-  --text3: #6a6a62 !important;
-  --border: rgba(255,255,255,0.08) !important;
-  --border2: rgba(255,255,255,0.18) !important;
-  --accent: #4caf74 !important;
-  --accent-bg: #0d2b1a !important;
-}
-
-html.dark-mode .badge-env { background: #0a2e1a !important; color: #5dd49a !important; }
-html.dark-mode .badge-labour { background: #0a1e38 !important; color: #6ab4f5 !important; }
-html.dark-mode .badge-tax { background: #2e1e08 !important; color: #f5c060 !important; }
-html.dark-mode .badge-animal { background: #162608 !important; color: #8dd45a !important; }
-html.dark-mode .badge-political { background: #2e0a18 !important; color: #f57ab0 !important; }
-html.dark-mode .badge-supply { background: #2e1208 !important; color: #f5906a !important; }
-html.dark-mode .badge-housing { background: #160e30 !important; color: #a08af5 !important; }
-html.dark-mode .badge-data { background: #082030 !important; color: #60d4f5 !important; }
-
-html.light-mode .badge-env { background: #e1f5ee !important; color: #0a5c32 !important; }
-html.light-mode .badge-labour { background: #e6f1fb !important; color: #134d8a !important; }
-html.light-mode .badge-tax { background: #faeeda !important; color: #7a4a08 !important; }
-html.light-mode .badge-animal { background: #eaf3de !important; color: #2e5c0a !important; }
-html.light-mode .badge-political { background: #fbeaf0 !important; color: #8a2048 !important; }
-html.light-mode .badge-supply { background: #faece7 !important; color: #8a2e10 !important; }
-html.light-mode .badge-housing { background: #f0edfe !important; color: #3e2a9e !important; }
-html.light-mode .badge-data { background: #e6f7fb !important; color: #0a5470 !important; }
