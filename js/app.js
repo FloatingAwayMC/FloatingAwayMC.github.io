@@ -193,3 +193,24 @@ Present findings as a factual list. Each finding is a short paragraph starting w
 function toggleCat(id) { App.toggleCat(id); }
 
 document.addEventListener("DOMContentLoaded", App.init);
+
+// ── Dark mode toggle ──────────────────────────────────────
+App.toggleDarkMode = function() {
+  const isDark = document.body.classList.toggle("dark-mode");
+  const btn = document.getElementById("dark-mode-btn");
+  if (btn) btn.textContent = isDark ? "☀️ Light" : "🌙 Dark";
+  localStorage.setItem("ethoscheck-theme", isDark ? "dark" : "light");
+};
+
+// Apply saved theme on load
+(function() {
+  const saved = localStorage.getItem("ethoscheck-theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  if (saved === "dark" || (!saved && prefersDark)) {
+    document.body.classList.add("dark-mode");
+    document.addEventListener("DOMContentLoaded", function() {
+      const btn = document.getElementById("dark-mode-btn");
+      if (btn) btn.textContent = "☀️ Light";
+    });
+  }
+})();
