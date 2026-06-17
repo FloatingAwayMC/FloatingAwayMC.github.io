@@ -3,17 +3,97 @@
  * Search, routing, filter, AI search, toggle logic.
  */
 
-// ── Apply theme before page renders to avoid flash ───────
+const DARK_STYLES = `
+  body { background-color: #141414 !important; color: #ffffff !important; }
+  nav { background-color: #141414 !important; border-color: rgba(255,255,255,0.15) !important; }
+  .browse-card { background-color: #141414 !important; border-color: rgba(255,255,255,0.15) !important; }
+  .browse-card:hover { background-color: #1e1e1c !important; }
+  .browse-card-name { color: #ffffff !important; }
+  .browse-card-sub { color: #a8a89e !important; }
+  .browse-card-type { color: #6a6a62 !important; }
+  .cat-toggle { background-color: #141414 !important; }
+  .cat-toggle:hover { background-color: #1e1e1c !important; }
+  .cat-block { border-color: rgba(255,255,255,0.15) !important; }
+  .cat-body { border-color: rgba(255,255,255,0.08) !important; }
+  .cat-title { color: #ffffff !important; }
+  .struct-card { background-color: #141414 !important; border-color: rgba(255,255,255,0.15) !important; }
+  .struct-card-note { color: #a8a89e !important; }
+  .product-card { background-color: #141414 !important; border-color: rgba(255,255,255,0.15) !important; }
+  .product-name { color: #ffffff !important; }
+  .search-input { background-color: #141414 !important; color: #ffffff !important; border-color: rgba(255,255,255,0.15) !important; }
+  .search-input::placeholder { color: #6a6a62 !important; }
+  .result-notice { background-color: #1e1e1c !important; color: #a8a89e !important; }
+  .result-name { color: #ffffff !important; }
+  .result-sub { color: #a8a89e !important; }
+  .result-type { color: #6a6a62 !important; }
+  .finding { border-color: rgba(255,255,255,0.15) !important; }
+  .finding p { color: #ffffff !important; }
+  .ai-block { background-color: #1e1e1c !important; border-color: rgba(255,255,255,0.15) !important; }
+  .ai-block h3 { color: #ffffff !important; }
+  .ai-result { color: #ffffff !important; }
+  .suggest-block { border-color: rgba(255,255,255,0.15) !important; }
+  .suggest-block p { color: #ffffff !important; }
+  .suggest-block span { color: #a8a89e !important; }
+  .suggest-btn { color: #ffffff !important; border-color: rgba(255,255,255,0.15) !important; }
+  .suggest-btn:hover { background-color: #1e1e1c !important; }
+  .nav-btn { color: #ffffff !important; border-color: rgba(255,255,255,0.15) !important; }
+  .nav-btn:hover { background-color: #1e1e1c !important; }
+  .nav-links a { color: #a8a89e !important; }
+  .nav-links a:hover { color: #ffffff !important; }
+  .logo { color: #ffffff !important; }
+  .chip { color: #a8a89e !important; border-color: rgba(255,255,255,0.15) !important; }
+  .chip:hover { background-color: #1e1e1c !important; color: #ffffff !important; }
+  .chip.active { background-color: #ffffff !important; color: #141414 !important; border-color: #ffffff !important; }
+  .section-label { color: #6a6a62 !important; }
+  .hero h1 { color: #ffffff !important; }
+  .hero p { color: #a8a89e !important; }
+  .alt-block { background-color: #0d2b1a !important; }
+  .alt-item { color: #a8a89e !important; }
+  .not-found h3 { color: #ffffff !important; }
+  .not-found p { color: #a8a89e !important; }
+  .compliance-legend { color: #6a6a62 !important; }
+  .result-tags .rtag { background-color: #1e1e1c !important; color: #a8a89e !important; }
+  .badge-env { background-color: #0a2e1a !important; color: #5dd49a !important; }
+  .badge-labour { background-color: #0a1e38 !important; color: #6ab4f5 !important; }
+  .badge-tax { background-color: #2e1e08 !important; color: #f5c060 !important; }
+  .badge-animal { background-color: #162608 !important; color: #8dd45a !important; }
+  .badge-political { background-color: #2e0a18 !important; color: #f57ab0 !important; }
+  .badge-supply { background-color: #2e1208 !important; color: #f5906a !important; }
+  .badge-housing { background-color: #160e30 !important; color: #a08af5 !important; }
+  .badge-data { background-color: #082030 !important; color: #60d4f5 !important; }
+  footer { border-color: rgba(255,255,255,0.15) !important; color: #6a6a62 !important; }
+  footer a { color: #6a6a62 !important; }
+  .dark-mode-btn { color: #a8a89e !important; border-color: rgba(255,255,255,0.15) !important; }
+  .static-content h1 { color: #ffffff !important; }
+  .static-content h2 { color: #ffffff !important; }
+  .static-content p { color: #a8a89e !important; }
+  .static-content li { color: #a8a89e !important; }
+  .form-input, .form-select, .form-textarea { background-color: #141414 !important; color: #ffffff !important; border-color: rgba(255,255,255,0.15) !important; }
+  .form-label { color: #ffffff !important; }
+  .form-hint { color: #6a6a62 !important; }
+`;
+
+function applyDark() {
+  let style = document.getElementById("dark-style");
+  if (!style) {
+    style = document.createElement("style");
+    style.id = "dark-style";
+    document.head.appendChild(style);
+  }
+  style.textContent = DARK_STYLES;
+}
+
+function applyLight() {
+  const style = document.getElementById("dark-style");
+  if (style) style.remove();
+}
+
+// Apply theme immediately before page renders
 (function() {
   const saved = localStorage.getItem("ethoscheck-theme");
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   if (saved === "dark" || (!saved && prefersDark)) {
-    document.documentElement.classList.add("dark-mode");
-    document.body && (document.body.style.backgroundColor = "#141414");
-    document.body && (document.body.style.color = "#ffffff");
-  } else {
-    document.body && (document.body.style.backgroundColor = "#ffffff");
-    document.body && (document.body.style.color = "#1a1a1a");
+    applyDark();
   }
 })();
 
@@ -23,26 +103,15 @@ const App = (() => {
 
   // ── Dark mode toggle ────────────────────────────────────
   function toggleDarkMode() {
-    const html = document.documentElement;
-    const body = document.body;
     const btn = document.getElementById("dark-mode-btn");
+    const isDark = !!document.getElementById("dark-style");
 
-    const isCurrentlyDark = html.classList.contains("dark-mode") ||
-      (!html.classList.contains("light-mode") &&
-       window.matchMedia("(prefers-color-scheme: dark)").matches);
-
-    if (isCurrentlyDark) {
-      html.classList.remove("dark-mode");
-      html.classList.add("light-mode");
-      body.style.backgroundColor = "#ffffff";
-      body.style.color = "#1a1a1a";
+    if (isDark) {
+      applyLight();
       if (btn) btn.textContent = "🌙 Dark";
       localStorage.setItem("ethoscheck-theme", "light");
     } else {
-      html.classList.remove("light-mode");
-      html.classList.add("dark-mode");
-      body.style.backgroundColor = "#141414";
-      body.style.color = "#ffffff";
+      applyDark();
       if (btn) btn.textContent = "☀️ Light";
       localStorage.setItem("ethoscheck-theme", "dark");
     }
@@ -229,22 +298,10 @@ Present findings as a factual list. Each finding is a short paragraph starting w
 
   // ── Init ────────────────────────────────────────────────
   function init() {
-    // Apply correct background on load
-    const savedTheme = localStorage.getItem("ethoscheck-theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
-      document.body.style.backgroundColor = "#141414";
-      document.body.style.color = "#ffffff";
-      document.documentElement.classList.add("dark-mode");
-    } else {
-      document.body.style.backgroundColor = "#ffffff";
-      document.body.style.color = "#1a1a1a";
-    }
-
-    // Set button text
+    // Set button text based on current state
     const btn = document.getElementById("dark-mode-btn");
     if (btn) {
-      const isDark = document.documentElement.classList.contains("dark-mode");
+      const isDark = !!document.getElementById("dark-style");
       btn.textContent = isDark ? "☀️ Light" : "🌙 Dark";
     }
 
