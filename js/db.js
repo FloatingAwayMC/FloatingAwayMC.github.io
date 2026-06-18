@@ -605,5 +605,47 @@ const DB = {
     "Advocate for public research funding transparency"
   ]
 }
+,
+
+"aib": {
+  type: "company", tags: ["ireland"],
+  name: "AIB (Allied Irish Banks)",
+  subtitle: "Banking — Republic of Ireland (Euronext: A5G)",
+  corporate: {
+    parent: { name: "AIB Group plc", note: "Irish state owns ~51.9% following 2008 bailout. Listed Euronext Dublin.", compliance: "concern", link: null },
+    subsidiaries: [
+      { name: "EBS (Educational Building Society)", note: "Mortgage lender — fined €13.4m for tracker mortgage breaches", compliance: "concern" },
+      { name: "Haven Mortgages", note: "AIB-backed broker-only mortgage brand", compliance: "mixed" },
+      { name: "AIB Group (UK) plc", note: "UK banking operations", compliance: "mixed" }
+    ],
+    shareholders: [
+      { name: "Irish State (Dept of Finance)", note: "~51.9% stake — majority state-owned following 2008 bailout and €21bn rescue", compliance: "mixed" },
+      { name: "Vanguard Group", note: "~3% institutional stake", compliance: "unclear" },
+      { name: "BlackRock", note: "~2% stake", compliance: "mixed" }
+    ]
+  },
+  products: [
+    { name: "AIB mortgages", flags: ["Tracker mortgage scandal — 10,015 accounts wrongly denied", "€83.3m Central Bank fine"] },
+    { name: "AIB current accounts", flags: ["Branch closure programme — 70+ closures 2022-23"] },
+    { name: "AIB business banking", flags: ["SME lending rates criticism"] }
+  ],
+  categories: [
+    { label: "Legal violations & fines", badgeClass: "badge-political", findings: [
+      { text: "The Central Bank of Ireland fined AIB a record €83.3 million in June 2022 for 57 separate regulatory breaches in its treatment of tracker mortgage customers across 10,015 accounts between August 2004 and March 2022. The Central Bank stated that AIB's failings caused 'unacceptable harm and loss' to customers over nearly 18 years, including significant financial strain and distress. AIB's EBS subsidiary was separately fined €13.4 million for 36 breaches affecting 2,830 accounts.", source: "Central Bank of Ireland June 2022", url: "https://www.centralbank.ie/news/article/press-release-aib-reprimanded-and-fined-83m-by-central-bank-of-ireland-for-regulatory-breaches-affecting-tracker-mortgage-customers-23-june-2022" },
+      { text: "The tracker mortgage scandal affected over 40,000 Irish mortgage customers across all major banks. AIB, along with Bank of Ireland, KBC, Permanent TSB, and Ulster Bank, wrongfully denied customers tracker mortgage rates they were contractually entitled to, switching them to more expensive variable or fixed rates when the financial crisis hit in 2008. In some cases customers lost their homes as a result.", source: "Central Bank of Ireland Tracker Mortgage Examination / Irish Examiner 2022", url: "https://www.irishexaminer.com/business/companies/arid-40902482.html" }
+    ]},
+    { label: "Tax arrangements", badgeClass: "badge-tax", findings: [
+      { text: "AIB received a €21 billion state bailout in 2008–2010, paid for by Irish taxpayers. Following the bailout, AIB used a deferred tax asset (DTA) scheme allowing it to offset accumulated losses against future taxable profits — meaning it paid minimal corporation tax for years after its state rescue, despite returning to profitability.", source: "Comptroller and Auditor General Reports 2015–2020", url: "https://audit.gov.ie" }
+    ]},
+    { label: "Labour & human rights", badgeClass: "badge-labour", findings: [
+      { text: "AIB closed over 70 branches across Ireland between 2022 and 2023, disproportionately affecting rural communities and elderly customers who depend on in-person banking services. The closures followed the simultaneous exit of Ulster Bank and KBC from the Irish market, leaving many communities with no local banking access.", source: "Irish Times / FSAI 2023", url: "https://irishtimes.com" }
+    ]}
+  ],
+  alternatives: [
+    "Credit unions for personal banking and loans — member-owned, community-based",
+    "An Post Money for basic current accounts",
+    "Revolut or N26 for digital-first banking"
+  ]
+}
 
 };
