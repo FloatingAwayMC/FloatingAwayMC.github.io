@@ -259,5 +259,60 @@ const DB = {
     "ProtonMail for private email"
   ]
 }
+,
+
+"apple": {
+  type: "company", tags: ["ireland"],
+  name: "Apple Inc.",
+  subtitle: "Technology — United States (EU HQ in Cork, Ireland)",
+  corporate: {
+    parent: { name: "Apple Inc.", note: "Nasdaq: AAPL. Market cap ~$3 trillion. No parent company.", compliance: "mixed", link: null },
+    subsidiaries: [
+      { name: "Apple Operations International (Ireland)", note: "Main Irish holding company — used for profit routing, subject to €13bn EU tax ruling", compliance: "concern" },
+      { name: "Apple Distribution International (Ireland)", note: "Handles European sales from Cork", compliance: "mixed" },
+      { name: "Beats Electronics", note: "Audio products — acquired 2014", compliance: "mixed" },
+      { name: "Shazam", note: "Music recognition — acquired 2018", compliance: "unclear" }
+    ],
+    shareholders: [
+      { name: "Vanguard Group", note: "~8.5% — largest institutional shareholder", compliance: "unclear" },
+      { name: "BlackRock", note: "~6.5% stake", compliance: "mixed" },
+      { name: "Berkshire Hathaway (Warren Buffett)", note: "~5.9% stake", compliance: "mixed" },
+      { name: "Tim Cook (CEO)", note: "~3.3 million shares personal holding", compliance: "unclear" }
+    ]
+  },
+  products: [
+    { name: "iPhone", flags: ["Cobalt mining concerns", "App Store antitrust violations", "Right to repair blocked"] },
+    { name: "App Store", flags: ["€500m EU DMA fine 2025", "US DOJ antitrust lawsuit 2024", "30% commission ruled anticompetitive"] },
+    { name: "MacBook", flags: ["Repairability rated poor", "Soldered components prevent repair"] },
+    { name: "AirPods", flags: ["Battery not user-replaceable", "Electronic waste concern"] }
+  ],
+  categories: [
+    { label: "Legal violations & fines", badgeClass: "badge-political", findings: [
+      { text: "The EU Court of Justice ruled in September 2024 that Apple must repay €13 billion in back taxes to Ireland. The European Commission had found in 2016 that Ireland granted Apple illegal state aid through special tax arrangements dating to 1991 and 2007, allowing Apple to pay an effective rate of just 0.005% on European profits in 2014.", source: "EU Court of Justice September 2024", url: "https://www.pbs.org/newshour/world/google-and-apple-lose-legal-battles-in-europe-and-now-owe-billions-in-fines-and-back-taxes" },
+      { text: "The European Commission fined Apple €500 million in April 2025 under the Digital Markets Act for preventing app developers from freely directing users to cheaper alternatives outside the App Store. This was the first fine ever issued under the DMA.", source: "European Commission April 2025", url: "https://ec.europa.eu" },
+      { text: "A US District Court ruled in March 2024 that Apple had wilfully violated a 2021 antitrust court order by imposing a 27% fee on developers using alternative payment methods and displaying scare warnings about leaving the App Store — behaviour the court found deliberately circumvented the original ruling.", source: "US District Court March 2024", url: "https://ainvest.com/news/apple-legal-battles-regulatory-headwinds-turning-point-ecosystem-dominance-2505" },
+      { text: "The US Department of Justice, together with 16 states, filed an antitrust lawsuit against Apple in March 2024 accusing it of illegally monopolising the smartphone market by blocking technologies that would reduce consumer dependence on the iPhone.", source: "US Department of Justice March 2024", url: "https://congress.gov/crs-product/LSB11154" },
+      { text: "Apple received a €25 million fine from France's data authority CNIL in January 2022 for placing advertising trackers on iPhones without adequate user consent.", source: "CNIL France January 2022", url: "https://cnil.fr" }
+    ]},
+    { label: "Tax arrangements", badgeClass: "badge-tax", findings: [
+      { text: "The US Senate Permanent Subcommittee on Investigations documented that Apple's Irish subsidiary Apple Operations International had no employees, no physical premises, and paid no tax to any government, despite being the repository of tens of billions in Apple profits.", source: "US Senate Permanent Subcommittee on Investigations 2013", url: "https://hsgac.senate.gov" }
+    ]},
+    { label: "Labour & human rights", badgeClass: "badge-labour", findings: [
+      { text: "Foxconn factories in China — Apple's primary manufacturing partner — have faced sustained documented reports of excessive working hours, wages below living wage levels, and worker suicides. Apple's own supplier audits have repeatedly found violations of its own code of conduct.", source: "China Labor Watch 2023", url: "https://chinalaborwatch.org" },
+      { text: "Cobalt in Apple batteries is sourced from the Democratic Republic of Congo where artisanal mining has been linked to child labour. Amnesty International documented children as young as seven working in cobalt mines supplying the battery industry.", source: "Amnesty International 2023", url: "https://amnesty.org" }
+    ]},
+    { label: "Environment", badgeClass: "badge-env", findings: [
+      { text: "iFixit and Right to Repair Europe have consistently rated Apple products among the least repairable consumer electronics, with soldered components, proprietary screws, and software locks preventing independent repair and driving premature replacement.", source: "iFixit Repairability Scores 2023", url: "https://ifixit.com" }
+    ]},
+    { label: "Lobbying", badgeClass: "badge-political", findings: [
+      { text: "Apple spent $9.4 million on US federal lobbying in 2023, targeting app store regulation, digital markets law, privacy regulation, and AI governance.", source: "OpenSecrets 2023", url: "https://opensecrets.org" }
+    ]}
+  ],
+  alternatives: [
+    "Fairphone — ethical Android smartphone with repairability focus",
+    "Refurbished iPhones via Back Market or Swappie",
+    "Repair rather than replace — Apple offers battery replacement programmes"
+  ]
+}
 
 };
