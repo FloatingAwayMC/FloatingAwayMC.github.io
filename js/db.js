@@ -204,5 +204,60 @@ const DB = {
     "Cloud storage: Proton Drive or Nextcloud"
   ]
 }
+,
+
+"meta": {
+  type: "company", tags: [],
+  name: "Meta Platforms",
+  subtitle: "Technology — United States (EU HQ in Dublin, Ireland)",
+  corporate: {
+    parent: { name: "Meta Platforms Inc.", note: "Nasdaq: META. Mark Zuckerberg controls ~61% of voting shares via Class B stock.", compliance: "concern", link: null },
+    subsidiaries: [
+      { name: "Facebook", note: "Core social network — multiple GDPR violations", compliance: "concern" },
+      { name: "Instagram", note: "Image platform — teen mental health concerns documented internally", compliance: "concern" },
+      { name: "WhatsApp", note: "Messaging — fined €225m by Irish DPC in 2021", compliance: "concern" },
+      { name: "Threads", note: "Twitter/X competitor, launched 2023", compliance: "concern" },
+      { name: "Oculus / Meta Quest", note: "VR hardware — biometric data collection", compliance: "mixed" }
+    ],
+    shareholders: [
+      { name: "Mark Zuckerberg", note: "~13% economic stake, ~61% voting control via Class B shares", compliance: "concern" },
+      { name: "Vanguard Group", note: "~7% stake", compliance: "unclear" },
+      { name: "BlackRock", note: "~6% stake", compliance: "mixed" },
+      { name: "Fidelity Investments", note: "~3% stake", compliance: "unclear" }
+    ]
+  },
+  products: [
+    { name: "Facebook", flags: ["€1.2bn GDPR fine 2023", "€390m GDPR fine 2023", "Behavioural ad targeting ruled illegal"] },
+    { name: "Instagram", flags: ["Teen mental health findings suppressed internally", "€180m GDPR fine"] },
+    { name: "WhatsApp", flags: ["€225m GDPR fine 2021", "Metadata collection"] },
+    { name: "Facebook Marketplace", flags: ["EU antitrust investigation ongoing"] }
+  ],
+  categories: [
+    { label: "Legal violations & fines", badgeClass: "badge-political", findings: [
+      { text: "The Irish Data Protection Commission fined Meta €1.2 billion in May 2023 — the largest GDPR fine in history — for unlawfully transferring EU user data to the United States without adequate legal protections. The DPC also ordered Meta to suspend data transfers to the US.", source: "Data Protection Commission Ireland May 2023", url: "https://www.irishlegal.com/articles/facebook-to-be-fined-eur12bn-over-gdpr-breaches" },
+      { text: "The Irish DPC fined Meta €390 million in January 2023 after finding that Meta had unlawfully forced users to consent to behavioural advertising as a condition of using Facebook and Instagram. The DPC found Meta was not entitled to rely on 'contract' as a legal basis for personalised ad targeting.", source: "Data Protection Commission Ireland / IAPP January 2023", url: "https://iapp.org/news/a/irish-dpc-fines-meta-390m-euros-over-legal-basis-for-personalized-ads" },
+      { text: "The Irish DPC fined Meta €251 million in December 2024 following a 2018 data breach affecting 29 million Facebook accounts globally, including 3 million EU accounts. Exposed data included full names, email addresses, phone numbers, locations, dates of birth, religion, gender, and children's personal data.", source: "Data Protection Commission Ireland December 2024", url: "https://www.dataprotection.ie/en/news-media/press-releases/irish-data-protection-commission-fines-meta-eu251-million" },
+      { text: "The Irish DPC fined Meta €91 million in September 2024 after Meta stored hundreds of millions of user passwords in plaintext — without cryptographic protection or encryption — on its internal systems. The breach was self-reported by Meta in March 2019.", source: "Data Protection Commission Ireland September 2024", url: "https://www.dataprotection.ie/en/news-media/press-releases/DPC-announces-91-million-fine-of-Meta" },
+      { text: "The Irish DPC fined WhatsApp Ireland €225 million in September 2021 for failing to be transparent with users about how it processed their personal data, including data shared with Facebook. It was the second-largest GDPR fine at the time.", source: "Data Protection Commission Ireland September 2021", url: "https://dataprotection.ie" },
+      { text: "The US Federal Trade Commission fined Facebook $5 billion in 2019 — the largest privacy fine in US history at the time — for violating a 2012 consent decree by sharing user data with Cambridge Analytica and other third parties without adequate user consent.", source: "US Federal Trade Commission 2019", url: "https://ftc.gov" }
+    ]},
+    { label: "Labour & human rights", badgeClass: "badge-labour", findings: [
+      { text: "Content moderators employed through Accenture in Dublin reported severe psychological trauma from sustained exposure to violent and abusive content, with inadequate mental health support. A 2021 Guardian investigation documented moderators developing PTSD symptoms.", source: "The Guardian 2021", url: "https://theguardian.com" },
+      { text: "Frances Haugen's 2021 whistleblower disclosure — backed by internal Facebook documents — revealed Meta's own research showed Instagram worsens body image issues in teenage girls and that the company did not act on these findings.", source: "US Senate Commerce Committee / WSJ October 2021", url: "https://commerce.senate.gov" }
+    ]},
+    { label: "Data & privacy", badgeClass: "badge-data", findings: [
+      { text: "The Cambridge Analytica scandal (2018): Facebook user data belonging to approximately 87 million people was harvested without consent and used in the 2016 US presidential election and Brexit campaign. Facebook had allowed third-party app developers access to users' friend networks without explicit consent.", source: "New York Times / The Guardian March 2018", url: "https://nytimes.com" },
+      { text: "Belgian courts ruled that Meta's collection of data on non-users through tracking pixels embedded in third-party websites was illegal under GDPR.", source: "Belgian Data Protection Authority 2022", url: "https://dataprotectionauthority.be" }
+    ]},
+    { label: "Lobbying", badgeClass: "badge-supply", findings: [
+      { text: "Meta spent over $20 million on US federal lobbying in 2023, targeting AI regulation, Section 230 reform, and data privacy legislation.", source: "OpenSecrets 2023", url: "https://opensecrets.org" }
+    ]}
+  ],
+  alternatives: [
+    "Signal for private messaging instead of WhatsApp",
+    "Mastodon or Bluesky for social networking — decentralised, no single corporate owner",
+    "ProtonMail for private email"
+  ]
+}
 
 };
