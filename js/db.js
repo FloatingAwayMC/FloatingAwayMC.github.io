@@ -806,5 +806,55 @@ const DB = {
   ],
   alternatives: []
 }
+,
+
+"nestle": {
+  type: "company", tags: [],
+  name: "Nestlé",
+  subtitle: "Food & Beverage — Switzerland (SIX: NESN)",
+  corporate: {
+    parent: { name: "Nestlé S.A.", note: "SIX Swiss Exchange: NESN. Revenue ~$101bn. World's largest packaged food company. HQ Vevey, Switzerland.", compliance: "concern", link: null },
+    subsidiaries: [
+      { name: "Nestlé Ireland", note: "Irish operations — distribution and sales", compliance: "mixed" },
+      { name: "Nestlé Waters (Perrier, Vittel, S.Pellegrino)", note: "Nestlé Waters France admitted in 2024 to illegally treating mineral water brands with unauthorised purification methods for years", compliance: "concern" },
+      { name: "Nespresso", note: "Coffee capsule brand — single-use plastic waste concerns", compliance: "concern" },
+      { name: "Purina", note: "Pet food — acquired 2001", compliance: "mixed" },
+      { name: "KitKat / Smarties / Aero", note: "Confectionery — cocoa supply chain child labour concerns", compliance: "concern" }
+    ],
+    shareholders: [
+      { name: "Vanguard Group", note: "~3% institutional stake", compliance: "unclear" },
+      { name: "BlackRock", note: "~3% stake", compliance: "mixed" },
+      { name: "Nestlé S.A. (own shares)", note: "~10% treasury shares held by company", compliance: "unclear" }
+    ]
+  },
+  products: [
+    { name: "Nestlé infant formula (NAN, Cerelac)", flags: ["WHO Code violations documented since 1977 — ongoing boycott", "Added sugar in products sold in lower-income countries — Public Eye/IBFAN 2024", "January 2026 recall across 60+ countries for contamination"] },
+    { name: "Perrier / Vittel / Contrex", flags: ["Nestlé Waters France admitted illegal purification of mineral water 2024", "Groundwater over-extraction documented globally"] },
+    { name: "KitKat / confectionery", flags: ["Cocoa supply chain child labour — US Supreme Court case 2021"] },
+    { name: "Nestlé Pure Life bottled water", flags: ["Ranked top 3 global plastic polluter 2018–2022 by Break Free From Plastic"] }
+  ],
+  categories: [
+    { label: "Legal violations & court findings", badgeClass: "badge-political", findings: [
+      { text: "Six individuals from Mali filed a US Supreme Court case — Nestlé USA v. Doe (2021) — alleging they were trafficked as children into the Ivory Coast to work as slaves harvesting cocoa for Nestlé and Cargill. The US 9th Circuit Court of Appeals had found in 2018 that Nestlé's payments to cocoa farmers amounted to kickbacks that maintained child slave labour. The Supreme Court ultimately dismissed the case on jurisdictional grounds without ruling on the merits of the child slavery allegations.", source: "US Supreme Court / Council on Foreign Relations June 2021", url: "https://www.cfr.org/article/supreme-court-denied-child-labor-claim-against-us-firms-what-know" },
+      { text: "Nestlé Waters France admitted in early 2024 to illegally treating its natural mineral water brands — including Perrier, Vittel, and Contrex — with UV light and carbon filters, which are prohibited under French regulations for mineral water. The company had concealed these practices from authorities for several years. French authorities opened an investigation.", source: "IBFAN / Le Monde 2024", url: "https://www.ibfan.org/cop-30-climate-crisis-intensifies-water-scarcity-nestles-water-scandals/" },
+      { text: "Activist groups filed a legal complaint against Nestlé at the European Commission in November 2023 for claiming its bottles are '100% recycled' and '100% recyclable' — claims the groups alleged constituted misleading greenwashing under EU consumer law.", source: "CorpWatch / Break Free From Plastic November 2023", url: "https://www.corpwatch.org/company/nestle" },
+      { text: "In January 2026, Nestlé recalled infant formula products across more than 60 countries following a safety alert over possible cereulide contamination. Six babies became ill. French authorities opened an investigation into whether two infant deaths were connected to the contamination. Austria's Health Ministry described it as the largest recall in Nestlé's history, affecting over 800 products from more than 10 factories.", source: "IBFAN January 2026", url: "https://www.ibfan.org/nestles-credibility-questioned-recall-2026/" }
+    ]},
+    { label: "Labour & human rights", badgeClass: "badge-labour", findings: [
+      { text: "The Nestlé infant formula boycott has been ongoing since 1977, when the company was branded 'The Baby Killer' for aggressively marketing formula to mothers in low-income countries — including paying healthcare workers to promote it — knowing that many mothers lacked access to clean water to safely prepare it. A 2018 National Bureau of Economic Research study estimated that Nestlé's formula marketing contributed to approximately 10.87 million infant deaths between 1960 and 2015 in low and middle-income countries.", source: "Wikipedia / NBER 2018 / Lakota People's Law Project", url: "https://en.wikipedia.org/wiki/1977_Nestl%C3%A9_boycott" },
+      { text: "A 2024 investigation by Swiss nonprofit Public Eye and the International Baby Food Action Network (IBFAN) found that Nestlé adds significantly more sugar to baby cereals and infant formula sold in lower and middle-income countries than in products sold in Europe and wealthy markets. Nestlé defended the practice by citing local regulatory standards.", source: "Public Eye / IBFAN April 2024 / Wikipedia", url: "https://en.wikipedia.org/wiki/Controversies_of_Nestl%C3%A9" }
+    ]},
+    { label: "Environment", badgeClass: "badge-env", findings: [
+      { text: "Break Free From Plastic ranked Nestlé among the top three worst global plastic polluters for five consecutive years between 2018 and 2022, based on branded plastic waste found in environmental audits across dozens of countries.", source: "Break Free From Plastic / CorpWatch 2022", url: "https://www.corpwatch.org/company/nestle" },
+      { text: "Nestlé has faced documented protests, boycotts, blockades, and legal actions in Canada, Michigan, California, Pakistan, and Mexico over its extraction of groundwater for bottled water operations. In Michigan, a Nestlé subsidiary extracted up to 576,000 gallons of groundwater per day while paying just $200 per year to the state — the same week Michigan stopped providing free bottled water to Flint residents who still could not drink from the tap.", source: "Lakota People's Law Project / IBFAN", url: "https://lakotalaw.org/news/2021-01-13/nestle-pledge-update" }
+    ]}
+  ],
+  alternatives: [
+    "Tap water instead of Nestlé bottled water brands",
+    "Local and independent coffee brands instead of Nespresso",
+    "Fair trade certified chocolate — Tony's Chocolonely, Divine Chocolate",
+    "Breastfeeding support organisations for infant nutrition information"
+  ]
+}
 
 };
