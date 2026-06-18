@@ -1078,5 +1078,48 @@ const DB = {
     "Buy less, buy better — extend the life of existing clothing"
   ]
 }
+,
+
+"shein": {
+  type: "company", tags: [],
+  name: "Shein",
+  subtitle: "Fashion Retail — China (privately held, Singapore-incorporated)",
+  corporate: {
+    parent: { name: "Shein International (Singapore)", note: "Private Chinese company incorporated in Singapore. Estimated value ~$66bn. Founded by Chris Xu. Subject to Chinese national security law through ownership structure.", compliance: "concern", link: null },
+    subsidiaries: [
+      { name: "Shein UK", note: "UK arm — breached UK company law by failing to disclose ownership structure 2024", compliance: "concern" },
+      { name: "Shein Ireland / EU operations", note: "European operations — subject to EU consumer and product safety laws", compliance: "concern" }
+    ],
+    shareholders: [
+      { name: "Chris Xu (founder)", note: "Majority owner", compliance: "concern" },
+      { name: "General Atlantic", note: "Private equity investor", compliance: "unclear" },
+      { name: "Tiger Global Management", note: "Investor", compliance: "unclear" }
+    ]
+  },
+  products: [
+    { name: "Shein clothing", flags: ["Child labour confirmed in supply chain — self-disclosed 2023", "Workers paid 3 cents per garment — Channel 4 / BBC investigation", "75-hour working weeks documented in supplier factories", "Mass copyright infringement lawsuits from independent designers"] },
+    { name: "Shein accessories and homeware", flags: ["Products found to contain hazardous chemicals above legal limits — CBC/CTV 2021"] }
+  ],
+  categories: [
+    { label: "Legal violations & supply chain", badgeClass: "badge-political", findings: [
+      { text: "Shein disclosed in its 2023 sustainability report that it found two confirmed cases of child labour in its supply chain between Q1 and Q3 2023. The company had previously only disclosed the percentage of audits finding minors, which stood at 1.8% of audits in 2021 and 0.3% in 2022. Upon discovery, Shein gave the offending suppliers 30 days to remediate — a policy it subsequently changed to immediate termination after the cases became public.", source: "Shein 2023 Sustainability Report / FashionUnited August 2024", url: "https://fashionunited.uk/news/business/shein-finds-cases-of-child-labour-and-forced-labour-in-supply-chain/2024082677274" },
+      { text: "A BBC investigation found workers at Shein's Chinese supplier factories working up to 75 hours per week — well above China's legal limit of 44 hours — and being paid on a piecework basis at rates that worked out to below living wage standards. The investigation found workers earning approximately 3 cents per garment completed.", source: "BBC Panorama / Business and Human Rights Centre", url: "https://www.business-humanrights.org/en/latest-news/china-shein-discloses-two-child-labour-cases-in-supply-chain-reports-temporary-supplier-suspensions-policy-tightening-ahead-of-potential-ipo/" },
+      { text: "Shein's UK arm breached UK company law in 2024 by failing to disclose its ownership structure — a legal requirement for companies registered in the UK. The breach was identified ahead of Shein's planned London IPO and threatened to disrupt its listing plans.", source: "Retail Gazette / Euronews March 2024", url: "https://www.retailgazette.co.uk/blog/2024/03/zara-inditex-publish-supply-chain/" },
+      { text: "Senior Shein executives appeared before the UK Parliament's Business and Trade Committee in January 2025 and repeatedly refused to answer questions about whether Shein's products contain cotton from China — raising concerns about potential links to Uyghur forced labour in Xinjiang. One MP described the evidence given as 'ridiculous'. Shein's senior lawyer declined to confirm or deny the origin of the cotton used in its products.", source: "Euronews / UK Parliament January 2025", url: "https://www.euronews.com/business/2025/01/08/shein-execs-decline-to-shine-light-over-forced-labour-claims" }
+    ]},
+    { label: "Consumer safety", badgeClass: "badge-supply", findings: [
+      { text: "A 2021 investigation by Canadian broadcasters CBC and CTV found that Shein clothing tested positive for hazardous chemicals including lead at levels exceeding Canadian and EU legal limits. A children's jacket was found to contain lead at 20 times the legal limit for children's products in Canada.", source: "CBC / CTV News 2021", url: "https://cbc.ca" }
+    ]},
+    { label: "Tax & business model", badgeClass: "badge-tax", findings: [
+      { text: "Shein built its rapid growth model partly on the de minimis trade rule, which in the US exempted individual shipments valued under $800 from import duties. Critics including bipartisan US congressional leaders argued this gave Shein an unfair competitive advantage over US retailers and was being exploited at massive scale — Shein ships millions of individual packages directly to US consumers to avoid tariffs.", source: "US Congress bipartisan letter / AP News 2023", url: "https://apnews.com" }
+    ]}
+  ],
+  alternatives: [
+    "Second-hand / charity shops — Oxfam, NCBI, SVP across Ireland",
+    "Vinted, Depop, or Thriftify for second-hand fashion online",
+    "Penneys / Primark for budget fashion — Irish-headquartered, more regulatory accountability",
+    "Support independent Irish clothing designers"
+  ]
+}
 
 };
