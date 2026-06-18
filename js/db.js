@@ -775,5 +775,36 @@ const DB = {
     "Support policy requiring carbon disclosure in public procurement"
   ]
 }
+,
+
+"fianna-fail": {
+  type: "government", tags: ["ireland"],
+  name: "Fianna Fáil",
+  subtitle: "Political party — Republic of Ireland (founded 1926)",
+  corporate: {
+    parent: null,
+    subsidiaries: [],
+    shareholders: []
+  },
+  products: [],
+  categories: [
+    { label: "Corruption & tribunal findings", badgeClass: "badge-political", findings: [
+      { text: "The Mahon Tribunal (1997–2012) found that corruption in Irish political and planning life was 'both endemic and systemic' during an era dominated by Fianna Fáil governments. The Tribunal made specific corruption findings against multiple Fianna Fáil politicians and councillors involved in Dublin land rezoning decisions. It found that former minister Ray Burke received corrupt payments from property developers.", source: "Mahon Tribunal Final Report 2012", url: "https://mahontribunal.ie" },
+      { text: "The Mahon Tribunal found that former Taoiseach Bertie Ahern failed to truthfully account for over IR£165,000 passing through accounts connected to him during his time as a senior minister and Taoiseach, and rejected his sworn evidence about the sources of those funds. Fianna Fáil subsequently moved to expel him over conduct described as 'unbecoming'. Ahern resigned from the party in 2012.", source: "Mahon Tribunal Final Report 2012 / Irish Times", url: "https://irishtimes.com" },
+      { text: "The Moriarty Tribunal found that former Taoiseach Charles Haughey — Fianna Fáil leader from 1979 to 1992 — received over IR£9 million in corrupt payments from businessmen while in office, including from Ben Dunne of Dunnes Stores. The Tribunal found this had 'debased' Irish public life. No criminal convictions resulted.", source: "Moriarty Tribunal Final Report 2011", url: "https://moriarty-tribunal.ie" },
+      { text: "The Moriarty Tribunal found that Haughey intervened with the Revenue Commissioners on behalf of Dunnes Stores owner Ben Dunne — who had paid him over £2 million — leading to an offer to settle a £38.8 million tax bill for £16 million, a reduction of £22.8 million. The Tribunal found this was 'directly consequent on Mr Haughey's actions'.", source: "Moriarty Tribunal Final Report 2011 / Irish Times", url: "https://irishtimes.com/business/report-shines-harsh-light-on-dunnes-link-with-haughey-1.1041366" },
+      { text: "The Mahon Tribunal found that senior Fianna Fáil cabinet ministers — including current party leader Micheál Martin — mounted a 'sustained and virulent attack' on the Tribunal while it was investigating Bertie Ahern, in an attempt to undermine the inquiry.", source: "Mahon Tribunal Final Report 2012 / An Phoblacht", url: "https://www.anphoblacht.com/contents/1393" }
+    ]},
+    { label: "Political finance & lobbying", badgeClass: "badge-supply", findings: [
+      { text: "In 1993, Fianna Fáil leaders Albert Reynolds and Bertie Ahern wrote to developer Owen O'Callaghan seeking a substantial donation. O'Callaghan was at the time lobbying for state support for a stadium project. He felt compelled to donate IR£80,000 to Fianna Fáil to secure support. The Mahon Tribunal found the payment was inappropriate even though it did not find it corrupt.", source: "Mahon Tribunal Final Report 2012 / Wikipedia", url: "https://en.wikipedia.org/wiki/History_of_Fianna_F%C3%A1il" },
+      { text: "The source of less than 9% of donations to Irish political parties between 2019 and 2022 was publicly disclosed, according to Transparency International Ireland's 2024 report. Fianna Fáil, as one of the two main governing parties, operates under ethics legislation described by Transparency International as 'hopelessly outdated'.", source: "Transparency International Ireland 2024", url: "https://transparency.ie" }
+    ]},
+    { label: "State agency scandals", badgeClass: "badge-housing", findings: [
+      { text: "Fianna Fáil-led governments oversaw the Celtic Tiger era property bubble and the subsequent 2008 banking collapse, which required a €64 billion bank bailout paid for by Irish taxpayers. The government's blanket bank guarantee of September 2008 — covering all bank liabilities including bondholders — was described by economists as one of the most expensive bank rescues in history relative to GDP.", source: "IMF / Department of Finance Ireland / Comptroller and Auditor General", url: "https://audit.gov.ie" },
+      { text: "The Golfgate scandal (August 2020): Fianna Fáil deputy leader Dara Calleary resigned after attending an 81-person golf society dinner during Level 3 COVID restrictions that limited indoor gatherings to 50 people. Calleary had been appointed Agriculture Minister just weeks earlier.", source: "RTÉ News / The Journal August 2020", url: "https://thejournal.ie" }
+    ]}
+  ],
+  alternatives: []
+}
 
 };
