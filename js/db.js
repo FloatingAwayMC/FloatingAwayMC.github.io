@@ -1121,5 +1121,34 @@ const DB = {
     "Support independent Irish clothing designers"
   ]
 }
+,
+
+"fine-gael": {
+  type: "government", tags: ["ireland"],
+  name: "Fine Gael",
+  subtitle: "Political party — Republic of Ireland (founded 1933)",
+  corporate: {
+    parent: null,
+    subsidiaries: [],
+    shareholders: []
+  },
+  products: [],
+  categories: [
+    { label: "Corruption & tribunal findings", badgeClass: "badge-political", findings: [
+      { text: "The Mahon Tribunal found that the corruption in Irish planning was 'both endemic and systemic' during an era that included Fine Gael-led governments. Tribunal findings of corruption or improper conduct were made against figures associated with Fine Gael as well as other parties, including councillors involved in Dublin rezoning decisions in the 1990s.", source: "Mahon Tribunal Final Report 2012", url: "https://mahontribunal.ie" },
+      { text: "Fine Gael minister Alan Shatter resigned in May 2014 following publication of the Guerin Report, which criticised him for failing to properly investigate whistleblower Sergeant Maurice McCabe's allegations of Garda malpractice. Shatter had earlier wrongly accused McCabe of refusing to co-operate with an inquiry — a false claim for which McCabe sought but did not receive an apology.", source: "Guerin Report May 2014 / Wikipedia", url: "https://en.wikipedia.org/wiki/Garda_whistleblower_scandal" },
+      { text: "Fine Gael Tánaiste Frances Fitzgerald resigned from Cabinet in November 2017 after it emerged she had been aware since 2015 of an aggressive legal strategy by Garda management to use a 'serious criminal complaint' against whistleblower Sergeant Maurice McCabe at a Commission of Inquiry — but had not intervened. Three emails from 2015 confirmed she had been informed significantly earlier than she had indicated.", source: "Irish Times November 2017", url: "https://www.irishtimes.com/news/politics/the-maurice-mccabe-affair-how-did-we-reach-this-point-1.3301473" }
+    ]},
+    { label: "Political finance & lobbying", badgeClass: "badge-supply", findings: [
+      { text: "Former Taoiseach Enda Kenny accepted a €15,000 speaking fee from a private healthcare company after leaving office — an industry that had benefited significantly from government policy decisions taken during his tenure. The payment was disclosed under lobbying rules.", source: "The Ditch / Sunday Times Ireland 2021", url: "https://theditch.ie" },
+      { text: "Fine Gael facilitated Ireland's role as a base for multinational tax avoidance structures including the 'Double Irish' arrangement used by Apple, Google, and others. The EU Commission found in 2016 that Ireland had granted Apple illegal state aid — a ruling upheld by the CJEU in 2024 — resulting in €13 billion in back taxes.", source: "European Commission 2016 / EU Court of Justice 2024", url: "https://curia.europa.eu" }
+    ]},
+    { label: "State agency scandals", badgeClass: "badge-housing", findings: [
+      { text: "The Golfgate scandal (August 2020): EU Commissioner Phil Hogan — a former Fine Gael minister and close ally — resigned from his EU position after attending the same 81-person golf dinner in Clifden that breached COVID restrictions. Hogan had initially denied the extent of his attendance and travel arrangements, before ultimately resigning.", source: "RTÉ News / The Journal August 2020", url: "https://thejournal.ie" },
+      { text: "Under Fine Gael-led governments from 2011 to 2020, Ireland's homelessness levels rose consistently to record highs, with housing policy prioritising market-led development and reliance on the private rented sector through the Housing Assistance Payment scheme. The Comptroller and Auditor General identified significant inefficiencies in HAP spending.", source: "Comptroller and Auditor General / Focus Ireland 2020", url: "https://audit.gov.ie" }
+    ]}
+  ],
+  alternatives: []
+}
 
 };
