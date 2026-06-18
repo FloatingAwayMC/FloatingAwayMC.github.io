@@ -690,5 +690,47 @@ const DB = {
     "Revolut or N26 for digital-first banking"
   ]
 }
+,
+
+"dunnes-stores": {
+  type: "company", tags: ["ireland"],
+  name: "Dunnes Stores",
+  subtitle: "Retail — Republic of Ireland (privately owned)",
+  corporate: {
+    parent: { name: "Dunnes Stores (privately held)", note: "Owned by the Dunne family trust. No public financial reporting — one of Ireland's most secretive major businesses. Ireland's largest supermarket by market share since 2018.", compliance: "concern", link: null },
+    subsidiaries: [],
+    shareholders: [
+      { name: "Heffernan family (Margaret Heffernan and family)", note: "Controlling shareholders of the family trust since Ben Dunne Snr's death", compliance: "unclear" },
+      { name: "No public shareholders", note: "Unlimited company — no requirement to publish full accounts", compliance: "concern" }
+    ]
+  },
+  products: [
+    { name: "Dunnes Stores clothing", flags: ["Uyghur forced labour supply chain — RTÉ Investigates 2025", "No public ethical sourcing policy"] },
+    { name: "Dunnes Stores food", flags: ["Refused to provide pricing data to food regulator", "Price gouging allegations raised in Dáil 2025"] },
+    { name: "Simply Better range", flags: ["Premium food line — supply chain opacity"] }
+  ],
+  categories: [
+    { label: "Labour & human rights", badgeClass: "badge-labour", findings: [
+      { text: "An RTÉ Investigates report in September 2025 found that at least 15 Bangladeshi factories supplying Dunnes Stores had imported cotton fabric from Chinese companies linked to a Uyghur forced labour programme in Xinjiang. Dunnes Stores refused to engage with RTÉ Investigates despite repeated contact attempts including hand-delivered requests to their Dublin head office. It was the only retailer in the investigation with no public position on ethical sourcing.", source: "RTÉ Investigates September 2025", url: "https://www.rte.ie/news/investigations-unit/2025/0924/1534937-suppliers-to-major-irish-retailers-linked-to-forced-labour-cotton" },
+      { text: "Dunnes Stores workers represented by Mandate Trade Union held a one-day national strike across 109 branches in April 2015 over the company's use of low-hour contracts (typically 15 hours per week), income insecurity, and the company's continued refusal to recognise or engage with Mandate Trade Union — contrary to Labour Court recommendations.", source: "Mandate Trade Union / Irish Times April 2015", url: "https://irishtimes.com" }
+    ]},
+    { label: "Corruption & political connections", badgeClass: "badge-political", findings: [
+      { text: "The Moriarty Tribunal found that former Taoiseach Charles Haughey intervened with the Revenue Commissioners on behalf of Dunnes Stores owner Ben Dunne, leading to an offer to settle a £38.8 million tax bill for £16 million — a reduction of £22.8 million. Haughey's intervention followed payments of over £2 million from Ben Dunne to Haughey. The Tribunal found this represented 'a real and tangible benefit for Mr Dunne directly consequent on Mr Haughey's actions'.", source: "Moriarty Tribunal Final Report 2011 / Irish Times", url: "https://www.irishtimes.com/business/report-shines-harsh-light-on-dunnes-link-with-haughey-1.1041366" },
+      { text: "Revenue Commissioners investigators found in 2001 that invoices issued by construction firm Faxhill Homes to Dunnes Stores, describing work on Dunnes business premises, were in fact for construction work carried out on the private homes of Ben Dunne and former minister Michael Lowry — payments totalling £1.4 million. A Revenue tax inspector told Naas District Court these invoices were part of 'a scheme of tax evasion'.", source: "Irish Times January 2001 / Revenue Commissioners", url: "https://www.irishtimes.com/business/prosecutions-likely-in-dunnes-tax-case-1.269283" }
+    ]},
+    { label: "Tax arrangements", badgeClass: "badge-tax", findings: [
+      { text: "Dunnes Stores operates as an unlimited private company, meaning it is not required to publish full financial accounts — making it one of the least transparent major retailers in Ireland. Despite being Ireland's largest supermarket, Irish consumers have no access to data on its revenues, profits, or tax payments.", source: "Companies Registration Office Ireland / Irish Times", url: "https://cro.ie" },
+      { text: "Dunnes Stores resisted placement of multiple zoned but vacant development sites on local authority vacant sites registers, fighting An Bord Pleanála decisions on sites in Dublin and Limerick that were zoned for housing but left undeveloped for years.", source: "Irish Examiner / An Bord Pleanála 2020", url: "https://www.irishexaminer.com/business/arid-30873669.html" }
+    ]},
+    { label: "Political & lobbying", badgeClass: "badge-supply", findings: [
+      { text: "Dunnes Stores refused to provide pricing data to Ireland's food regulator during a 2025 Dáil-noted investigation into alleged supermarket price gouging. Dáil deputies raised the refusal in Oireachtas debate, with one TD stating that Dunnes told the regulator 'No, tough, you are not getting the information.'", source: "Dáil Éireann debates 2025 / Gript", url: "https://gript.ie/dail-hears-of-alleged-price-gouging-by-supermarkets" }
+    ]}
+  ],
+  alternatives: [
+    "SuperValu — more transparent Irish supplier sourcing",
+    "Local farmers markets for fresh produce",
+    "Lidl or Aldi — comparable pricing with more supply chain reporting"
+  ]
+}
 
 };
