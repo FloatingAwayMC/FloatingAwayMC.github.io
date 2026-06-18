@@ -559,5 +559,51 @@ const DB = {
     "Independent pharmacies for personal care products"
   ]
 }
+,
+
+"astrazeneca": {
+  type: "company", tags: [],
+  name: "AstraZeneca",
+  subtitle: "Pharmaceuticals — United Kingdom (LSE/Nasdaq: AZN)",
+  corporate: {
+    parent: { name: "AstraZeneca PLC", note: "LSE/Nasdaq: AZN. Revenue ~$46bn. HQ Cambridge, UK. CEO Pascal Soriot.", compliance: "mixed", link: null },
+    subsidiaries: [
+      { name: "Alexion Pharma International Operations Ltd (Ireland)", note: "Irish-registered subsidiary — Alexion acquired by AZ in 2021 for $39bn", compliance: "mixed" },
+      { name: "Alexion Pharma Holding Ltd (Ireland)", note: "Irish holding company for rare disease division", compliance: "mixed" },
+      { name: "AstraZeneca manufacturing sites", note: "No major Irish manufacturing — mainly UK, Sweden, US", compliance: "mixed" }
+    ],
+    shareholders: [
+      { name: "Vanguard Group", note: "~5% institutional stake", compliance: "unclear" },
+      { name: "BlackRock", note: "~4% stake", compliance: "mixed" },
+      { name: "Capital Research", note: "~5% stake", compliance: "unclear" }
+    ]
+  },
+  products: [
+    { name: "COVID-19 vaccine (Vaxzevria)", flags: ["EU sued over supply shortfalls 2021", "Rare blood clot side effect — delayed disclosure concerns"] },
+    { name: "Seroquel (quetiapine)", flags: ["$520m DOJ settlement for illegal marketing 2010"] },
+    { name: "Nexium, Losec", flags: ["Pay-for-delay patent settlements investigated"] },
+    { name: "Rare disease drugs (Alexion)", flags: ["Among highest-priced drugs in the world", "Soliris price — $700,000 per patient per year"] }
+  ],
+  categories: [
+    { label: "Legal violations & fines", badgeClass: "badge-political", findings: [
+      { text: "AstraZeneca paid $520 million to the US Department of Justice in 2010 to settle allegations that it had illegally marketed the antipsychotic drug Seroquel (quetiapine) for unapproved uses including in children, the elderly, veterans, and prisoners. The settlement resolved both criminal and civil allegations.", source: "US Department of Justice April 2010", url: "https://justice.gov" },
+      { text: "The European Commission took legal action against AstraZeneca in 2021 over its failure to deliver COVID-19 vaccines as contractually required to EU member states. AstraZeneca delivered only 30 million of a promised 120 million doses in the first quarter of 2021. A Belgian court initially ruled AstraZeneca had breached its contract.", source: "European Commission / Irish Examiner April 2021", url: "https://www.irishexaminer.com/news/arid-40272185.html" }
+    ]},
+    { label: "Labour & human rights", badgeClass: "badge-labour", findings: [
+      { text: "AstraZeneca's Alexion division produces Soliris (eculizumab) — one of the world's most expensive drugs at approximately $700,000 per patient per year. Médecins Sans Frontières and patient advocacy groups have repeatedly criticised Alexion and AstraZeneca for the pricing of rare disease drugs that are unaffordable to most health systems and patients globally, despite the drugs being developed partly with public research funding.", source: "Médecins Sans Frontières Access Campaign", url: "https://msfaccess.org" }
+    ]},
+    { label: "Tax arrangements", badgeClass: "badge-tax", findings: [
+      { text: "AstraZeneca holds two Irish-registered subsidiaries — Alexion Pharma International Operations Ltd and Alexion Pharma Holding Ltd — as part of its post-acquisition structure following the $39 billion purchase of Alexion in 2021. These Irish entities hold intellectual property and operational rights for AstraZeneca's rare disease division in structures that benefit from Ireland's 12.5% corporate tax rate.", source: "AstraZeneca Form 20-F 2024 / Companies Registration Office Ireland", url: "https://www.sec.gov/Archives/edgar/data/0000901832/000110465925014750/azn-20241231xex8d1.htm" }
+    ]},
+    { label: "Lobbying", badgeClass: "badge-supply", findings: [
+      { text: "AstraZeneca spent $4.8 million on US federal lobbying in 2023, targeting drug pricing legislation, Medicare negotiation rules, and regulatory policy for rare disease drugs.", source: "OpenSecrets 2023", url: "https://opensecrets.org" }
+    ]}
+  ],
+  alternatives: [
+    "Generic alternatives where patent exclusivity has expired",
+    "Support MSF Access Campaign for fair medicine pricing",
+    "Advocate for public research funding transparency"
+  ]
+}
 
 };
