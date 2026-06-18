@@ -1033,5 +1033,50 @@ const DB = {
     "Slow fashion — buy less, choose quality, keep longer"
   ]
 }
+,
+
+"hm": {
+  type: "company", tags: [],
+  name: "H&M",
+  subtitle: "Fashion Retail — Sweden (Nasdaq Stockholm: HM-B)",
+  corporate: {
+    parent: { name: "H&M Hennes & Mauritz AB", note: "Nasdaq Stockholm: HM-B. Revenue ~SEK 236bn (~€21bn). Second largest fashion retailer globally. HQ Stockholm.", compliance: "concern", link: null },
+    subsidiaries: [
+      { name: "H&M", note: "Core brand — 4,000+ stores globally", compliance: "concern" },
+      { name: "COS", note: "Premium fashion brand", compliance: "mixed" },
+      { name: "&Other Stories", note: "Women's fashion brand", compliance: "mixed" },
+      { name: "Monki", note: "Youth fashion brand", compliance: "mixed" },
+      { name: "Weekday", note: "Denim and fashion brand", compliance: "mixed" }
+    ],
+    shareholders: [
+      { name: "Stefan Persson family (Ramsbury Invest)", note: "~44% controlling stake — founding family", compliance: "unclear" },
+      { name: "Vanguard Group", note: "~4% institutional stake", compliance: "unclear" },
+      { name: "BlackRock", note: "~3% stake", compliance: "mixed" }
+    ]
+  },
+  products: [
+    { name: "H&M clothing", flags: ["Greenwashing class actions — Conscious Choice collection data falsified", "Cerrado deforestation-linked cotton — Earthsight 2024", "Fashion Transparency Index — improving but below average"] },
+    { name: "H&M Conscious Choice collection", flags: ["Sustainability profiles contained falsified data — Quartz 2022", "Multiple class action lawsuits in US federal courts"] }
+  ],
+  categories: [
+    { label: "Legal violations & greenwashing", badgeClass: "badge-env", findings: [
+      { text: "A June 2022 investigation by Quartz found that H&M's 'Sustainability Profiles' — environmental scorecards displayed on product pages — contained falsified data. In one documented case, a sustainability profile claimed a dress used 20% less water on average in production, when the actual data showed it used 20% more water. H&M removed the scorecards from its websites following publication of the investigation.", source: "Quartz June 2022 / ClassAction.org", url: "https://www.classaction.org/news/greenwashing-class-action-alleges-handm-sustainability-profiles-contain-falsified-information" },
+      { text: "Multiple class action lawsuits were filed against H&M in US federal courts in 2022 alleging that its 'Conscious Choice' sustainable clothing line constituted greenwashing — misleading consumers into paying premium prices for products that were not meaningfully more sustainable. The lawsuits cited the falsified sustainability profiles and alleged that products described as made from 'sustainable materials' contained up to 100% polyester, which does not biodegrade and sheds toxic microfibers.", source: "ClassAction.org / Business and Human Rights Centre 2022", url: "https://www.business-humanrights.org/en/latest-news/usa-hm-faces-greenwashing-class-action-lawsuit-over-alleged-misleading-false-marketing-of-sustainable-clothing-line/" },
+      { text: "The Norwegian Consumer Authority ruled in 2022 that H&M's Conscious Choice marketing was in breach of Norwegian marketing law, finding that the sustainability claims were vague and unsubstantiated and therefore misleading to consumers.", source: "Norwegian Consumer Authority 2022", url: "https://www.forbrukertilsynet.no" }
+    ]},
+    { label: "Supply chain & environment", badgeClass: "badge-supply", findings: [
+      { text: "A 2024 investigation by UK NGO Earthsight found that nearly a million tonnes of cotton from Brazilian producers with documented histories of illegal deforestation in the Cerrado biome had entered H&M's supply chain. The two producers — SLC Agrícola and Grupo Horita — had been fined over 20 times by Brazil's environmental agency IBAMA, with fines totalling $4.5 million between 2002 and 2019. The cotton carried Better Cotton certification despite these violations.", source: "Earthsight / Mongabay April 2024", url: "https://news.mongabay.com/2024/04/report-links-hm-and-zara-to-major-environmental-damage-in-biodiverse-cerrado/" }
+    ]},
+    { label: "Labour & human rights", badgeClass: "badge-labour", findings: [
+      { text: "H&M has faced repeated documented reports of garment workers in Bangladesh, Cambodia, and Myanmar earning below living wage in factories in its supply chain. A 2021 report by the Clean Clothes Campaign found that wages paid to workers in H&M's supply chain had not kept pace with cost of living increases, leaving workers worse off in real terms than in previous years.", source: "Clean Clothes Campaign 2021", url: "https://cleanclothes.org" }
+    ]}
+  ],
+  alternatives: [
+    "Second-hand / charity shops — Oxfam, NCBI, SVP across Ireland",
+    "Vinted, Depop, or Thriftify for second-hand fashion online",
+    "Ethical brands: People Tree, Patagonia, Thought Clothing",
+    "Buy less, buy better — extend the life of existing clothing"
+  ]
+}
 
 };
