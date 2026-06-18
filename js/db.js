@@ -1150,5 +1150,33 @@ const DB = {
   ],
   alternatives: []
 }
+,
+
+"sinn-fein": {
+  type: "government", tags: ["ireland"],
+  name: "Sinn Féin",
+  subtitle: "Political party — Republic of Ireland and Northern Ireland",
+  corporate: {
+    parent: null,
+    subsidiaries: [],
+    shareholders: []
+  },
+  products: [],
+  categories: [
+    { label: "Historical IRA associations", badgeClass: "badge-political", findings: [
+      { text: "Sinn Féin was historically the political wing of the Provisional IRA during the Troubles (1969–1998). The IRA's military campaign was responsible for over 1,700 deaths during the conflict. The Charleton Tribunal and multiple inquiries have documented the close organisational relationship between the party and the IRA during this period.", source: "Britannica / NPR / EBSCO Research Starters", url: "https://www.britannica.com/topic/Sinn-Fein" },
+      { text: "The Northern Bank robbery of £26.5 million in Belfast in December 2004 was widely attributed to the IRA by the Irish and British governments, including then-Taoiseach Bertie Ahern. Sinn Féin denied knowledge of the robbery. The timing — occurring while Sinn Féin was engaged in peace settlement talks — significantly damaged confidence in the peace process.", source: "Wikipedia / BBC 2004", url: "https://en.wikipedia.org/wiki/Sinn_F%C3%A9in" },
+      { text: "Sinn Féin chairman Mitchel McLaughlin stated on RTÉ's Questions and Answers programme that the IRA's killing of Jean McConville — a mother of ten children, abducted and murdered in the early 1970s — was 'wrong' but 'not a crime'. The statement caused significant public outrage.", source: "RTÉ / Irish Times reporting", url: "https://rte.ie" }
+    ]},
+    { label: "Political finance & transparency", badgeClass: "badge-supply", findings: [
+      { text: "Sinn Féin historically received significant funding from Irish-American diaspora organisations in the United States, including NORAID, which the FBI and Irish government identified as a fundraising vehicle for the IRA. The party's finances during the Troubles period were not publicly transparent.", source: "PBS Frontline / FBI records", url: "https://www.pbs.org/wgbh/pages/frontline/shows/ira/conflict/gasf.html" },
+      { text: "Transparency International Ireland's 2024 report found that less than 9% of donations to Irish political parties between 2019 and 2022 were publicly disclosed. As one of Ireland's largest parties, Sinn Féin operates under the same 'hopelessly outdated' ethics and political finance legislation as other parties.", source: "Transparency International Ireland 2024", url: "https://transparency.ie" }
+    ]},
+    { label: "Garda & justice", badgeClass: "badge-housing", findings: [
+      { text: "The Irish government has alleged that senior members of Sinn Féin have held posts on the IRA Army Council. Multiple security service assessments in both Ireland and the UK maintained that organisational links between Sinn Féin and the IRA persisted beyond the 1998 Good Friday Agreement, though the IRA formally ended its armed campaign in 2005 and decommissioned weapons.", source: "Wikipedia / Britannica / Irish government statements", url: "https://en.wikipedia.org/wiki/Sinn_F%C3%A9in" }
+    ]}
+  ],
+  alternatives: []
+}
 
 };
