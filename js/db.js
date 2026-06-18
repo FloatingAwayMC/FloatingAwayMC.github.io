@@ -11,7 +11,6 @@
  */
 
 const DB = {
-,
 
 "ryanair": {
   type: "company", tags: ["ireland"],
