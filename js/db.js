@@ -947,5 +947,46 @@ const DB = {
     "Home cooking — significantly cheaper and healthier"
   ]
 }
+,
+
+"primark": {
+  type: "company", tags: ["ireland"],
+  name: "Primark (Penneys in Ireland)",
+  subtitle: "Fashion Retail — Ireland (subsidiary of Associated British Foods)",
+  corporate: {
+    parent: { name: "Associated British Foods plc", note: "LSE: ABF. Primark accounts for ~40% of ABF revenue. HQ Dublin (Primark) / London (ABF).", compliance: "concern", link: null },
+    subsidiaries: [
+      { name: "Primark Stores Ltd", note: "UK and international operations", compliance: "concern" },
+      { name: "Penneys (Ireland)", note: "Irish trading name — same company", compliance: "concern" }
+    ],
+    shareholders: [
+      { name: "Wittington Investments (Weston family)", note: "~54% of ABF — Primark's controlling shareholder is the Weston family, one of Canada's wealthiest families", compliance: "unclear" },
+      { name: "Vanguard Group", note: "~3% of ABF institutional stake", compliance: "unclear" }
+    ]
+  },
+  products: [
+    { name: "Primark / Penneys clothing", flags: ["Rana Plaza supply chain link 2013", "Channel 4 below-minimum-wage Leicester investigation 2021", "CMA greenwashing finding 2023", "Fashion Transparency Index — consistently low score"] },
+    { name: "Primark homeware and accessories", flags: ["Supply chain labour standards concerns"] }
+  ],
+  categories: [
+    { label: "Labour & human rights", badgeClass: "badge-labour", findings: [
+      { text: "The Rana Plaza factory complex in Bangladesh collapsed on 24 April 2013, killing 1,138 garment workers and injuring over 2,500. It remains the deadliest garment factory disaster in history. Labels from multiple fashion retailers were found in the rubble, including Primark. Primark acknowledged sourcing from a supplier at the site and paid compensation to affected workers and families, but critics including Labour Behind the Label noted that compensation arrangements took years and were inadequate for many families.", source: "Labour Behind the Label / Guardian 2013–2015", url: "https://labourbehindthelabel.net" },
+      { text: "A Channel 4 News investigation broadcast in May 2021 found garment workers in Leicester producing clothes for online fashion brands being paid as little as £3.50 per hour — less than half the UK minimum wage of £8.72. While the investigation focused primarily on online brands, Leicester had been a known hub of below-minimum-wage garment production supplying fast fashion retailers including those sourcing from Primark's supply chain tier.", source: "Channel 4 News May 2021", url: "https://channel4.com" }
+    ]},
+    { label: "Environmental & greenwashing", badgeClass: "badge-env", findings: [
+      { text: "The UK Competition and Markets Authority named Primark in its 2023 investigation into greenwashing in the fashion sector, examining whether Primark's sustainability claims — including its 'Primark Cares' branding — were misleading to consumers. The CMA found that vague and unsubstantiated environmental claims across the fashion industry breached consumer protection law.", source: "UK Competition and Markets Authority 2023", url: "https://cma.gov.uk" },
+      { text: "Primark has consistently received among the lowest scores on the Fashion Transparency Index — an annual ranking of major fashion brands' disclosure of their supply chain, policies, and social and environmental impact. In 2023 Primark scored 23% out of 100, placing it in the lower tier of the index.", source: "Fashion Revolution Fashion Transparency Index 2023", url: "https://fashionrevolution.org" }
+    ]},
+    { label: "Tax arrangements", badgeClass: "badge-tax", findings: [
+      { text: "Primark's parent company Associated British Foods uses Ireland as its headquarters for the Primark business, benefiting from Ireland's 12.5% corporate tax rate. ABF's 2023 annual report shows Primark's profits are primarily reported through its Dublin-headquartered entities.", source: "Associated British Foods Annual Report 2023 / Companies Registration Office Ireland", url: "https://abf.co.uk" }
+    ]}
+  ],
+  alternatives: [
+    "Charity shops / second-hand — Oxfam, NCBI, SVP shops across Ireland",
+    "Depop, Vinted, or Thriftify for second-hand fashion online",
+    "Ethical brands: People Tree, Patagonia, Thought Clothing",
+    "Buy less, buy better — extend the life of existing clothing"
+  ]
+}
 
 };
