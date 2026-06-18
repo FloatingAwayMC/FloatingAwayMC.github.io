@@ -510,5 +510,54 @@ const DB = {
     "MSF Access Campaign for information on pharmaceutical patent abuse"
   ]
 }
+,
+
+"johnson-johnson": {
+  type: "company", tags: [],
+  name: "Johnson & Johnson",
+  subtitle: "Pharmaceuticals & Consumer — United States (NYSE: JNJ)",
+  corporate: {
+    parent: { name: "Johnson & Johnson", note: "NYSE: JNJ. Revenue ~$88bn. Split into J&J (pharma/medtech) and Kenvue (consumer) in 2023.", compliance: "concern", link: null },
+    subsidiaries: [
+      { name: "Janssen Pharmaceuticals (Ireland)", note: "Major R&D and manufacturing in Cork and Dublin. Janssen is J&J's pharmaceutical division.", compliance: "concern" },
+      { name: "Kenvue", note: "Consumer health spinoff — owns Johnson's Baby, Tylenol, Listerine, Neutrogena", compliance: "mixed" },
+      { name: "DePuy Synthes", note: "Orthopaedic devices — multiple recall and litigation issues", compliance: "concern" },
+      { name: "Ethicon", note: "Surgical products — mesh litigation", compliance: "concern" }
+    ],
+    shareholders: [
+      { name: "Vanguard Group", note: "~9% stake", compliance: "unclear" },
+      { name: "BlackRock", note: "~7% stake", compliance: "mixed" },
+      { name: "State Street Global Advisors", note: "~4% stake", compliance: "unclear" }
+    ]
+  },
+  products: [
+    { name: "Johnson's Baby Powder (talc)", flags: ["Asbestos contamination — 60,000+ lawsuits", "Lab tests showed asbestos from 1971 to early 2000s", "Company knew and did not report to FDA"] },
+    { name: "Risperdal (risperidone)", flags: ["$2.2bn DOJ settlement for illegal marketing", "Promoted off-label to children and elderly"] },
+    { name: "Surgical mesh products", flags: ["Thousands of injury lawsuits", "Products recalled in multiple countries"] },
+    { name: "DePuy hip implants", flags: ["Global recall 2010 — metal-on-metal failure", "Over $4bn in settlements"] }
+  ],
+  categories: [
+    { label: "Legal violations & fines", badgeClass: "badge-political", findings: [
+      { text: "Johnson & Johnson faces over 60,000 lawsuits from people who claim that asbestos in its talc-based Johnson's Baby Powder caused them to develop ovarian cancer or mesothelioma. Lab tests showed asbestos contamination in J&J talc from at least 1971 to the early 2000s. The company never reported those findings to the US Food and Drug Administration. J&J has paid out over $2 billion in settlements and multiple juries have found the company liable, including a $1.5 billion mesothelioma verdict in December 2025.", source: "Reuters / Drugwatch / asbestos.com", url: "https://usrtk.org/cosmetics/johnson-talc-baby-powder-asbestos" },
+      { text: "J&J has attempted to use the US bankruptcy system three times to limit its talc liability — a controversial legal manoeuvre called the 'Texas Two-Step', which involves creating a new subsidiary, loading it with the liability, and having it declare bankruptcy. All three attempts were rejected by US bankruptcy courts as of 2025.", source: "US Bankruptcy Courts 2021–2025 / Reuters", url: "https://drugwatch.com/talcum-powder/lawsuits" },
+      { text: "J&J paid $2.2 billion to the US Department of Justice in 2013 to settle criminal and civil allegations that it had illegally marketed the antipsychotic drug Risperdal for unapproved uses, including to children and elderly nursing home patients. A J&J subsidiary pleaded guilty to a criminal misdemeanour.", source: "US Department of Justice November 2013", url: "https://justice.gov" },
+      { text: "J&J's DePuy division recalled its ASR metal-on-metal hip implants globally in 2010 after they failed at an unusually high rate, releasing metal particles into patients' bodies. Over 93,000 implants were recalled. J&J paid over $4 billion in settlements to affected patients worldwide.", source: "US FDA / Reuters 2010–2016", url: "https://fda.gov" }
+    ]},
+    { label: "Labour & human rights", badgeClass: "badge-labour", findings: [
+      { text: "J&J, like other major pharmaceutical companies, opposed the WTO intellectual property waiver during the COVID-19 pandemic that would have allowed lower-income countries to manufacture vaccines without patent restrictions. This position was maintained despite calls from the WHO, Médecins Sans Frontières, and over 100 governments.", source: "Médecins Sans Frontières / WTO proceedings 2021", url: "https://msfaccess.org" }
+    ]},
+    { label: "Tax arrangements", badgeClass: "badge-tax", findings: [
+      { text: "Janssen Pharmaceuticals, J&J's Irish-based drug development and manufacturing subsidiary, operates in Ireland partly due to its favourable tax environment. Janssen Ireland files accounts with the CRO showing Irish-registered entities holding significant intellectual property rights, contributing to a lower effective global tax rate for J&J.", source: "Companies Registration Office Ireland", url: "https://cro.ie" }
+    ]},
+    { label: "Lobbying", badgeClass: "badge-supply", findings: [
+      { text: "Johnson & Johnson spent $9.3 million on US federal lobbying in 2023, targeting drug pricing legislation, Medicare drug price negotiation, patent protection, and medical device regulation.", source: "OpenSecrets 2023", url: "https://opensecrets.org" }
+    ]}
+  ],
+  alternatives: [
+    "Avoid talc-based body powder — cornstarch-based alternatives available",
+    "Generic equivalents for J&J drugs where available",
+    "Independent pharmacies for personal care products"
+  ]
+}
 
 };
