@@ -18,15 +18,15 @@ const Render = (() => {
   }
 
   function externalLinkIcon() {
-    return `<svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M7 3H3a1 1 0 00-1 1v9a1 1 0 001 1h9a1 1 0 001-1V9M1...`;
+    return `<svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M7 3H3a1 1 0 00-1 1v9a1 1 0 001 1h9a1 1 0 001-1V9M11 1h4v4"/></svg>`;
   }
 
   function infoIcon() {
-    return `<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r...`;
+    return `<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="7"/><path d="M8 11v-4"/><circle cx="8" cy="5" r=".5"/></svg>`;
   }
 
   function chevronIcon(id) {
-    return `<svg id="ch-${id}" class="cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 6l4 4 4-4"/></...`;
+    return `<svg id="ch-${id}" class="cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 6l4 4 4-4"/></svg>`;
   }
 
   function browseCard(key, entry) {
@@ -60,7 +60,7 @@ const Render = (() => {
     return `
       <div class="result-notice">
         ${infoIcon()}
-        All findings describe what has already happened or is currently ongoing — not what a company says it plans to do. Every finding links to its original public source. EthosCheck does not a...
+        All findings describe what has already happened or is currently ongoing — not what a company says it plans to do. Every finding links to its original public source. EthosCheck does not add interpretation.
       </div>`;
   }
 
@@ -190,19 +190,12 @@ const Render = (() => {
     return `
       <div class="not-found">
         <h3>No results for "${query}"</h3>
-        <p>We don't have an entry for that yet. Try the suggestions below, or use AI search to see what's been publicly reported.</p>
+        <p>We don't have an entry for that yet. Try the suggestions below, or suggest a finding to add this subject to EthosCheck.</p>
         <div class="nf-chips">${suggestions}</div>
-        <div class="ai-block">
-          <h3>Search public sources for "${query}"</h3>
-          <p>EthosCheck will search publicly available reports and summarise what has actually happened — no future promises included.</p>
-          <button class="search-btn" onclick="App.aiSearch('${query}')">Search for "${query}"</button>
-          <div id="ai-result" style="margin-top:1rem"></div>
+        <div style="margin-top:1rem">
+          <a class="search-btn" href="/pages/submit.html">Suggest a finding for "${query}"</a>
         </div>
       </div>`;
-  }
-
-  function aiLoading() {
-    return `<div class="loading">Searching public sources <div class="dot-flash"><span></span><span></span><span></span></div></div>`;
   }
 
   function fullEntry(entry) {
@@ -217,6 +210,6 @@ const Render = (() => {
     ].join("");
   }
 
-  return { browseCard, fullEntry, notFound, aiLoading };
+  return { browseCard, fullEntry, notFound };
 
 })();
