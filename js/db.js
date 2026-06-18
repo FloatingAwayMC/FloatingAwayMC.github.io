@@ -419,5 +419,48 @@ const DB = {
     "Gitea or Codeberg instead of GitHub for code hosting"
   ]
 }
+,
+
+"tiktok": {
+  type: "company", tags: [],
+  name: "TikTok (ByteDance)",
+  subtitle: "Technology — China (EU operations registered in Dublin, Ireland)",
+  corporate: {
+    parent: { name: "ByteDance Ltd.", note: "Private Chinese company. HQ Beijing. Estimated value ~$300bn. Subject to Chinese national security laws.", compliance: "concern", link: null },
+    subsidiaries: [
+      { name: "TikTok Ireland Ltd.", note: "European HQ in Dublin — lead GDPR jurisdiction for EU enforcement", compliance: "concern" },
+      { name: "TikTok UK", note: "UK operations", compliance: "concern" },
+      { name: "Douyin", note: "Chinese domestic version of TikTok — subject to Chinese censorship and surveillance laws", compliance: "concern" }
+    ],
+    shareholders: [
+      { name: "ByteDance founders and employees", note: "~60% ownership", compliance: "concern" },
+      { name: "General Atlantic", note: "US private equity — ~7% stake", compliance: "unclear" },
+      { name: "Susquehanna International Group", note: "~15% stake", compliance: "unclear" }
+    ]
+  },
+  products: [
+    { name: "TikTok app", flags: ["€530m GDPR fine 2025 for China data transfers", "Children's data violations — UK £12.7m fine", "Algorithmic design linked to addictive use"] },
+    { name: "TikTok for Business", flags: ["Advertising platform — data targeting practices under investigation"] }
+  ],
+  categories: [
+    { label: "Legal violations & fines", badgeClass: "badge-political", findings: [
+      { text: "The Irish Data Protection Commission fined TikTok €530 million in May 2025 — the third-largest GDPR fine ever imposed — for transferring European users' personal data to servers in China without ensuring equivalent protections to those required under EU law. The DPC found that engineers in China had routine access to sensitive data of EU users, and that TikTok failed to adequately assess the risks posed by Chinese anti-terrorism and counter-espionage laws that can compel data disclosure to the Chinese government.", source: "Data Protection Commission Ireland May 2025", url: "https://skillcast.com/blog/20-biggest-gdpr-fines" },
+      { text: "The UK Information Commissioner's Office fined TikTok £12.7 million in April 2023 for unlawfully processing the personal data of children under 13 without parental consent, in violation of UK data protection law.", source: "UK ICO April 2023", url: "https://ico.org.uk" },
+      { text: "The US FTC referred TikTok to the DOJ in 2024 for alleged violations of the Children's Online Privacy Protection Act, including failing to honour parents' and users' requests to delete data collected from children.", source: "US Federal Trade Commission 2024", url: "https://ftc.gov" }
+    ]},
+    { label: "Data & privacy", badgeClass: "badge-data", findings: [
+      { text: "TikTok's parent ByteDance is incorporated in China and subject to Chinese national security laws requiring companies to cooperate with Chinese intelligence services. The Irish DPC's €530m fine was specifically linked to the structural risk that Chinese authorities could access European user data through ByteDance's ownership and control of TikTok.", source: "Data Protection Commission Ireland 2025 / MediaLaws analysis", url: "https://www.medialaws.eu/why-tiktok-was-fined-half-a-billion-under-the-gdpr" },
+      { text: "ByteDance employees in China accessed the private data of US journalists in 2022 in an attempt to identify their sources. ByteDance fired four employees following an internal investigation and the incident was confirmed in statements to US media.", source: "Forbes / ByteDance December 2022", url: "https://forbes.com" }
+    ]},
+    { label: "Lobbying", badgeClass: "badge-supply", findings: [
+      { text: "TikTok spent $8.7 million on US federal lobbying in 2023, primarily targeting legislation that would force a sale or ban of the app in the United States. The Protecting Americans from Foreign Adversary Controlled Applications Act was ultimately signed into law in 2024, requiring ByteDance to divest TikTok.", source: "OpenSecrets 2023", url: "https://opensecrets.org" }
+    ]}
+  ],
+  alternatives: [
+    "YouTube Shorts for short video content",
+    "Nebula or Vimeo for independent creator content",
+    "Instagram Reels — though Meta has its own privacy concerns"
+  ]
+}
 
 };
