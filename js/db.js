@@ -988,5 +988,50 @@ const DB = {
     "Buy less, buy better — extend the life of existing clothing"
   ]
 }
+,
+
+"zara": {
+  type: "company", tags: [],
+  name: "Zara (Inditex)",
+  subtitle: "Fashion Retail — Spain (BME: ITX)",
+  corporate: {
+    parent: { name: "Inditex S.A.", note: "BME: ITX. Revenue ~€36bn. World's largest fashion retailer. HQ Arteixo, Spain. Amancio Ortega (founder) controls ~59% via Pontegadea.", compliance: "concern", link: null },
+    subsidiaries: [
+      { name: "Zara", note: "Flagship brand — accounts for ~70% of Inditex revenue", compliance: "concern" },
+      { name: "Pull&Bear", note: "Youth fashion brand", compliance: "mixed" },
+      { name: "Massimo Dutti", note: "Premium brand", compliance: "mixed" },
+      { name: "Bershka", note: "Teen fashion brand", compliance: "mixed" },
+      { name: "Stradivarius", note: "Women's fashion brand", compliance: "mixed" }
+    ],
+    shareholders: [
+      { name: "Pontegadea Inversiones (Amancio Ortega)", note: "~59% controlling stake — Ortega is one of the world's wealthiest individuals", compliance: "unclear" },
+      { name: "Vanguard Group", note: "~3% institutional stake", compliance: "unclear" },
+      { name: "BlackRock", note: "~3% stake", compliance: "mixed" }
+    ]
+  },
+  products: [
+    { name: "Zara clothing", flags: ["Brazilian court found conditions analogous to slavery in supply chain 2011", "Cerrado deforestation-linked cotton — Earthsight 2024", "Refuses to publish factory supplier list — outlier among major retailers"] },
+    { name: "Zara Home", flags: ["Supply chain opacity"] }
+  ],
+  categories: [
+    { label: "Legal violations & court findings", badgeClass: "badge-political", findings: [
+      { text: "Brazilian labour inspectors raided workshops in São Paulo in 2011 and found workers — including undocumented Bolivian migrants — sewing Zara clothes in conditions classified as 'analogous to slavery'. Workers were living in cramped accommodation attached to the workshops, unable to leave freely, and earning below minimum wage. A Brazilian court subsequently found Zara Brasil liable and fined it for 48 separate labour infractions. Zara Brasil challenged the findings in court but ultimately lost.", source: "Mind the Gap NGO / Human Trafficking Search legal analysis", url: "https://humantraffickingsearch.org/resource/from-moral-responsibility-to-legal-liability-modern-day-slavery-conditions-in-the-global-garment-supply-chain-and-the-need-to-strengthen-regulatory-frameworks-the-case-of-inditex-zara-in-brazil/" },
+      { text: "Zara Brasil was fined again in 2015 — this time for a discriminatory labour practice. After the 2011 slavery scandal, the company terminated almost all contracts with workshops that employed immigrants, whether legal or not, rather than improving conditions for affected workers. Brazil's Ministry of Labour and Employment found this constituted unlawful discrimination.", source: "Mind the Gap NGO 2015", url: "https://www.mindthegap.ngo/harmful-strategies/constructing-deniability/hiding-behind-complex-supply-chains/zara-fights-sanctions-for-forced-labour-in-brazilian-supply-chain/" }
+    ]},
+    { label: "Supply chain & environment", badgeClass: "badge-supply", findings: [
+      { text: "A 2024 investigation by UK NGO Earthsight, using satellite images, court rulings, and shipment records, found that cotton from Brazilian producers with documented histories of illegal deforestation in the Cerrado — one of the world's most biodiverse savannas — had entered Inditex's supply chain. The Cerrado saw a 43% increase in deforestation year-on-year in 2023. The cotton carried Better Cotton certification, which Earthsight found to be inadequate at preventing tainted supply.", source: "Earthsight / Mongabay April 2024", url: "https://news.mongabay.com/2024/04/report-links-hm-and-zara-to-major-environmental-damage-in-biodiverse-cerrado/" },
+      { text: "Inditex is an outlier among major global fashion retailers in refusing to publish a full factory supplier list — meaning it is impossible for consumers, investors, or regulators to independently verify its supply chain. Rivals including H&M, M&S, Hugo Boss, Nike, Adidas, and Primark all publish detailed supplier lists including factory names and addresses. A coalition of 20 institutional investors managing €6.58 trillion in assets formally requested disclosure in 2024.", source: "Fast Company / Reuters March 2024", url: "https://www.fastcompany.com/91054702/zara-inditex-investors-supply-chain" }
+    ]},
+    { label: "Tax arrangements", badgeClass: "badge-tax", findings: [
+      { text: "Inditex channels royalties from its Zara and other brands through subsidiaries in the Netherlands and Ireland, reducing its effective tax rate below Spain's standard corporate tax rate. EU tax justice campaigners have identified Inditex's IP royalty structure as an example of profit-shifting within the EU single market.", source: "Tax Justice Network / EU Commission reports", url: "https://taxjustice.net" }
+    ]}
+  ],
+  alternatives: [
+    "Second-hand / charity shops — Oxfam, NCBI, SVP across Ireland",
+    "Vinted, Depop, or Thriftify for second-hand fashion online",
+    "Ethical brands: People Tree, Patagonia, Thought Clothing",
+    "Slow fashion — buy less, choose quality, keep longer"
+  ]
+}
 
 };
