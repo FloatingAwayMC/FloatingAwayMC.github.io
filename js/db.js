@@ -732,5 +732,48 @@ const DB = {
     "Lidl or Aldi — comparable pricing with more supply chain reporting"
   ]
 }
+,
+
+"crh": {
+  type: "company", tags: ["ireland"],
+  name: "CRH plc",
+  subtitle: "Building materials — Ireland (NYSE/Euronext: CRH)",
+  corporate: {
+    parent: { name: "CRH plc", note: "NYSE/Euronext Dublin. Revenue ~$35bn. World's largest building materials company. Moved primary listing to NYSE in 2023.", compliance: "concern", link: null },
+    subsidiaries: [
+      { name: "Oldcastle (Americas)", note: "Largest US building materials supplier", compliance: "mixed" },
+      { name: "CRH Americas", note: "Construction aggregates, asphalt, cement across US", compliance: "mixed" },
+      { name: "CRH Europe", note: "Construction materials across Europe", compliance: "mixed" }
+    ],
+    shareholders: [
+      { name: "Vanguard Group", note: "~10% following NYSE primary listing — largest institutional shareholder", compliance: "unclear" },
+      { name: "BlackRock", note: "~7% stake", compliance: "mixed" },
+      { name: "Capital Research", note: "~5% stake", compliance: "unclear" }
+    ]
+  },
+  products: [
+    { name: "Cement and aggregates", flags: ["High CO₂ emissions — cement is among most carbon-intensive industries", "Quarrying environmental impact"] },
+    { name: "Asphalt and paving", flags: ["Cartel investigations in multiple jurisdictions"] },
+    { name: "Building products", flags: ["Supply chain labour standards in developing markets"] }
+  ],
+  categories: [
+    { label: "Legal violations & fines", badgeClass: "badge-political", findings: [
+      { text: "CRH subsidiary Oldcastle was part of a Department of Justice investigation into bid-rigging and price-fixing in the US ready-mix concrete market. Multiple concrete companies faced criminal charges and civil penalties as part of a broader DOJ investigation into cartel behaviour in the construction materials industry.", source: "US Department of Justice antitrust division", url: "https://justice.gov" },
+      { text: "CRH's European operations have faced multiple competition authority investigations across EU member states for alleged price-fixing and market allocation in aggregates, cement, and concrete markets — industries historically prone to cartel behaviour due to regional market concentration.", source: "European Competition Network investigations", url: "https://ec.europa.eu" }
+    ]},
+    { label: "Tax arrangements", badgeClass: "badge-tax", findings: [
+      { text: "CRH moved its primary stock exchange listing from Euronext Dublin to the New York Stock Exchange in 2023, while retaining Irish incorporation. The move was driven by access to US capital markets and higher valuations, but critics noted it reduced CRH's visibility and accountability to Irish regulators and shareholders.", source: "Irish Times / Financial Times 2023", url: "https://irishtimes.com" },
+      { text: "CRH structures its global operations through a network of subsidiaries across multiple jurisdictions. As a Dublin-incorporated company operating primarily in the US, its effective tax arrangements benefit from Ireland's 12.5% corporate tax rate on Irish-sourced income while its US operations are subject to US tax arrangements.", source: "CRH Annual Report / Companies Registration Office Ireland", url: "https://cro.ie" }
+    ]},
+    { label: "Environment", badgeClass: "badge-env", findings: [
+      { text: "The cement industry — in which CRH is the world's largest operator — accounts for approximately 8% of global CO₂ emissions. CRH's cement operations are among the most significant contributors to its carbon footprint. EU Emissions Trading System data shows CRH among the largest industrial CO₂ emitters in Ireland and Europe.", source: "EU Emissions Trading System data / Climate Action Tracker", url: "https://ec.europa.eu" }
+    ]}
+  ],
+  alternatives: [
+    "Low-carbon construction materials — timber frame, hempcrete where applicable",
+    "Specify recycled aggregates in construction projects",
+    "Support policy requiring carbon disclosure in public procurement"
+  ]
+}
 
 };
