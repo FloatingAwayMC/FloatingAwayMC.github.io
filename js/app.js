@@ -1,6 +1,6 @@
 /**
  * EthosCheck — app.js
- * Search, routing, filter, AI search, toggle logic.
+ * Search, routing, filter, toggle logic.
  */
 
 function applyDark() {
@@ -153,49 +153,6 @@ const App = (() => {
     });
   }
 
-  // ── AI search ───────────────────────────────────────────
-  async function aiSearch(query) {
-    const el = document.getElementById("ai-result");
-    if (!el) return;
-    el.innerHTML = Render.aiLoading();
-
-    try {
-      const res = await fetch("https://api.anthropic.com/v1/messages", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          model: "claude-sonnet-4-6",
-          max_tokens: 1000,
-          tools: [{ "type": "web_search_20250305", "name": "web_search" }],
-          system: `You are EthosCheck's research assistant. Search for publicly reported ethical concerns about the given company, product, or government. Cover: environment, labour rights, tax, [...]
-
-CRITICAL RULE: Only report what has already happened or is currently happening. Do NOT include future pledges, sustainability targets, net zero goals, commitments to improve, stated intentions, o[...]
-
-Present findings as a factual list. Each finding is a short paragraph starting with the category in square brackets e.g. [Environment]. Name the source for every finding. No scores, no opinion. I[...],
-          messages: [{ role: "user", content: `Search for ethical findings about: ${query}` }]
-        })
-      });
-
-      const data = await res.json();
-      const text = data.content
-        .filter(b => b.type === "text")
-        .map(b => b.text)
-        .join("\n");
-
-      if (text) {
-        el.innerHTML = `
-          <div class="ai-result">${text.replace(/\[([^\]]+)\]/g, "<strong>[$1]</strong>")}</div>
-          <p style="font-size:12px;color:var(--text3);margin-top:1rem">
-            Found via web search. <a href="/pages/submit.html" style="color:var(--accent)">Submit as a verified finding →</a>
-          </p>`;
-      } else {
-        el.innerHTML = `<p style="font-size:14px;color:var(--text2)">No findings returned. Try submitting what you know manually.</p>`;
-      }
-    } catch (err) {
-      el.innerHTML = `<p style="font-size:14px;color:var(--text2)">Search unavailable right now. Try <a href="https://ethicalconsumer.org" target="_blank" style="color:var(--accent)">Ethical Cons[...]`;
-    }
-  }
-
   // ── Entry page ──────────────────────────────────────────
   function loadEntryPage() {
     const params = new URLSearchParams(window.location.search);
@@ -247,7 +204,7 @@ Present findings as a factual list. Each finding is a short paragraph starting w
     });
   }
 
-  return { init, search, setFilter, toggleCat, toggleDarkMode, aiSearch, subscribeNewsletter, copyLink };
+  return { init, search, setFilter, toggleCat, toggleDarkMode, subscribeNewsletter, copyLink };
 
 })();
 
