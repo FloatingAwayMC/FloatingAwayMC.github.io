@@ -167,11 +167,11 @@ const App = (() => {
           model: "claude-sonnet-4-6",
           max_tokens: 1000,
           tools: [{ "type": "web_search_20250305", "name": "web_search" }],
-          system: `You are EthosCheck's research assistant. Search for publicly reported ethical concerns about the given company, product, or government. Cover: environment, labour rights, tax, animal welfare, political donations, supply chain, housing, data privacy.
+          system: `You are EthosCheck's research assistant. Search for publicly reported ethical concerns about the given company, product, or government. Cover: environment, labour rights, tax, [...]
 
-CRITICAL RULE: Only report what has already happened or is currently happening. Do NOT include future pledges, sustainability targets, net zero goals, commitments to improve, stated intentions, or brand promises. Facts only.
+CRITICAL RULE: Only report what has already happened or is currently happening. Do NOT include future pledges, sustainability targets, net zero goals, commitments to improve, stated intentions, o[...]
 
-Present findings as a factual list. Each finding is a short paragraph starting with the category in square brackets e.g. [Environment]. Name the source for every finding. No scores, no opinion. If you find nothing, say so clearly.`,
+Present findings as a factual list. Each finding is a short paragraph starting with the category in square brackets e.g. [Environment]. Name the source for every finding. No scores, no opinion. I[...],
           messages: [{ role: "user", content: `Search for ethical findings about: ${query}` }]
         })
       });
@@ -186,13 +186,13 @@ Present findings as a factual list. Each finding is a short paragraph starting w
         el.innerHTML = `
           <div class="ai-result">${text.replace(/\[([^\]]+)\]/g, "<strong>[$1]</strong>")}</div>
           <p style="font-size:12px;color:var(--text3);margin-top:1rem">
-            Found via web search. <a href="submit.html" style="color:var(--accent)">Submit as a verified finding →</a>
+            Found via web search. <a href="/pages/submit.html" style="color:var(--accent)">Submit as a verified finding →</a>
           </p>`;
       } else {
         el.innerHTML = `<p style="font-size:14px;color:var(--text2)">No findings returned. Try submitting what you know manually.</p>`;
       }
     } catch (err) {
-      el.innerHTML = `<p style="font-size:14px;color:var(--text2)">Search unavailable right now. Try <a href="https://ethicalconsumer.org" target="_blank" style="color:var(--accent)">Ethical Consumer</a>.</p>`;
+      el.innerHTML = `<p style="font-size:14px;color:var(--text2)">Search unavailable right now. Try <a href="https://ethicalconsumer.org" target="_blank" style="color:var(--accent)">Ethical Cons[...]`;
     }
   }
 
@@ -204,7 +204,7 @@ Present findings as a factual list. Each finding is a short paragraph starting w
     if (!container) return;
 
     if (!id || !DB[id]) {
-      container.innerHTML = `<div class="not-found"><h3>Entry not found</h3><p><a href="index.html" style="color:var(--accent)">← Back to search</a></p></div>`;
+      container.innerHTML = `<div class="not-found"><h3>Entry not found</h3><p><a href="/index.html" style="color:var(--accent)">← Back to search</a></p></div>`;
       return;
     }
 
@@ -214,7 +214,8 @@ Present findings as a factual list. Each finding is a short paragraph starting w
 
     document.querySelectorAll(".struct-card-name[data-search]").forEach(el => {
       el.addEventListener("click", () => {
-        window.location.href = `index.html?q=${encodeURIComponent(el.dataset.search)}`;
+        // Use absolute path to the index so the link resolves correctly from /pages/entry.html
+        window.location.href = `/index.html?q=${encodeURIComponent(el.dataset.search)}`;
       });
     });
   }
