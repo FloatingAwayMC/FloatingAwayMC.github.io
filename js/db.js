@@ -905,5 +905,47 @@ const DB = {
     "Independent coffee shops instead of Costa Coffee"
   ]
 }
+,
+
+"mcdonalds": {
+  type: "company", tags: [],
+  name: "McDonald's",
+  subtitle: "Food & Beverage — United States (NYSE: MCD)",
+  corporate: {
+    parent: { name: "McDonald's Corporation", note: "NYSE: MCD. Revenue ~$25bn. Operates in 100+ countries. HQ Chicago, Illinois.", compliance: "concern", link: null },
+    subsidiaries: [
+      { name: "McDonald's Restaurants of Ireland", note: "Irish operations — 101 restaurants. Mix of corporate and franchise.", compliance: "mixed" },
+      { name: "McDonald's UK & Ireland", note: "Regional operating company", compliance: "mixed" }
+    ],
+    shareholders: [
+      { name: "Vanguard Group", note: "~8% — largest institutional shareholder", compliance: "unclear" },
+      { name: "BlackRock", note: "~6% stake", compliance: "mixed" },
+      { name: "State Street Global Advisors", note: "~4% stake", compliance: "unclear" }
+    ]
+  },
+  products: [
+    { name: "McDonald's restaurants (franchised)", flags: ["Systematic wage theft documented by US DOL across multiple states", "Franchise model used to distance corporate from labour liability"] },
+    { name: "McDonald's corporate restaurants", flags: ["Workers forced to wait unpaid until store reached sales targets — court findings", "Overtime violations documented"] },
+    { name: "Happy Meal / children's marketing", flags: ["Marketing junk food to children — EU scrutiny"] }
+  ],
+  categories: [
+    { label: "Legal violations & labour", badgeClass: "badge-labour", findings: [
+      { text: "The US Department of Labor has found McDonald's franchisees guilty of wage theft on multiple documented occasions across multiple states. In one case the DOL ordered a Pennsylvania franchisee to pay $211,000 in back wages to 291 employees. In another, franchisees in New York were fined approximately $500,000 for underpaying workers. McDonald's franchise owners were also found to have shaved hours from employee time cards, required employees to work off the clock, and failed to pay legally-required overtime.", source: "US Department of Labor / CorpWatch / Jobs With Justice", url: "https://www.corpwatch.org/article/fast-food-workers-file-lawsuit-against-mcdonalds-alleged-wage-theft" },
+      { text: "Seven simultaneous class action lawsuits were filed against McDonald's and its franchisees in California, Michigan, and New York in 2014 on behalf of over 25,000 workers, alleging systematic wage theft including failure to pay for all hours worked, improper deductions, and denial of legally-required meal and rest breaks. McDonald's financial tracking software sent alerts to franchise managers when labour costs exceeded a set percentage of sales, allegedly prompting managers to prevent workers from clocking in.", source: "Vedder Price legal analysis / CorpWatch 2014", url: "https://www.vedderprice.com/mcdonalds-workers-sue-alleged-wage-hour-violations" },
+      { text: "McDonald's franchise owners, acting through a front group called 'New Yorkers for Local Businesses', spent nearly half a million dollars lobbying against a 2024 New York state bill that would have strengthened workers' ability to recover stolen wages. Public records showed the group was led by a McDonald's corporate vice president and individuals who collectively owned over 50 McDonald's franchise locations — at least one of whom had previously been sued twice for wage theft.", source: "New York Focus / Adirondack Daily Enterprise May 2024", url: "https://nysfocus.com/2024/05/09/mcdonalds-lobbying-empire-act-wage-theft" }
+    ]},
+    { label: "Tax arrangements", badgeClass: "badge-tax", findings: [
+      { text: "The European Commission opened a state aid investigation into McDonald's in 2015, examining whether Luxembourg had granted McDonald's illegal tax benefits through advance tax rulings that allowed the company to pay no tax in Luxembourg or the US on hundreds of millions in royalties routed through Luxembourg. The investigation was closed in 2018 after the Commission concluded Luxembourg had not broken EU rules — though it criticised the tax arrangements as highlighting gaps in EU tax law.", source: "European Commission 2015–2018", url: "https://ec.europa.eu" }
+    ]},
+    { label: "Environment", badgeClass: "badge-env", findings: [
+      { text: "McDonald's is one of the world's largest users of single-use plastic packaging. The company has faced sustained pressure from environmental groups over plastic straws, cups, and packaging. In 2021 McDonald's was named in the top 10 global plastic polluters in the Break Free From Plastic global brand audit.", source: "Break Free From Plastic 2021", url: "https://breakfreefromplastic.org" }
+    ]}
+  ],
+  alternatives: [
+    "Local independent cafés and restaurants",
+    "Supermac's — Irish-owned fast food with domestic economic benefit",
+    "Home cooking — significantly cheaper and healthier"
+  ]
+}
 
 };
