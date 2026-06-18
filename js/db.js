@@ -369,5 +369,55 @@ const DB = {
     "Fastly or Cloudflare instead of AWS for developers"
   ]
 }
+,
+
+"microsoft": {
+  type: "company", tags: [],
+  name: "Microsoft (incl. LinkedIn)",
+  subtitle: "Technology — United States (Nasdaq: MSFT)",
+  corporate: {
+    parent: { name: "Microsoft Corporation", note: "Nasdaq: MSFT. Market cap ~$3 trillion. CEO Satya Nadella.", compliance: "mixed", link: null },
+    subsidiaries: [
+      { name: "LinkedIn", note: "Professional network — €310m GDPR fine Ireland 2024", compliance: "concern" },
+      { name: "GitHub", note: "Code hosting platform — acquired 2018", compliance: "mixed" },
+      { name: "Activision Blizzard", note: "Gaming — acquired 2023. Sexual harassment culture documented. NLRB violations.", compliance: "concern" },
+      { name: "OpenAI (partial)", note: "~49% stake — AI company behind ChatGPT", compliance: "mixed" },
+      { name: "Nuance Communications", note: "Healthcare AI — acquired 2022", compliance: "mixed" }
+    ],
+    shareholders: [
+      { name: "Vanguard Group", note: "~9% stake — largest institutional shareholder", compliance: "unclear" },
+      { name: "BlackRock", note: "~7% stake", compliance: "mixed" },
+      { name: "Bill Gates (founder)", note: "~1% stake — reduced via philanthropy", compliance: "mixed" },
+      { name: "Satya Nadella (CEO)", note: "~0.1% stake", compliance: "unclear" }
+    ]
+  },
+  products: [
+    { name: "LinkedIn", flags: ["€310m Irish DPC GDPR fine 2024", "Tracking ad data processed illegally"] },
+    { name: "Windows / Office 365", flags: ["EU antitrust investigation into Teams bundling"] },
+    { name: "Azure cloud", flags: ["US CLOUD Act allows government access to overseas data"] },
+    { name: "Activision games", flags: ["Documented sexual harassment culture", "NLRB violations during acquisition"] }
+  ],
+  categories: [
+    { label: "Legal violations & fines", badgeClass: "badge-political", findings: [
+      { text: "The Irish Data Protection Commission fined LinkedIn €310 million in October 2024 for GDPR violations in its targeted advertising business. The DPC found that LinkedIn had used invalid legal bases — including 'legitimate interests' and 'consent' — to process personal data for behavioural advertising, and had failed to properly inform users about its data practices.", source: "Data Protection Commission Ireland / TechCrunch October 2024", url: "https://techcrunch.com/2024/10/24/linkedin-fined-356-million-in-eu-for-tracking-ads-privacy-breaches" },
+      { text: "The European Commission opened an antitrust investigation into Microsoft in 2023 over its bundling of Teams with Microsoft 365 Office software following a complaint from Slack. Microsoft subsequently agreed to unbundle Teams globally to avoid a potential multi-billion euro fine.", source: "European Commission 2023", url: "https://ec.europa.eu" }
+    ]},
+    { label: "Labour & human rights", badgeClass: "badge-labour", findings: [
+      { text: "Activision Blizzard — acquired by Microsoft in 2023 for $69 billion — had been sued by California's Department of Fair Employment and Housing over a documented culture of sexual harassment, gender discrimination, and retaliation against female employees. The NLRB also filed complaints against Activision for illegally interfering with workers' rights to organise.", source: "California DFEH / NLRB 2021–2023", url: "https://dfeh.ca.gov" }
+    ]},
+    { label: "Data & privacy", badgeClass: "badge-data", findings: [
+      { text: "Microsoft's cloud services including Azure, Office 365, and LinkedIn are subject to the US CLOUD Act, which allows US authorities to demand access to data stored on Microsoft servers anywhere in the world, including in Europe. EU data protection authorities have flagged this as incompatible with GDPR protections for European citizens.", source: "European Data Protection Board reports", url: "https://edpb.europa.eu" }
+    ]},
+    { label: "Lobbying", badgeClass: "badge-supply", findings: [
+      { text: "Microsoft spent $9.8 million on US federal lobbying in 2023, targeting AI regulation, cybersecurity legislation, antitrust reform, and government procurement rules.", source: "OpenSecrets 2023", url: "https://opensecrets.org" }
+    ]}
+  ],
+  alternatives: [
+    "LibreOffice — free open-source alternative to Microsoft Office",
+    "Slack or Discord instead of Teams",
+    "ProtonMail instead of Outlook for private email",
+    "Gitea or Codeberg instead of GitHub for code hosting"
+  ]
+}
 
 };
