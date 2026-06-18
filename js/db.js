@@ -11,7 +11,6 @@
  */
 
 const DB = {
-
 "ryanair": {
   type: "company", tags: ["ireland"],
   name: "Ryanair",
@@ -68,7 +67,8 @@ const DB = {
     "Irish Ferries / Stena Line — Dublin to Holyhead for UK travel"
   ]
 }
-,
+
+,
 
 "google": {
   type: "company", tags: ["ireland"],
