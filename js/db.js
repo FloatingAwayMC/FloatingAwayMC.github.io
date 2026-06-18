@@ -68,5 +68,141 @@ const DB = {
     "Irish Ferries / Stena Line — Dublin to Holyhead for UK travel"
   ]
 }
+,
+
+"google": {
+  type: "company", tags: ["ireland"],
+  name: "Google (Alphabet Inc.)",
+  subtitle: "Technology — United States (European HQ in Dublin, Ireland)",
+  corporate: {
+    parent: { name: "Alphabet Inc.", note: "Nasdaq: GOOGL. Market cap ~$2 trillion. Parent of Google, YouTube, DeepMind, Waymo.", compliance: "concern", link: null },
+    subsidiaries: [
+      { name: "Google Ireland Limited", note: "Main European operating subsidiary, Dublin. 4,000+ employees. Recorded €45.7bn in revenues in 2019.", compliance: "concern" },
+      { name: "Google Ireland Holdings Unlimited", note: "Holding company used for Double Irish profit shifting — shifted $75.4bn to Bermuda in 2019 alone.", compliance: "concern" },
+      { name: "YouTube", note: "Owned by Alphabet — content moderation and misinformation concerns", compliance: "concern" },
+      { name: "DeepMind", note: "AI research division — acquired 2014", compliance: "mixed" },
+      { name: "Waymo", note: "Self-driving vehicle division", compliance: "unclear" }
+    ],
+    shareholders: [
+      { name: "Larry Page (co-founder)", note: "~6% economic stake, ~26% voting control via Class B shares", compliance: "concern" },
+      { name: "Sergey Brin (co-founder)", note: "~6% economic stake, ~25% voting control via Class B shares", compliance: "concern" },
+      { name: "Sundar Pichai (CEO)", note: "~0.1% stake", compliance: "unclear" },
+      { name: "Vanguard Group", note: "~7% institutional stake — also holds stakes in Meta, Apple, Amazon, Nestlé", compliance: "unclear" },
+      { name: "BlackRock", note: "~6% institutional stake — world's largest asset manager", compliance: "mixed" }
+    ]
+  },
+  products: [
+    { name: "Google Search", flags: ["Antitrust violation — €2.4bn EU fine upheld 2024", "Ad market dominance under investigation"] },
+    { name: "Google Ads / AdSense", flags: ["Ad tech market dominance — EU investigation ongoing", "€1.49bn fine partially overturned"] },
+    { name: "Android", flags: ["€4.34bn EU antitrust fine 2018 for illegal tying practices"] },
+    { name: "YouTube", flags: ["Misinformation concerns", "Child privacy violations — $170m FTC fine 2019"] },
+    { name: "Google Chrome", flags: ["Data collection via browser", "Third-party cookie tracking"] },
+    { name: "Gmail / Google Workspace", flags: ["Email content scanning", "Data stored on US servers subject to US surveillance law"] }
+  ],
+  categories: [
+    {
+      label: "Legal violations & fines",
+      badgeClass: "badge-political",
+      findings: [
+        {
+          text: "The EU Court of Justice upheld a €2.4 billion antitrust fine against Google in September 2024, confirming that Google had abused its dominant search market position by favouring its own Google Shopping service over competitors. Google had appealed the original 2017 European Commission decision for seven years before the CJEU dismissed the appeal.",
+          source: "EU Court of Justice / PBS News September 2024",
+          url: "https://www.pbs.org/newshour/world/google-and-apple-lose-legal-battles-in-europe-and-now-owe-billions-in-fines-and-back-taxes"
+        },
+        {
+          text: "The European Commission fined Google €4.34 billion in 2018 for illegally requiring Android device manufacturers to pre-install Google Search and Google Chrome as a condition of accessing the Google Play app store. The fine was later reduced on appeal to €4.125 billion but the underlying violation was upheld.",
+          source: "European Commission 2018 / EU General Court 2022",
+          url: "https://ec.europa.eu"
+        },
+        {
+          text: "The Irish Data Protection Commission launched a statutory cross-border investigation into Google Ireland Limited in September 2024 under Section 110 of the Data Protection Act 2018, examining Google's AI model training practices and data handling.",
+          source: "Data Protection Commission Ireland September 2024",
+          url: "https://digitalpolicyalert.org/change/10913"
+        },
+        {
+          text: "YouTube was fined $170 million by the US Federal Trade Commission in 2019 for violating the Children's Online Privacy Protection Act (COPPA) by collecting personal data from children under 13 without parental consent. It was the largest COPPA fine ever imposed at the time.",
+          source: "US Federal Trade Commission 2019",
+          url: "https://ftc.gov"
+        }
+      ]
+    },
+    {
+      label: "Tax arrangements",
+      badgeClass: "badge-tax",
+      findings: [
+        {
+          text: "In 2019 — its last year using the structure — Google shifted $75.4 billion in profits out of Ireland using the 'Double Irish' tax arrangement. Google Ireland Holdings Unlimited Company was incorporated in Ireland but tax-domiciled in Bermuda, where the tax rate is 0%. This allowed Google to pay no corporation tax on these profits in either Ireland or the United States.",
+          source: "Irish Times / Silicon Republic April 2021",
+          url: "https://www.irishtimes.com/business/technology/google-used-double-irish-to-shift-75-4bn-in-profits-out-of-ireland-1.4540519"
+        },
+        {
+          text: "Google Ireland recorded €45.7 billion in revenues in 2019 — more than Ireland's entire annual government tax revenue — yet paid a fraction of this in Irish corporation tax due to its profit-shifting structure. In 2017 it recorded €32.2 billion in revenue and paid just €167 million in Irish corporation tax.",
+          source: "Irish Times / Companies Registration Office",
+          url: "https://www.irishtimes.com/business/economy/explainer-google-and-its-double-irish-tax-scheme-1.4128929"
+        },
+        {
+          text: "Google used the 'Double Irish Dutch Sandwich' structure for over a decade — routing profits through Irish subsidiaries, then a Dutch entity, and finally to a Bermuda holding company where they were untaxed. US multinationals were estimated to hold over $1 trillion in offshore profits via such mechanisms by the end of 2017.",
+          source: "Irish Times / IMF research",
+          url: "https://www.irishtimes.com/business/economy/explainer-google-and-its-double-irish-tax-scheme-1.4128929"
+        }
+      ]
+    },
+    {
+      label: "Data & privacy",
+      badgeClass: "badge-data",
+      findings: [
+        {
+          text: "The Irish Data Protection Commission is the lead EU supervisory authority for Google under GDPR, as Google's European HQ is in Dublin. Ireland has issued over €3.5 billion in GDPR fines since 2018 — more than four times the next highest EU enforcer — but as of early 2026 over €4 billion in total DPC fines across all companies remain unpaid due to appeals.",
+          source: "DLA Piper GDPR Survey / RTÉ January 2026",
+          url: "https://www.rte.ie/news/business/2026/0112/1552670-data-protection-commission-fines/"
+        },
+        {
+          text: "France's data authority CNIL fined Google €150 million in January 2022 for making it harder for users to reject cookies than to accept them — a violation of French data protection law. Google was given three months to comply.",
+          source: "CNIL France January 2022",
+          url: "https://cnil.fr"
+        }
+      ]
+    },
+    {
+      label: "Lobbying",
+      badgeClass: "badge-supply",
+      findings: [
+        {
+          text: "Alphabet spent $13.7 million on US federal lobbying in 2023, targeting AI regulation, antitrust legislation, data privacy law, and copyright reform — among the highest of any technology company.",
+          source: "OpenSecrets 2023",
+          url: "https://opensecrets.org"
+        },
+        {
+          text: "Google is registered as an active lobbying organisation in the EU Transparency Register, with documented contacts with European Commission officials on AI regulation, the Digital Markets Act, and competition policy. The EU's outgoing competition chief Margrethe Vestager stated she had opened 'four Google cases' during her tenure.",
+          source: "EU Transparency Register / Financial Times 2024",
+          url: "https://ft.com"
+        }
+      ]
+    },
+    {
+      label: "Labour & human rights",
+      badgeClass: "badge-labour",
+      findings: [
+        {
+          text: "Google fired 28 employees in April 2024 following protests against the company's Project Nimbus — a $1.2 billion cloud computing contract with the Israeli government and military. Workers alleged the firings were retaliation for protected labour activity. The National Labor Relations Board received complaints from affected workers.",
+          source: "The Guardian / NLRB April 2024",
+          url: "https://theguardian.com"
+        },
+        {
+          text: "Google has used a two-tier workforce structure in which a large number of contract workers — employed through third-party firms — perform similar work to direct employees but receive lower pay, fewer benefits, and no job security. A 2019 New York Times investigation found Google had more contract workers than direct employees globally.",
+          source: "New York Times 2019",
+          url: "https://nytimes.com"
+        }
+      ]
+    }
+  ],
+  alternatives: [
+    "Search: DuckDuckGo, Brave Search, or Ecosia (plants trees per search)",
+    "Email: ProtonMail or Tutanota for private encrypted email",
+    "Browser: Firefox or Brave instead of Chrome",
+    "Maps: OpenStreetMap or Apple Maps",
+    "Cloud storage: Proton Drive or Nextcloud"
+  ]
+}
 
 };
