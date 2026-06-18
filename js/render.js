@@ -18,20 +18,21 @@ const Render = (() => {
   }
 
   function externalLinkIcon() {
-    return `<svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M7 3H3a1 1 0 00-1 1v9a1 1 0 001 1h9a1 1 0 001-1V9M10 2h4m0 0v4m0-4L7 9"/></svg>`;
+    return `<svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M7 3H3a1 1 0 00-1 1v9a1 1 0 001 1h9a1 1 0 001-1V9M1...`;
   }
 
   function infoIcon() {
-    return `<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="6"/><path d="M8 5v3M8 11h.01"/></svg>`;
+    return `<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r...`;
   }
 
   function chevronIcon(id) {
-    return `<svg id="ch-${id}" class="cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 6l4 4 4-4"/></svg>`;
+    return `<svg id="ch-${id}" class="cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 6l4 4 4-4"/></...`;
   }
 
   function browseCard(key, entry) {
+    // Link to the canonical entry page in /pages so clicks from the homepage resolve correctly.
     return `
-      <a class="browse-card" href="entry.html?id=${key}">
+      <a class="browse-card" href="/pages/entry.html?id=${key}">
         <div class="browse-card-type">${entry.type}</div>
         <div class="browse-card-name">${entry.name}</div>
         <div class="browse-card-sub">${entry.subtitle.split('—')[0].trim()}</div>
@@ -59,7 +60,7 @@ const Render = (() => {
     return `
       <div class="result-notice">
         ${infoIcon()}
-        All findings describe what has already happened or is currently ongoing — not what a company says it plans to do. Every finding links to its original public source. EthosCheck does not assign scores or pass judgement.
+        All findings describe what has already happened or is currently ongoing — not what a company says it plans to do. Every finding links to its original public source. EthosCheck does not a...
       </div>`;
   }
 
@@ -177,7 +178,7 @@ const Render = (() => {
           <p>Something missing or inaccurate?</p>
           <span>Help keep findings up to date and well-sourced.</span>
         </div>
-        <a class="suggest-btn" href="submit.html">Suggest an edit</a>
+        <a class="suggest-btn" href="/pages/submit.html">Suggest an edit</a>
       </div>`;
   }
 
