@@ -314,5 +314,60 @@ const DB = {
     "Repair rather than replace — Apple offers battery replacement programmes"
   ]
 }
+,
+
+"amazon": {
+  type: "company", tags: [],
+  name: "Amazon",
+  subtitle: "Technology & Retail — United States (Nasdaq: AMZN)",
+  corporate: {
+    parent: { name: "Amazon.com Inc.", note: "Nasdaq: AMZN. Revenue ~$620bn. Andy Jassy CEO.", compliance: "concern", link: null },
+    subsidiaries: [
+      { name: "Amazon Web Services (AWS)", note: "Cloud computing — dominant market position, hosts Netflix, Airbnb, much of the internet", compliance: "mixed" },
+      { name: "Whole Foods Market", note: "Grocery retail — acquired 2017", compliance: "mixed" },
+      { name: "Twitch", note: "Live streaming platform", compliance: "mixed" },
+      { name: "MGM Studios", note: "Film and TV — acquired 2022", compliance: "mixed" },
+      { name: "Ring", note: "Home surveillance — shared footage with US police without warrants", compliance: "concern" },
+      { name: "Amazon Ireland", note: "Irish operations — routes EU profits through Luxembourg", compliance: "concern" }
+    ],
+    shareholders: [
+      { name: "Jeff Bezos (founder)", note: "~9% stake — largest individual shareholder", compliance: "concern" },
+      { name: "Vanguard Group", note: "~7% institutional stake", compliance: "unclear" },
+      { name: "BlackRock", note: "~5.5% stake", compliance: "mixed" }
+    ]
+  },
+  products: [
+    { name: "Amazon Marketplace", flags: ["Used seller data anticompetitively — EU investigation", "Buy Box manipulation investigated"] },
+    { name: "Amazon Prime", flags: ["FTC lawsuit over cancellation dark patterns 2023"] },
+    { name: "Alexa / Echo", flags: ["Children's voice data retained illegally — FTC fine", "Always-on microphone"] },
+    { name: "Ring cameras", flags: ["Shared footage with police without warrants", "Employee access to customer footage documented"] },
+    { name: "Amazon Logistics", flags: ["Injury rates above industry average", "Algorithmic management documented"] }
+  ],
+  categories: [
+    { label: "Legal violations & fines", badgeClass: "badge-political", findings: [
+      { text: "Luxembourg's data protection authority fined Amazon €746 million in 2021 under GDPR for violations related to personal data processing — the second-largest GDPR fine ever imposed at the time.", source: "Luxembourg CNPD / GDPR Enforcement Tracker 2021", url: "https://skillcast.com/blog/20-biggest-gdpr-fines" },
+      { text: "The US FTC fined Amazon $25 million in 2023 for violating the Children's Online Privacy Protection Act by retaining children's Alexa voice recordings indefinitely and using them to train its algorithms, despite parental requests for deletion.", source: "US Federal Trade Commission May 2023", url: "https://ftc.gov" },
+      { text: "The European Commission issued Amazon a formal statement of objections in 2020 for systematically using non-public business data from independent marketplace sellers to benefit its own retail division. Amazon settled in 2022 with behavioural commitments to avoid a multi-billion euro fine.", source: "European Commission 2020 / CNBC December 2022", url: "https://www.cnbc.com/2022/12/20/amazon-reaches-settlement-with-eu-on-antitrust-case.html" },
+      { text: "The US FTC sued Amazon in September 2023 accusing it of illegally maintaining monopoly power through its Prime programme and marketplace practices, and of using dark patterns to trap consumers in Prime subscriptions that were deliberately difficult to cancel.", source: "US Federal Trade Commission September 2023", url: "https://ftc.gov" }
+    ]},
+    { label: "Labour & human rights", badgeClass: "badge-labour", findings: [
+      { text: "Amazon warehouse workers in the US, UK, and Germany have documented injury rates significantly above industry average due to extreme productivity quotas monitored by algorithmic management. The Strategic Organising Center found Amazon's serious injury rate was more than double the industry average in 2022.", source: "Strategic Organising Center 2022", url: "https://thesoc.org" },
+      { text: "The National Labor Relations Board found Amazon guilty of multiple unfair labour practice violations including threatening workers and illegally interfering with union organising. Amazon illegally fired union organiser Christian Smalls before workers at a Staten Island warehouse successfully unionised in 2022.", source: "National Labor Relations Board 2022", url: "https://nlrb.gov" },
+      { text: "EU trade unions filed a complaint in 2024 accusing Amazon of running an excessively intrusive surveillance and algorithmic management system for warehouse workers in Austria, Germany, Ireland, and Spain — in systematic disregard of EU privacy laws.", source: "Law Society of Ireland Gazette May 2024", url: "https://www.lawsociety.ie/gazette/top-stories/2024/may/amazon-accused-of-systemic-disregard-for-eu-privacy-laws" }
+    ]},
+    { label: "Tax arrangements", badgeClass: "badge-tax", findings: [
+      { text: "Amazon routes European profits through a Luxembourg holding structure, allowing revenues from Ireland, UK, France, and Germany to be taxed at Luxembourg rates. The European Commission investigated this as potential illegal state aid.", source: "European Commission State Aid Investigation 2017", url: "https://ec.europa.eu" }
+    ]},
+    { label: "Data & privacy", badgeClass: "badge-data", findings: [
+      { text: "Ring shared customer footage with over 2,000 US law enforcement agencies between 2018 and 2022 without requiring a warrant — often without the knowledge of camera owners. This was confirmed in a US Senate inquiry in 2022.", source: "US Senate Inquiry / The Guardian 2022", url: "https://theguardian.com" }
+    ]}
+  ],
+  alternatives: [
+    "Local bookshops or hive.co.uk for books",
+    "Etsy for handmade and independent products",
+    "Local retailers and independent Irish shops",
+    "Fastly or Cloudflare instead of AWS for developers"
+  ]
+}
 
 };
