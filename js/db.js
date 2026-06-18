@@ -462,5 +462,53 @@ const DB = {
     "Instagram Reels — though Meta has its own privacy concerns"
   ]
 }
+,
+
+"pfizer": {
+  type: "company", tags: ["ireland"],
+  name: "Pfizer",
+  subtitle: "Pharmaceuticals — United States (major Irish manufacturing operations)",
+  corporate: {
+    parent: { name: "Pfizer Inc.", note: "NYSE: PFE. Revenue ~$63bn. One of the world's largest pharmaceutical companies. HQ New York.", compliance: "concern", link: null },
+    subsidiaries: [
+      { name: "Pfizer Ireland Pharmaceuticals", note: "Major manufacturing sites in Ringaskiddy, Cork and Newbridge, Kildare — one of Pfizer's largest global manufacturing hubs", compliance: "mixed" },
+      { name: "Pfizer Healthcare Ireland", note: "Irish commercial operations", compliance: "mixed" },
+      { name: "Wyeth (now Pfizer)", note: "Acquired 2009 — Wyeth had major Munster manufacturing", compliance: "mixed" }
+    ],
+    shareholders: [
+      { name: "Vanguard Group", note: "~9% — largest institutional shareholder", compliance: "unclear" },
+      { name: "BlackRock", note: "~7% stake", compliance: "mixed" },
+      { name: "State Street Global Advisors", note: "~4% stake", compliance: "unclear" }
+    ]
+  },
+  products: [
+    { name: "Bextra (withdrawn)", flags: ["Criminal plea — illegal off-label promotion", "$1.3bn criminal penalty 2009"] },
+    { name: "Lyrica (pregabalin)", flags: ["Off-label promotion — part of 2009 DOJ settlement"] },
+    { name: "Geodon (ziprasidone)", flags: ["Off-label promotion — part of 2009 DOJ settlement"] },
+    { name: "Lipitor, Viagra, Zoloft", flags: ["Aggressive patent protection strategies", "Pay-for-delay settlements investigated"] }
+  ],
+  categories: [
+    { label: "Legal violations & fines", badgeClass: "badge-political", findings: [
+      { text: "Pfizer paid $2.3 billion to the US Department of Justice in 2009 — the largest healthcare fraud settlement in US history at the time. A Pfizer subsidiary, Pharmacia & Upjohn, pleaded guilty to one criminal count of violating the Food, Drug, and Cosmetic Act for illegally promoting Bextra for unapproved uses and at doses higher than approved. The settlement also resolved allegations of illegal off-label promotion of Geodon, Lyrica, and Zyvox, and allegations of payments to healthcare professionals.", source: "US Department of Justice / Pfizer 8-K September 2009", url: "https://www.sec.gov/Archives/edgar/data/0000078003/000007800309000189/x990902.htm" },
+      { text: "Pfizer has been subject to repeated DOJ and FTC investigations over 'pay-for-delay' patent settlements — arrangements where brand-name pharmaceutical companies pay generic manufacturers to delay releasing cheaper versions of drugs, keeping prices artificially high at the expense of patients and healthcare systems.", source: "US Federal Trade Commission reports", url: "https://ftc.gov" }
+    ]},
+    { label: "Tax arrangements", badgeClass: "badge-tax", findings: [
+      { text: "Ireland is one of Pfizer's most significant global manufacturing bases, with major plants in Cork and Kildare. Like other US pharmaceutical multinationals in Ireland, Pfizer has structured its Irish operations to benefit from Ireland's 12.5% corporate tax rate and IP-based tax structures, allowing profits from global drug sales to be attributed to Irish entities.", source: "Companies Registration Office Ireland / IDA Ireland reports", url: "https://cro.ie" },
+      { text: "Pfizer's proposed $160 billion merger with Allergan in 2016 — which would have relocated Pfizer's legal headquarters to Ireland in a so-called 'tax inversion' — was abandoned after the US Treasury introduced new rules specifically designed to block the deal. The inversion would have allowed Pfizer to avoid US corporate taxes on its overseas profits.", source: "US Treasury Department 2016 / New York Times", url: "https://nytimes.com" }
+    ]},
+    { label: "Labour & human rights", badgeClass: "badge-labour", findings: [
+      { text: "Pfizer and other pharmaceutical companies holding COVID-19 vaccine patents refused to support a temporary waiver of intellectual property protections at the WTO during the pandemic, despite calls from over 100 countries, the WHO, and Médecins Sans Frontières. Critics argued this kept vaccine prices high and limited access in lower-income countries.", source: "Médecins Sans Frontières / WTO TRIPS waiver debate 2021", url: "https://msfaccess.org" }
+    ]},
+    { label: "Lobbying", badgeClass: "badge-supply", findings: [
+      { text: "Pfizer spent $11.4 million on US federal lobbying in 2023, targeting drug pricing legislation, Medicare negotiation rules, patent protection, and regulatory reform.", source: "OpenSecrets 2023", url: "https://opensecrets.org" },
+      { text: "PhRMA — the pharmaceutical industry lobby group of which Pfizer is a leading member — spent over $30 million on US federal lobbying in 2023, making it one of the largest lobbying operations in Washington, primarily targeting legislation that would allow Medicare to negotiate drug prices.", source: "OpenSecrets 2023", url: "https://opensecrets.org" }
+    ]}
+  ],
+  alternatives: [
+    "Support generic and biosimilar drug availability",
+    "Advocate for transparent drug pricing through patient groups",
+    "MSF Access Campaign for information on pharmaceutical patent abuse"
+  ]
+}
 
 };
