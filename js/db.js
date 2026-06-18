@@ -856,5 +856,54 @@ const DB = {
     "Breastfeeding support organisations for infant nutrition information"
   ]
 }
+,
+
+"coca-cola": {
+  type: "company", tags: [],
+  name: "Coca-Cola",
+  subtitle: "Food & Beverage — United States (NYSE: KO)",
+  corporate: {
+    parent: { name: "The Coca-Cola Company", note: "NYSE: KO. Revenue ~$46bn. World's largest beverage company. HQ Atlanta, Georgia.", compliance: "concern", link: null },
+    subsidiaries: [
+      { name: "Coca-Cola HBC Ireland", note: "Irish bottling and distribution partner", compliance: "mixed" },
+      { name: "Innocent Drinks", note: "Acquired majority stake 2009 — now majority owned by Coca-Cola", compliance: "mixed" },
+      { name: "Costa Coffee", note: "Acquired 2019 for $5.1bn", compliance: "mixed" },
+      { name: "Sprite, Fanta, Powerade, Schweppes", note: "Coca-Cola brand portfolio", compliance: "mixed" }
+    ],
+    shareholders: [
+      { name: "Berkshire Hathaway (Warren Buffett)", note: "~9.3% — largest shareholder", compliance: "mixed" },
+      { name: "Vanguard Group", note: "~8% institutional stake", compliance: "unclear" },
+      { name: "BlackRock", note: "~6% stake", compliance: "mixed" }
+    ]
+  },
+  products: [
+    { name: "Coca-Cola / Diet Coke", flags: ["World's #1 plastic polluter 5 years running — Break Free From Plastic", "IRS $3.3bn tax dispute ongoing", "Sugar industry research funding manipulation documented"] },
+    { name: "Sprite / Fanta", flags: ["Plastic pollution — branded waste found globally"] },
+    { name: "Dasani bottled water", flags: ["Groundwater extraction controversies"] },
+    { name: "Powerade / sports drinks", flags: ["Sugar content and marketing to children"] }
+  ],
+  categories: [
+    { label: "Legal violations & court findings", badgeClass: "badge-political", findings: [
+      { text: "The US Internal Revenue Service issued Coca-Cola a $3.3 billion tax bill in 2020 following an audit of its transfer pricing arrangements — how it allocates income between its US parent and foreign subsidiaries. Coca-Cola contested the bill. The IRS alleged that Coca-Cola had understated its US taxable income by shifting profits to lower-tax foreign affiliates through royalty arrangements. As of 2024 the dispute remained unresolved.", source: "IRS / US Tax Court proceedings 2020–2024", url: "https://justice.gov" },
+      { text: "Coca-Cola faced documented allegations of paramilitary violence against trade union members at its bottling plants in Colombia. The International Labour Rights Fund filed a federal lawsuit in the US in 2001 alleging that Coca-Cola's Colombian bottler hired paramilitary groups to threaten, torture, and kill union leaders at its plants. Several union leaders at Coca-Cola bottling facilities were murdered. Coca-Cola denied the allegations and the case was ultimately dismissed on jurisdictional grounds.", source: "International Labour Rights Fund / The Guardian 2001–2006", url: "https://theguardian.com" }
+    ]},
+    { label: "Environment", badgeClass: "badge-env", findings: [
+      { text: "Break Free From Plastic ranked Coca-Cola as the world's number one plastic polluter for five consecutive years from 2019 to 2023, based on global branded plastic waste audits conducted across more than 50 countries. Coca-Cola produces approximately 3 million tonnes of plastic packaging per year.", source: "Break Free From Plastic Annual Audit 2019–2023", url: "https://breakfreefromplastic.org" },
+      { text: "Activist groups filed a legal complaint against Coca-Cola at the European Commission in November 2023 alongside Nestlé and others, alleging misleading claims about plastic recyclability that constituted greenwashing under EU consumer protection law.", source: "CorpWatch / Break Free From Plastic November 2023", url: "https://www.corpwatch.org/company/nestle" }
+    ]},
+    { label: "Labour & human rights", badgeClass: "badge-labour", findings: [
+      { text: "Coca-Cola, PepsiCo, and Nestlé were identified in a 2020 investigation as sourcing sugar from Mitr Phol — the world's fourth-largest sugar producer — which had violently displaced approximately 3,000 people from five villages in Cambodia between 2008 and 2009 to clear land for sugarcane plantations. A Thai civil court case was filed on behalf of the displaced community.", source: "CorpWatch / Nonprofit Quarterly 2020", url: "https://www.corpwatch.org/company/nestle" }
+    ]},
+    { label: "Tax arrangements", badgeClass: "badge-tax", findings: [
+      { text: "The IRS's $3.3 billion tax dispute with Coca-Cola centres on alleged manipulation of transfer pricing — the internal pricing of transactions between Coca-Cola's US headquarters and its foreign subsidiaries — to shift profits to lower-tax jurisdictions. The case is one of the largest transfer pricing disputes in US tax history.", source: "IRS / Wall Street Journal 2020", url: "https://wsj.com" }
+    ]}
+  ],
+  alternatives: [
+    "Tap water — Ireland's tap water quality is among the highest in Europe",
+    "Local Irish mineral water brands with smaller environmental footprint",
+    "Cawston Press, Belvoir, or Folkington's for soft drinks",
+    "Independent coffee shops instead of Costa Coffee"
+  ]
+}
 
 };
