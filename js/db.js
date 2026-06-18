@@ -647,5 +647,48 @@ const DB = {
     "Revolut or N26 for digital-first banking"
   ]
 }
+,
+
+"bank-of-ireland": {
+  type: "company", tags: ["ireland"],
+  name: "Bank of Ireland",
+  subtitle: "Banking — Republic of Ireland (Euronext: BIRG)",
+  corporate: {
+    parent: { name: "Bank of Ireland Group plc", note: "Listed Euronext Dublin and London. Irish state previously held majority stake following 2008 bailout — reduced below 14% by 2022.", compliance: "concern", link: null },
+    subsidiaries: [
+      { name: "Bank of Ireland Mortgages", note: "Largest mortgage lender in Ireland — tracker mortgage violations", compliance: "concern" },
+      { name: "Bank of Ireland UK", note: "UK banking operations including post office banking", compliance: "mixed" },
+      { name: "New Ireland Assurance", note: "Insurance subsidiary", compliance: "mixed" }
+    ],
+    shareholders: [
+      { name: "Irish State (Dept of Finance)", note: "Reduced from majority to ~<5% stake by 2023 — state sold shares as bank recovered", compliance: "mixed" },
+      { name: "Fidelity Investments", note: "~3% institutional stake", compliance: "unclear" },
+      { name: "Vanguard Group", note: "~3% stake", compliance: "unclear" }
+    ]
+  },
+  products: [
+    { name: "Bank of Ireland mortgages", flags: ["Tracker mortgage scandal — 16,000 accounts", "€100.5m Central Bank fine 2022"] },
+    { name: "Business banking", flags: ["SME lending practices scrutinised"] },
+    { name: "365 Online banking", flags: ["IT outages affecting customers"] }
+  ],
+  categories: [
+    { label: "Legal violations & fines", badgeClass: "badge-political", findings: [
+      { text: "The Central Bank of Ireland fined Bank of Ireland a record €100.5 million in September 2022 for its role in the tracker mortgage scandal — the largest fine ever imposed by the Central Bank at that time. The bank's failings affected 16,000 tracker mortgage customer accounts between August 2004 and June 2022. The Central Bank found Bank of Ireland had failed to warn customers about the consequences of decisions relating to their mortgages.", source: "Central Bank of Ireland September 2022 / Irish Legal News", url: "https://www.irishlegal.com/articles/bank-of-ireland-fined-eur101m-over-tracker-mortgages" },
+      { text: "Bank of Ireland was one of five Irish banks — along with AIB, KBC, Permanent TSB, and Ulster Bank — found by the Central Bank to have wrongfully denied tracker mortgage rates to tens of thousands of customers. The industry-wide scandal resulted in total fines of over €174 million and over €737 million in compensation payments to affected customers.", source: "Central Bank of Ireland Tracker Mortgage Examination / Irish Examiner", url: "https://www.irishexaminer.com/business/companies/arid-40902482.html" },
+      { text: "The Central Bank fined Bank of Ireland €463,000 in 2021 for breaches of the Consumer Protection Code relating to its handling of tracker mortgage customers — a separate, earlier sanction preceding the larger 2022 fine.", source: "Central Bank of Ireland 2021", url: "https://centralbank.ie" }
+    ]},
+    { label: "Tax arrangements", badgeClass: "badge-tax", findings: [
+      { text: "Bank of Ireland received approximately €4.7 billion in state support during the 2008–2010 financial crisis, including through recapitalisation by the Irish government. The bank subsequently used deferred tax assets to minimise its corporation tax liability for years after returning to profitability, meaning Irish taxpayers who funded the bailout saw minimal tax return on the investment for a prolonged period.", source: "Comptroller and Auditor General / Dept of Finance reports", url: "https://audit.gov.ie" }
+    ]},
+    { label: "Political & lobbying", badgeClass: "badge-supply", findings: [
+      { text: "Bank of Ireland sold Irish mortgage loan portfolios to US vulture funds during the post-crisis period, including loans secured on family homes. Critics including the Irish Council for Civil Liberties argued this facilitated aggressive repossession practices by unregulated entities not subject to the same consumer protection obligations as regulated Irish banks.", source: "Irish Council for Civil Liberties / Irish Times 2018–2022", url: "https://iccl.ie" }
+    ]}
+  ],
+  alternatives: [
+    "Credit unions for personal banking — member-owned, community-based",
+    "An Post Money for basic current accounts",
+    "Revolut or N26 for digital-first banking"
+  ]
+}
 
 };
