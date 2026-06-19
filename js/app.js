@@ -85,8 +85,11 @@ const App = (() => {
       return;
     }
 
-    // Navigate to the entry page instead of displaying inline
-    window.location.href = `/pages/entry.html?id=${matchKey}`;
+    if (resultsEl) resultsEl.innerHTML = Render.fullEntry(entry, matchKey);
+
+    document.querySelectorAll(".struct-card-name[data-search]").forEach(el => {
+      el.addEventListener("click", () => search(el.dataset.search));
+    });
   }
 
   // ── Filter ──────────────────────────────────────────────
