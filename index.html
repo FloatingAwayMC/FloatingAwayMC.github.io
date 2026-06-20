@@ -5,10 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EthosCheck — Ethical accountability, clearly sourced</title>
   <meta name="description" content="Look up any product, company, brand, or government. See what has been reported about their ethical record — no scores, just sourced facts.">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-
 <nav>
   <a class="logo" href="/index.html">
     <div class="logo-mark">
@@ -23,7 +22,6 @@
     <button class="dark-mode-btn" onclick="App.toggleDarkMode()" id="dark-mode-btn">🌙 Dark</button>
   </div>
 </nav>
-
 <main>
   <div class="hero">
     <h1>What do you know about<br><span>who you're buying from?</span></h1>
@@ -46,23 +44,21 @@
       <button class="chip" onclick="App.setFilter('ireland', this)">🇮🇪 Ireland</button>
     </div>
   </div>
-
   <div id="browse-section">
     <div class="section-label">Browse all entries</div>
     <div class="browse-grid" id="browse-grid"></div>
   </div>
-
   <div id="results" class="hidden"></div>
 </main>
-
 <footer>
   <p>EthosCheck — built in Ireland. Track record only — no pledges, no PR.
     <a href="/pages/about.html">About</a> · <a href="/pages/submit.html">Submit a finding</a>
   </p>
 </footer>
-
-<script src="js/db.js"></script>
-<script src="js/render.js"></script>
-<script src="js/app.js"></script>
+<script src="/js/db.js"></script>
+<script src="/js/render.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
+<script src="/js/app.js"></script>
 </body>
 </html>
