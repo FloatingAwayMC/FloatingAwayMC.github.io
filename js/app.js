@@ -26,6 +26,24 @@ const App = (() => {
 
   let activeFilter = "all";
 
+  // ── Build Fuse index from DB ────────────────────────────
+  // Called once on init so it's ready for all searches.
+  let _fuse = null;
+  function _buildFuse() {
+    const items = Object.entries(DB).map(([key, entry]) => ({
+      key,
+      name: entry.name,
+      subtitle: entry.subtitle || "",
+      type: entry.type,
+      tags: (entry.tags || []).join(" ")
+    }));
+    _fuse = new Fuse(items, {
+      keys: ["name", "subtitle", "key"],
+      threshold: 0.4,   // 0 = exact only, 1 = match anything. 0.4 is forgiving but not wild.
+      minMatchCharLength: 2
+    });
+  }
+
   // ── Dark mode toggle ────────────────────────────────────
   function toggleDarkMode() {
     const btn = document.getElementById("dark-mode-btn");
@@ -49,7 +67,7 @@ const App = (() => {
   }
 
   function _runSearch(query) {
-    query = (query || "").trim().toLowerCase();
+    query = (query || "").trim();
     const resultsEl = document.getElementById("results");
     const browseEl  = document.getElementById("browse-section");
 
@@ -62,11 +80,22 @@ const App = (() => {
     if (resultsEl) resultsEl.classList.remove("hidden");
     if (browseEl)  browseEl.classList.add("hidden");
 
-    const matchKey = Object.keys(DB).find(k =>
-      k.includes(query) ||
-      query.includes(k) ||
-      DB[k].name.toLowerCase().includes(query)
-    );
+    // Use Fuse for fuzzy matching; fall back to plain key/name check if Fuse isn't ready
+    let matchKey = null;
+    if (_fuse) {
+      const fuseResults = _fuse.search(query);
+      if (fuseResults.length > 0) {
+        matchKey = fuseResults[0].item.key;
+      }
+    } else {
+      // Fallback (same logic as before)
+      const q = query.toLowerCase();
+      matchKey = Object.keys(DB).find(k =>
+        k.includes(q) ||
+        q.includes(k) ||
+        DB[k].name.toLowerCase().includes(q)
+      );
+    }
 
     if (!matchKey) {
       if (resultsEl) resultsEl.innerHTML = Render.notFound(query);
@@ -171,7 +200,6 @@ const App = (() => {
 
     document.querySelectorAll(".struct-card-name[data-search]").forEach(el => {
       el.addEventListener("click", () => {
-        // Use absolute path to the index so the link resolves correctly from /pages/entry.html
         window.location.href = `/index.html?q=${encodeURIComponent(el.dataset.search)}`;
       });
     });
@@ -186,6 +214,7 @@ const App = (() => {
       btn.textContent = isDark ? "☀️ Light" : "🌙 Dark";
     }
 
+    _buildFuse();
     renderBrowse();
 
     const input = document.getElementById("search-input");
