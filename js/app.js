@@ -25,6 +25,28 @@ function applyLight() {
 const App = (() => {
 
   let activeFilter = "all";
+  let fuseIndex = null;
+
+  // ── Initialize Fuse.js index ────────────────────────────
+  function initializeFuseIndex() {
+    if (fuseIndex) return;
+    
+    const entries = Object.entries(DB).map(([key, entry]) => ({
+      key,
+      name: entry.name,
+      type: entry.type,
+      subtitle: entry.subtitle,
+      tags: entry.tags || []
+    }));
+
+    const fuseOptions = {
+      keys: ['name', 'type', 'subtitle'],
+      threshold: 0.4,
+      minMatchCharLength: 1
+    };
+
+    fuseIndex = new Fuse(entries, fuseOptions);
+  }
 
   // ── Dark mode toggle ────────────────────────────────────
   function toggleDarkMode() {
@@ -49,7 +71,7 @@ const App = (() => {
   }
 
   function _runSearch(query) {
-    query = (query || "").trim().toLowerCase();
+    query = (query || "").trim();
     const resultsEl = document.getElementById("results");
     const browseEl  = document.getElementById("browse-section");
 
@@ -62,17 +84,19 @@ const App = (() => {
     if (resultsEl) resultsEl.classList.remove("hidden");
     if (browseEl)  browseEl.classList.add("hidden");
 
-    const matchKey = Object.keys(DB).find(k =>
-      k.includes(query) ||
-      query.includes(k) ||
-      DB[k].name.toLowerCase().includes(query)
-    );
+    // Initialize Fuse index if needed
+    initializeFuseIndex();
 
-    if (!matchKey) {
+    // Use Fuse.js for fuzzy search
+    const results = fuseIndex.search(query);
+    
+    if (results.length === 0) {
       if (resultsEl) resultsEl.innerHTML = Render.notFound(query);
       return;
     }
 
+    // Get the best match
+    const matchKey = results[0].item.key;
     const entry = DB[matchKey];
 
     if (activeFilter !== "all" && activeFilter !== "ireland" && entry.type !== activeFilter) {
@@ -92,7 +116,7 @@ const App = (() => {
     });
   }
 
-  // ── Filter ──────────────────────────────────────────────
+  // ── Filter ───────���──────────────────────────────────────
   function setFilter(f, el) {
     activeFilter = f;
     document.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
@@ -186,6 +210,7 @@ const App = (() => {
       btn.textContent = isDark ? "☀️ Light" : "🌙 Dark";
     }
 
+    initializeFuseIndex();
     renderBrowse();
 
     const input = document.getElementById("search-input");
