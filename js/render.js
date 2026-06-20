@@ -198,7 +198,7 @@ const Render = (() => {
       </div>`;
   }
 
-  function fullEntry(entry) {
+  function fullEntry(entry, key) {
     return [
       resultHeader(entry),
       resultNotice(),
