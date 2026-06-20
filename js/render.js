@@ -18,11 +18,11 @@ const Render = (() => {
   }
 
   function externalLinkIcon() {
-    return `<svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M7 3H3a1 1 0 00-1 1v9a1 1 0 001 1h9a1 1 0 001-1V9"/><path d="M10 2h4v4"/><path d="M15 1L8 8"/></svg>`;
+    return `<svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M7 3H3a1 1 0 00-1 1v9a1 1 0 001 1h9a1 1 0 001-1V9M11 1h4v4"/></svg>`;
   }
 
   function infoIcon() {
-    return `<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="6"/><path d="M8 7v4"/><circle cx="8" cy="5" r=".5" fill="currentColor"/></svg>`;
+    return `<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="7"/><path d="M8 11v-4"/><circle cx="8" cy="5" r=".5"/></svg>`;
   }
 
   function chevronIcon(id) {
@@ -30,11 +30,12 @@ const Render = (() => {
   }
 
   function browseCard(key, entry) {
+    // Link to the canonical entry page in /pages so clicks from the homepage resolve correctly.
     return `
       <a class="browse-card" href="/pages/entry.html?id=${key}">
-        <div class="browse-card-type">${DOMPurify.sanitize(entry.type)}</div>
-        <div class="browse-card-name">${DOMPurify.sanitize(entry.name)}</div>
-        <div class="browse-card-sub">${DOMPurify.sanitize(entry.subtitle.split('—')[0].trim())}</div>
+        <div class="browse-card-type">${entry.type}</div>
+        <div class="browse-card-name">${entry.name}</div>
+        <div class="browse-card-sub">${entry.subtitle.split('—')[0].trim()}</div>
       </a>`;
   }
 
@@ -48,9 +49,9 @@ const Render = (() => {
 
     return `
       <div class="result-header">
-        <div class="result-type">${typeIcon} ${DOMPurify.sanitize(entry.type)}</div>
-        <div class="result-name">${DOMPurify.sanitize(entry.name)}</div>
-        <div class="result-sub">${DOMPurify.sanitize(entry.subtitle)}</div>
+        <div class="result-type">${typeIcon} ${entry.type}</div>
+        <div class="result-name">${entry.name}</div>
+        <div class="result-sub">${entry.subtitle}</div>
         <div class="result-tags">${irishTag}${catCount}${subCount}</div>
       </div>`;
   }
@@ -59,11 +60,11 @@ const Render = (() => {
     return `
       <div class="result-notice">
         ${infoIcon()}
-        All findings describe what has already happened or is currently ongoing — not what a company says it plans to do. Every finding links to its original public source. EthosCheck does not assign scores or ratings.
+        All findings describe what has already happened or is currently ongoing — not what a company says it plans to do. Every finding links to its original public source. EthosCheck does not add interpretation.
       </div>`;
   }
 
-  function corporateStructure(corporate) {
+  function corporateStructure(corporate, onNameClick) {
     if (!corporate) return "";
     const rows = [];
 
@@ -71,9 +72,9 @@ const Render = (() => {
       rows.push(`
         <div class="struct-card">
           <div class="struct-card-role">Parent company</div>
-          <div class="struct-card-name" data-search="${DOMPurify.sanitize(corporate.parent.name)}">${DOMPurify.sanitize(corporate.parent.name)}</div>
+          <div class="struct-card-name" data-search="${corporate.parent.name}">${corporate.parent.name}</div>
           <div class="struct-card-note" style="margin-top:4px">${complianceDot(corporate.parent.compliance)}</div>
-          <div class="struct-card-note" style="margin-top:4px">${DOMPurify.sanitize(corporate.parent.note)}</div>
+          <div class="struct-card-note" style="margin-top:4px">${corporate.parent.note}</div>
         </div>`);
     } else if (corporate.subsidiaries && corporate.subsidiaries.length) {
       rows.push(`
@@ -87,9 +88,9 @@ const Render = (() => {
       rows.push(`
         <div class="struct-card">
           <div class="struct-card-role">Subsidiary / division</div>
-          <div class="struct-card-name" data-search="${DOMPurify.sanitize(s.name)}">${DOMPurify.sanitize(s.name)}</div>
+          <div class="struct-card-name" data-search="${s.name}">${s.name}</div>
           <div class="struct-card-note" style="margin-top:4px">${complianceDot(s.compliance)}</div>
-          <div class="struct-card-note" style="margin-top:4px">${DOMPurify.sanitize(s.note)}</div>
+          <div class="struct-card-note" style="margin-top:4px">${s.note}</div>
         </div>`);
     });
 
@@ -97,9 +98,9 @@ const Render = (() => {
       rows.push(`
         <div class="struct-card">
           <div class="struct-card-role">Shareholder</div>
-          <div class="struct-card-name">${DOMPurify.sanitize(s.name)}</div>
+          <div class="struct-card-name">${s.name}</div>
           <div class="struct-card-note" style="margin-top:4px">${complianceDot(s.compliance)}</div>
-          <div class="struct-card-note" style="margin-top:4px">${DOMPurify.sanitize(s.note)}</div>
+          <div class="struct-card-note" style="margin-top:4px">${s.note}</div>
         </div>`);
     });
 
@@ -122,8 +123,8 @@ const Render = (() => {
     if (!products || !products.length) return "";
     const cards = products.map(p => `
       <div class="product-card">
-        <div class="product-name">${DOMPurify.sanitize(p.name)}</div>
-        <div class="product-flags">${p.flags.map(f => `<span class="pflag badge-supply">${DOMPurify.sanitize(f)}</span>`).join("")}</div>
+        <div class="product-name">${p.name}</div>
+        <div class="product-flags">${p.flags.map(f => `<span class="pflag badge-supply">${f}</span>`).join("")}</div>
       </div>`).join("");
 
     return `
@@ -138,9 +139,9 @@ const Render = (() => {
     const blocks = categories.map((cat, i) => {
       const findings = cat.findings.map(f => `
         <div class="finding">
-          <p>${DOMPurify.sanitize(f.text)}</p>
-          <a class="finding-source" href="${DOMPurify.sanitize(f.url)}" target="_blank" rel="noopener">
-            ${externalLinkIcon()} ${DOMPurify.sanitize(f.source)}
+          <p>${f.text}</p>
+          <a class="finding-source" href="${f.url}" target="_blank" rel="noopener">
+            ${externalLinkIcon()} ${f.source}
           </a>
         </div>`).join("");
 
@@ -148,7 +149,7 @@ const Render = (() => {
         <div class="cat-block">
           <button class="cat-toggle" onclick="toggleCat(${i})" aria-expanded="false" aria-controls="cb-${i}">
             <div class="cat-toggle-left">
-              <span class="cat-title">${DOMPurify.sanitize(cat.label)}</span>
+              <span class="cat-title">${cat.label}</span>
               <span class="cat-badge ${cat.badgeClass}">${cat.findings.length} finding${cat.findings.length > 1 ? "s" : ""}</span>
             </div>
             ${chevronIcon(i)}
@@ -162,7 +163,7 @@ const Render = (() => {
 
   function alternativesSection(alternatives) {
     if (!alternatives || !alternatives.length) return "";
-    const items = alternatives.map(a => `<div class="alt-item">${DOMPurify.sanitize(a)}</div>`).join("");
+    const items = alternatives.map(a => `<div class="alt-item">${a}</div>`).join("");
     return `
       <div class="alt-block">
         <div class="alt-title">Ethical alternatives to consider</div>
@@ -183,21 +184,21 @@ const Render = (() => {
 
   function notFound(query) {
     const suggestions = Object.keys(DB).map(k =>
-      `<button class="nf-chip" onclick="App.search('${DOMPurify.sanitize(DB[k].name)}')">${DOMPurify.sanitize(DB[k].name)}</button>`
+      `<button class="nf-chip" onclick="App.search('${DB[k].name}')">${DB[k].name}</button>`
     ).join("");
 
     return `
       <div class="not-found">
-        <h3>No results for "${DOMPurify.sanitize(query)}"</h3>
+        <h3>No results for "${query}"</h3>
         <p>We don't have an entry for that yet. Try the suggestions below, or suggest a finding to add this subject to EthosCheck.</p>
         <div class="nf-chips">${suggestions}</div>
         <div style="margin-top:1rem">
-          <a class="search-btn" href="/pages/submit.html">Suggest a finding for "${DOMPurify.sanitize(query)}"</a>
+          <a class="search-btn" href="/pages/submit.html">Suggest a finding for "${query}"</a>
         </div>
       </div>`;
   }
 
-  function fullEntry(entry, key) {
+  function fullEntry(entry) {
     return [
       resultHeader(entry),
       resultNotice(),
