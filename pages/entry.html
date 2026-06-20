@@ -3,12 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EthosCheck</title>
   <meta name="description" content="Ethical record — sourced facts, no scores.">
-  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-
 <nav>
   <a class="logo" href="/index.html">
     <div class="logo-mark">
@@ -20,23 +24,23 @@
     <a href="/index.html" class="hide-mobile">← Search</a>
     <a href="/pages/about.html" class="hide-mobile">About</a>
     <a href="/pages/submit.html" class="nav-btn">Submit a finding</a>
+    <button class="dark-mode-btn" onclick="App.toggleDarkMode()" id="dark-mode-btn">🌙 Dark</button>
   </div>
 </nav>
-
 <main>
   <div id="entry-container" style="padding-bottom: 3rem;">
     <div class="loading">Loading entry…</div>
   </div>
 </main>
-
 <footer>
   <p>EthosCheck — built in Ireland. Track record only — no pledges, no PR.
     <a href="/pages/about.html">About</a> · <a href="/pages/submit.html">Submit a finding</a>
   </p>
 </footer>
-
-<script src="../js/db.js"></script>
-<script src="../js/render.js"></script>
-<script src="../js/app.js"></script>
+<script src="/js/db.js"></script>
+<script src="/js/render.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
+<script src="/js/app.js"></script>
 </body>
 </html>
