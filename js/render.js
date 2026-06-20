@@ -18,19 +18,18 @@ const Render = (() => {
   }
 
   function externalLinkIcon() {
-    return `<svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M7 3H3a1 1 0 00-1 1v9a1 1 0 001 1h9a1 1 0 001-1V9M1[...]
+    return `<svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M7 3H3a1 1 0 00-1 1v9a1 1 0 001 1h9a1 1 0 001-1V9"/><path d="M10 2h4v4"/><path d="M15 1L8 8"/></svg>`;
   }
 
   function infoIcon() {
-    return `<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r[...]
+    return `<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="6"/><path d="M8 7v4"/><circle cx="8" cy="5" r=".5" fill="currentColor"/></svg>`;
   }
 
   function chevronIcon(id) {
-    return `<svg id="ch-${id}" class="cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 6l4 4 4-4"/></[...]
+    return `<svg id="ch-${id}" class="cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 6l4 4 4-4"/></svg>`;
   }
 
   function browseCard(key, entry) {
-    // Link to the canonical entry page in /pages so clicks from the homepage resolve correctly.
     return `
       <a class="browse-card" href="/pages/entry.html?id=${key}">
         <div class="browse-card-type">${DOMPurify.sanitize(entry.type)}</div>
@@ -60,11 +59,11 @@ const Render = (() => {
     return `
       <div class="result-notice">
         ${infoIcon()}
-        All findings describe what has already happened or is currently ongoing — not what a company says it plans to do. Every finding links to its original public source. EthosCheck does not a[...]
+        All findings describe what has already happened or is currently ongoing — not what a company says it plans to do. Every finding links to its original public source. EthosCheck does not assign scores or ratings.
       </div>`;
   }
 
-  function corporateStructure(corporate, onNameClick) {
+  function corporateStructure(corporate) {
     if (!corporate) return "";
     const rows = [];
 
