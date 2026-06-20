@@ -5,21 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Submit a finding — EthosCheck</title>
   <meta name="description" content="Submit a new ethical finding to EthosCheck. All submissions reviewed before publishing.">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
 
 <nav>
-  <a class="logo" href="index.html">
+  <a class="logo" href="/index.html">
     <div class="logo-mark">
       <svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="5"/><path d="M8 5v3l2 2"/></svg>
     </div>
     EthosCheck
   </a>
   <div class="nav-links">
-    <a href="index.html" class="hide-mobile">Search</a>
-    <a href="about.html" class="hide-mobile">About</a>
-    <a href="submit.html" class="nav-btn">Submit a finding</a>
+    <a href="/index.html" class="hide-mobile">Search</a>
+    <a href="/pages/about.html" class="hide-mobile">About</a>
+    <a href="/pages/submit.html" class="nav-btn">Submit a finding</a>
+    <button class="dark-mode-btn" onclick="App.toggleDarkMode()" id="dark-mode-btn">🌙 Dark</button>
   </div>
 </nav>
 
@@ -75,18 +76,20 @@
     <div id="submit-success" class="hidden" style="padding:2rem 0">
       <p style="font-size:16px;font-weight:500;margin-bottom:.5rem">Thank you — submission received.</p>
       <p style="color:var(--text2)">We'll review it before publishing. If you included your email we'll let you know when it goes live.</p>
-      <a href="index.html" style="color:var(--accent);font-size:14px;margin-top:1rem;display:inline-block">← Back to search</a>
+      <a href="/index.html" style="color:var(--accent);font-size:14px;margin-top:1rem;display:inline-block">← Back to search</a>
     </div>
   </div>
 </main>
 
 <footer>
   <p>EthosCheck — built in Ireland. Track record only — no pledges, no PR.
-    <a href="about.html">About</a> · <a href="submit.html">Submit a finding</a>
+    <a href="/pages/about.html">About</a> · <a href="/pages/submit.html">Submit a finding</a>
   </p>
 </footer>
 
 <script>
+const WORKER_URL = "https://bitter-feather-2cfa.michaelgcfinn.workers.dev";
+
 async function handleSubmit() {
   const entity   = document.getElementById("f-entity").value.trim();
   const category = document.getElementById("f-category").value;
@@ -104,10 +107,14 @@ async function handleSubmit() {
   btn.textContent = "Submitting…";
 
   try {
-    // POST to backend API when it's live
-    // const res = await fetch("/api/submit", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ entity, category, finding, source, email }) });
-    // For now — show success
-    await new Promise(r => setTimeout(r, 600));
+    const res = await fetch(WORKER_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ entity, category, finding, source, email })
+    });
+
+    if (!res.ok) throw new Error("Worker error");
+
     document.getElementById("submit-form").classList.add("hidden");
     document.getElementById("submit-success").classList.remove("hidden");
   } catch (err) {
@@ -118,5 +125,10 @@ async function handleSubmit() {
 }
 </script>
 
+<script src="/js/db.js"></script>
+<script src="/js/render.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
+<script src="/js/app.js"></script>
 </body>
 </html>
