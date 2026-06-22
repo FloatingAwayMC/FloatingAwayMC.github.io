@@ -1343,5 +1343,69 @@ const DB = {
   ],
   alternatives: []
 },
+,
+
+"inm": {
+  type: "company",
+  tags: ["ireland"],
+  name: "Independent News & Media (Mediahuis Ireland)",
+  subtitle: "News Publisher — Dublin, Ireland",
+  corporate: {
+    parent: { name: "Mediahuis", note: "Belgian media group; acquired INM in June 2019 following governance scandal under Denis O'Brien's majority shareholding", compliance: "mixed", link: "https://www.mediahuis.com" },
+    subsidiaries: [
+      { name: "Irish Independent", note: "Ireland's largest-circulation daily newspaper", compliance: "unclear" },
+      { name: "Sunday Independent", note: "Ireland's largest-circulation Sunday newspaper", compliance: "unclear" },
+      { name: "Herald.ie / Belfast Telegraph", note: "Digital and regional titles under same umbrella", compliance: "unclear" }
+    ],
+    shareholders: [
+      { name: "Mediahuis NV", note: "Full owner since 2019 Euronext de-listing", compliance: "mixed" }
+    ]
+  },
+  products: [
+    { name: "Irish Independent", flags: ["editorial independence concerns"] },
+    { name: "Sunday Independent", flags: ["editorial independence concerns"] },
+    { name: "Sunday World", flags: [] }
+  ],
+  categories: [
+    {
+      label: "Data Privacy & Corporate Governance",
+      badgeClass: "badge-data",
+      findings: [
+        {
+          text: "In 2014, INM's IT backup tapes were secretly removed and sent to a cybersecurity firm in Wales for 'data interrogation' of 19 named individuals, including journalists, barristers, and former Moriarty Tribunal counsel. The operation was authorised by then-chairman Leslie Buckley and paid for by Denis O'Brien's offshore company Blaydon Ltd (Isle of Man). The High Court in 2018 found the conduct 'suggestive of an unlawful purpose' to benefit O'Brien.",
+          source: "High Court of Ireland (Mr Justice Peter Kelly), September 2018; Irish Times investigative reporting",
+          url: "https://www.irishtimes.com/crime-law/courts/2024/07/23/denis-obrien-leslie-buckley-and-others-seek-to-be-given-inspectors-report-on-inm-governance-scandal/"
+        },
+        {
+          text: "High Court inspectors appointed in 2018 found, following a six-year investigation, that Leslie Buckley had 'readily acknowledged' passing confidential and 'undoubtedly price-sensitive' information to Denis O'Brien, INM's largest shareholder, in potential breach of market abuse regulations. O'Brien's companies paid for the data analysis and for other costs including a €15,000–€20,000 payment to an O'Brien associate for a trip to Australia linked to the APN share sale.",
+          source: "High Court Inspectors' Report (Seán Gillane SC / Richard Fleck), published July 2024; Irish Times",
+          url: "https://www.irishtimes.com/crime-law/courts/2024/07/31/inm-controversy-denis-obrien-told-emails-being-searched-in-bid-to-indentify-why-solicitors-contract-renewed/"
+        },
+        {
+          text: "The Office of the Director of Corporate Enforcement (ODCE) concluded that INM's affairs had been conducted in a manner 'unfairly prejudicial' to some of its members, citing multiple instances of O'Brien's interests being prioritised over other shareholders, including blocked acquisition reviews and an attempted purchase of O'Brien's Newstalk radio station at an allegedly inflated price.",
+          source: "ODCE affidavit of Director Ian Drennan to High Court, 2018; Irish Times",
+          url: "https://www.irishtimes.com/business/media-and-marketing/concern-over-denis-o-brien-s-influence-at-inm-central-to-court-action-1.3559943"
+        }
+      ]
+    },
+    {
+      label: "Editorial Independence",
+      badgeClass: "badge-political",
+      findings: [
+        {
+          text: "In 2014, allegations arose that a group editor at INM ordered amendments to a Sunday Independent column by editor Anne Harris that contained references to Denis O'Brien, INM's dominant shareholder. Harris left her role later that year when her contract was not renewed.",
+          source: "Wikipedia / Irish Times reporting on Denis O'Brien and INM",
+          url: "https://en.wikipedia.org/wiki/Denis_O'Brien"
+        },
+        {
+          text: "Among the 19 individuals whose data was secretly interrogated were two barristers who worked for the Moriarty Tribunal, which investigated the award of a mobile phone licence to O'Brien's Esat Digifone consortium — establishing a direct link between the data breach and O'Brien's commercial and reputational interests in suppressing Tribunal-related coverage.",
+          source: "High Court (Mr Justice Peter Kelly) appointment of inspectors, September 2018; Irish Times",
+          url: "https://www.irishtimes.com/ireland/2024/07/13/report-into-governance-scandal-at-independent-news-media-to-be-given-to-high-court-within-days/"
+        }
+      ]
+    }
+  ],
+  alternatives: []
+},
 
 };
