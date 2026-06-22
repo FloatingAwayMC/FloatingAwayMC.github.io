@@ -1629,5 +1629,57 @@ const DB = {
   ],
   alternatives: []
 },
+,
+
+"kennedy_wilson": {
+  type: "company",
+  tags: ["ireland"],
+  name: "Kennedy Wilson (Ireland)",
+  subtitle: "Institutional Property Fund — Beverly Hills, US / Dublin, Ireland",
+  corporate: {
+    parent: { name: "Kennedy Wilson Inc.", note: "Beverly Hills, California-based property investment firm; Ireland's second-largest institutional landlord holding ~16% of all institutional residential units", compliance: "concern", link: "https://www.kennedywilson.com" },
+    subsidiaries: [
+      { name: "Kennedy Wilson QIAIF structures (3 Irish funds)", note: "Irish-registered Qualifying Investor Alternative Investment Funds used to hold Irish property portfolio including Capital Dock, Shelbourne Hotel, Vantage Sandyford", compliance: "concern" }
+    ],
+    shareholders: [
+      { name: "Kennedy Wilson Inc. (NYSE: KW)", note: "US-listed parent", compliance: "unclear" }
+    ]
+  },
+  products: [
+    { name: "Residential rental portfolio (Dublin)", flags: ["tax structure", "QIAIF"] },
+    { name: "Capital Dock, Dublin Docklands", flags: [] },
+    { name: "Shelbourne Hotel, Dublin", flags: [] }
+  ],
+  categories: [
+    {
+      label: "Tax",
+      badgeClass: "badge-tax",
+      findings: [
+        {
+          text: "Kennedy Wilson holds much of its Irish property portfolio through three Irish Qualifying Investor Alternative Investment Funds (QIAIFs). Its 2020 financial statements noted that 'during the year these funds were exempt from any direct Irish taxation on income and gains.' Revenue Commissioners data showed Irish real estate funds paid an effective tax rate of 17.9% in 2020 — up from just 2.7% in 2019 — following 2016 legislative reforms introduced after significant lobbying.",
+          source: "Irish Times, May 2021; Revenue Commissioners data",
+          url: "https://www.irishtimes.com/business/commercial-property/tax-take-from-institutional-property-investors-rose-by-171-in-2020-1.4561988"
+        },
+        {
+          text: "Freedom of Information documents obtained by the Irish Times revealed that Kennedy Wilson, alongside Oaktree Capital and CarVal, engaged in an extensive lobbying campaign of the Department of Finance and Revenue Commissioners in 2016 as the government moved to tighten QIAIF tax rules. Kennedy Wilson's top Irish executive Peter Collins wrote directly to the Minister for Finance, arguing the use of QIAIFs was legitimate, after Deloitte had first arranged a meeting between the company and Department officials.",
+          source: "Irish Times, January 2017 (FOI documents)",
+          url: "https://www.irishtimes.com/news/ireland/irish-news/us-vulture-funds-lobbied-government-over-proposed-tax-changes-1.2945025"
+        }
+      ]
+    },
+    {
+      label: "Housing & Tenants' Rights",
+      badgeClass: "badge-housing",
+      findings: [
+        {
+          text: "Kennedy Wilson is Ireland's second-largest institutional landlord with approximately 16% of all institutional residential units. Dublin Inquirer analysis of RTB data found that Kennedy Wilson did not respond to media queries about its eviction policies or notice figures. In 2023 it issued notices to quit to an estimated 0.5% of its tenants — lower than peers but with uncertainty about whether all Kennedy Wilson evictions were logged under its own name or its letting agent.",
+          source: "Dublin Inquirer, November 2024; RTB figures",
+          url: "https://www.dublininquirer.com/why-is-one-of-irelands-biggest-landlords-evicting-so-many-of-its-tenants/"
+        }
+      ]
+    }
+  ],
+  alternatives: []
+},
 
 };
