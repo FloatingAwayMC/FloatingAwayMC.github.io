@@ -1471,5 +1471,62 @@ const DB = {
   ],
   alternatives: []
 },
+,
+
+"reach_plc": {
+  type: "company",
+  tags: ["ireland"],
+  name: "Reach plc (Irish Mirror / Irish Star)",
+  subtitle: "News Publisher — UK-listed, Irish operations via Irish Mirror & Irish Star",
+  corporate: {
+    parent: { name: "Reach plc", note: "UK-listed media group (formerly Trinity Mirror); owns Irish Mirror and 50% stake in Irish Star acquired 2020. HQ: One Canada Square, London.", compliance: "mixed", link: "https://www.reachplc.com" },
+    subsidiaries: [
+      { name: "Irish Mirror", note: "Full Reach ownership; national Irish daily", compliance: "mixed" },
+      { name: "Irish Star", note: "50% stake acquired 2020; integrated with Irish Mirror editorial operations", compliance: "mixed" }
+    ],
+    shareholders: [
+      { name: "Institutional investors (LSE-listed)", note: "Publicly traded on London Stock Exchange", compliance: "unclear" }
+    ]
+  },
+  products: [
+    { name: "Irish Mirror", flags: ["mass redundancies 2025", "phone hacking parent"] },
+    { name: "Irish Star", flags: ["mass redundancies 2025"] }
+  ],
+  categories: [
+    {
+      label: "Phone Hacking (Parent Company)",
+      badgeClass: "badge-data",
+      findings: [
+        {
+          text: "In September 2014, Trinity Mirror (now Reach plc) admitted that some of its journalists had been involved in phone hacking and agreed to pay compensation to four individuals who sued, including entertainer Shane Richie, soap actresses Shobna Gulati and Lucy Benjamin, and BBC creative director Alan Yentob.",
+          source: "Trinity Mirror admission of liability, September 2014; Reach plc Wikipedia",
+          url: "https://en.wikipedia.org/wiki/Reach_plc"
+        },
+        {
+          text: "In January 2011, former MP Paul Marsden announced he was considering legal action against Trinity Mirror over alleged phone hacking, predating the full public exposure of industry-wide practices.",
+          source: "Reach plc Wikipedia",
+          url: "https://en.wikipedia.org/wiki/Reach_plc"
+        }
+      ]
+    },
+    {
+      label: "Labour & Redundancies",
+      badgeClass: "badge-labour",
+      findings: [
+        {
+          text: "In September 2025, Reach plc announced plans to make 321 editorial staff redundant across its UK and Irish titles, putting 600 roles at risk in total. Around 20 jobs were under threat at the Irish Mirror and Irish Star. The NUJ described the proposals as a 'devastating body blow to staff' and raised concerns that AI was being deployed to replace specialist journalists.",
+          source: "Irish Times, September 2025; UK Parliament Early Day Motion, September 2025",
+          url: "https://www.irishtimes.com/media/2025/09/08/irish-mirror-and-star-journalists-to-be-hit-by-reach-group-redundancies/"
+        },
+        {
+          text: "The NUJ's national Reach coordinator told Press Gazette that Reach had 'sought to cut around 70 print production staff in the UK nationals and eight print production staff in Ireland — including over 50 sub-editors whose job is to preserve standards of accuracy and clarity', while simultaneously using AI to duplicate content across titles.",
+          source: "Press Gazette, November 2025",
+          url: "https://pressgazette.co.uk/news/senior-editorial-staff-and-editors-hit-hard-by-reach-cutbacks/"
+        }
+      ]
+    }
+  ],
+  alternatives: []
+},
 
 };
