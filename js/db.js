@@ -1823,5 +1823,81 @@ const DB = {
   ],
   alternatives: []
 },
+,
+
+"abp_food_group": {
+  type: "company",
+  tags: ["ireland"],
+  name: "ABP Food Group",
+  subtitle: "Beef Processor — Ardee, Co. Louth (registered: Jersey)",
+  corporate: {
+    parent: { name: "Goodman family / Williamstown (Jersey)", note: "Privately held; ABP Group itself registered in Jersey. Ownership chain runs through Luxembourg-based Kilbroney Investments, linked to Jersey-based Williamstown, whose directors include Larry Goodman. Larry Goodman stepped down in 2023; family retains control.", compliance: "concern", link: "https://abpfoodgroup.com" },
+    subsidiaries: [
+      { name: "Anglo Beef Processors Ireland UC", note: "Main Irish trading company; unlimited company with historically limited public disclosure obligations", compliance: "mixed" },
+      { name: "Silvercrest Foods", note: "Co. Monaghan burger plant; sold to Kepak in April 2013 following horsemeat scandal", compliance: "concern" },
+      { name: "Trojaan Investering BV", note: "Dutch shell company with no employees; received €700m in zero-interest loans from Jersey/Ireland entities and re-loaned at 4–5% interest to ABP subsidiaries to reduce taxable profits in UK and Ireland", compliance: "concern" },
+      { name: "C&D Petfoods", note: "Pet food subsidiary; sought injunctions against protesting farmers in 2019 beef crisis", compliance: "mixed" }
+    ],
+    shareholders: [
+      { name: "Goodman family", note: "Larry Goodman founded company 1954; family estimated net worth €2.46bn (2020); retains control through Jersey-registered holding structures", compliance: "concern" }
+    ]
+  },
+  products: [
+    { name: "Fresh & frozen beef", flags: ["food safety — horsemeat scandal"] },
+    { name: "Burgers & processed meat", flags: ["food safety — horsemeat scandal"] },
+    { name: "Pet food (C&D Foods)", flags: [] }
+  ],
+  categories: [
+    {
+      label: "Food Safety",
+      badgeClass: "badge-supply",
+      findings: [
+        {
+          text: "In January 2013, the Food Safety Authority of Ireland (FSAI) found that Tesco Everyday Value Beef Burgers contained 29.1% horse DNA. The burgers were produced by Silvercrest Foods in Co. Monaghan, a subsidiary of ABP Food Group. A second ABP subsidiary, Dalepak Hambleton in Yorkshire, was also implicated. Tesco dropped Silvercrest as a supplier. Burger King removed Silvercrest from its supply chain entirely. The Department of Agriculture's investigation concluded there was no evidence Silvercrest knowingly purchased horsemeat; ABP attributed the contamination to continental suppliers in the Netherlands and Poland.",
+          source: "Food Safety Authority of Ireland (FSAI), January 2013; Irish Times / Wikipedia",
+          url: "https://en.wikipedia.org/wiki/2013_horse_meat_scandal"
+        },
+        {
+          text: "Four ABP Food Group subsidiaries were accused of supplying adulterated meat during the 2013 scandal: Silvercrest Foods (Co. Monaghan), Dalepak (North Yorkshire), Freshlink (Glasgow) and ABP Nenagh (Co. Tipperary).",
+          source: "Wikipedia – 2013 horse meat scandal",
+          url: "https://en.wikipedia.org/wiki/2013_horse_meat_scandal"
+        }
+      ]
+    },
+    {
+      label: "Tax",
+      badgeClass: "badge-tax",
+      findings: [
+        {
+          text: "A 2019 investigation by the Irish Farmers Journal found ABP at the centre of a complex structure of private companies with no employees, based in tax havens across Europe, whose purpose was to provide intercompany loans to ABP subsidiaries. ABP Group is itself registered in Jersey. The IFJ estimated ABP's effective tax rate at approximately 0.3% at the time, compared to Ireland's nominal 12.5% corporate rate.",
+          source: "Irish Farmers Journal investigative report, 2019",
+          url: "https://www.wsws.org/en/articles/2026/02/06/omdl-f06.html"
+        },
+        {
+          text: "A joint investigation by The Guardian and Lighthouse Reports / Follow The Money found that ABP's Dutch entity Trojaan Investering BV — which had no employees — held around €420 million in assets and made €161 million in profits between 2013 and 2017, paying an effective tax rate of 0.93%. Trojaan received more than €700 million in zero-interest loans from group companies in Ireland and Jersey and re-loaned to ABP UK at 5% interest, enabling Irish and UK subsidiaries to deduct interest payments from their taxable profits. University of Michigan law professor Reuven Avi-Yonah, a former OECD consultant, described the structure as 'aggressive tax avoidance'. ABP stated it 'remained tax compliant in all jurisdictions'.",
+          source: "The Guardian / Lighthouse Reports / Follow The Money, September 2022",
+          url: "https://www.lighthousereports.com/investigation/big-meat-fat-subsidies-thin-taxes/"
+        }
+      ]
+    },
+    {
+      label: "Governance & Tribunal Findings",
+      badgeClass: "badge-political",
+      findings: [
+        {
+          text: "The 1994 Beef Tribunal (chaired by High Court President Liam Hamilton) found that 'widespread tax evasion was practiced in all plants investigated with the knowledge of management in the Goodman group.' The Tribunal also found irregularities and malpractices but stopped short of finding that all conduct was carried out with the direct personal knowledge of Larry Goodman.",
+          source: "Hamilton Beef Tribunal Report, 1994; Irish Examiner",
+          url: "https://www.irishexaminer.com/business/arid-20220037.html"
+        },
+        {
+          text: "During the 2019 beef farmers' blockade, ABP's subsidiary C&D Petfoods obtained court injunctions against protesting farmers. Multiple TDs in the Dáil accused ABP Food Group of 'holding the whole industry to ransom' by refusing to lift injunctions and thereby stalling the beef taskforce. Independent TD Denis Naughten told the Dáil it was 'unacceptable' that one organisation was blocking the taskforce process.",
+          source: "Irish Times, November 2019; Oireachtas Dáil record",
+          url: "https://www.irishtimes.com/news/politics/larry-goodman-firm-accused-of-holding-beef-industry-to-ransom-1.4097092"
+        }
+      ]
+    }
+  ],
+  alternatives: []
+},
 
 };
