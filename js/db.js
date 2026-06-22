@@ -2223,5 +2223,44 @@ const DB = {
   ],
   alternatives: []
 },
+,
+
+"irish_life": {
+  type: "company",
+  tags: ["ireland"],
+  name: "Irish Life",
+  subtitle: "Life & Pensions — Dublin, Ireland",
+  corporate: {
+    parent: { name: "Great-West Lifeco Inc.", note: "Canadian financial services group (TSX: GWO); acquired Irish Life from the Irish State in 2013 for €1.3 billion. Irish Life is Ireland's largest life and pensions provider.", compliance: "mixed", link: "https://www.irishlife.ie" },
+    subsidiaries: [
+      { name: "Irish Life Assurance plc", note: "Core life, pensions and investment entity; over 1.3 million customers", compliance: "mixed" },
+      { name: "Irish Life Health dac", note: "Private health insurance; approximately 21% market share in Ireland", compliance: "mixed" },
+      { name: "Irish Life Investment Managers (ILIM)", note: "Asset management; €70bn+ assets under management", compliance: "ok" }
+    ],
+    shareholders: [
+      { name: "Great-West Lifeco Inc. (TSX: GWO)", note: "Canadian parent; acquired Irish Life from Irish State in 2013", compliance: "mixed" }
+    ]
+  },
+  products: [
+    { name: "Life insurance & mortgage protection", flags: [] },
+    { name: "Pension schemes", flags: [] },
+    { name: "Irish Life Health (health insurance)", flags: [] },
+    { name: "Investment products", flags: [] }
+  ],
+  categories: [
+    {
+      label: "Regulatory Findings",
+      badgeClass: "badge-political",
+      findings: [
+        {
+          text: "Irish Life & Permanent plc (the then-parent of Irish Life Assurance) was fined by the Financial Regulator (predecessor to the Central Bank) for reporting breaches. Irish Life Assurance has historically topped the Financial Services and Pensions Ombudsman's complaints table, with Irish Life listed as the insurer with the highest number of complaints upheld against it in multiple years — indicating a pattern of consumer grievances requiring independent adjudication.",
+          source: "Financial Services and Pensions Ombudsman annual reports; Reuters reporting on Irish Life & Permanent fine",
+          url: "https://grokipedia.com/page/Irish_Life"
+        }
+      ]
+    }
+  ],
+  alternatives: []
+},
 
 };
