@@ -2187,5 +2187,41 @@ const DB = {
   ],
   alternatives: []
 },
+,
+
+"fbd_insurance": {
+  type: "company",
+  tags: ["ireland"],
+  name: "FBD Insurance",
+  subtitle: "Insurance — Dublin, Ireland (Irish-owned)",
+  corporate: {
+    parent: null,
+    subsidiaries: [
+      { name: "FBD Insurance plc", note: "Non-life insurer; publicly listed on Euronext Dublin. Originally farmer-owned; now has institutional shareholders.", compliance: "mixed" }
+    ],
+    shareholders: [
+      { name: "FBD Holdings plc (Euronext Dublin: FBD)", note: "Parent holding company; institutional and retail shareholders", compliance: "mixed" }
+    ]
+  },
+  products: [
+    { name: "Motor insurance", flags: ["CCPC price-signalling investigation"] },
+    { name: "Farm & agricultural insurance", flags: [] },
+    { name: "Home & commercial insurance", flags: [] }
+  ],
+  categories: [
+    {
+      label: "Competition",
+      badgeClass: "badge-political",
+      findings: [
+        {
+          text: "The CCPC issued preliminary findings in September 2020 to FBD Insurance plc and five other insurers (AIG, Allianz, AXA, Aviva, AA Ireland) stating it had 'reasonable grounds to suspect' anti-competitive price-signalling in the private motor insurance market between January 2015 and September 2016. The CCPC's investigation found that the parties made public statements that appeared to forecast, with confidence, that motor insurance premiums would rise — conduct that can reduce competition by signalling to rivals that price increases will not be undercut. Motor insurance premiums rose more than 70% over three years before peaking in 2016 according to CSO data. FBD declined to comment when the preliminary findings were issued. FBD entered into legally binding commitments with the CCPC in August 2021 to reform its internal competition law compliance programme. All parties denied breaching competition law and there was no finding of liability.",
+          source: "CCPC enforcement action and final report, August 2021; Irish Examiner / Irish Times",
+          url: "https://www.ccpc.ie/business/enforcement/civil-competition-enforcement/closed-investigations/private-motor-insurance/"
+        }
+      ]
+    }
+  ],
+  alternatives: []
+},
 
 };
