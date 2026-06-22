@@ -1948,5 +1948,50 @@ const DB = {
   ],
   alternatives: []
 },
+,
+
+"glanbia": {
+  type: "company",
+  tags: ["ireland"],
+  name: "Glanbia plc",
+  subtitle: "Dairy & Nutrition Group — Kilkenny, Ireland (NYSE/Euronext listed)",
+  corporate: {
+    parent: null,
+    subsidiaries: [
+      { name: "Glanbia Nutritionals", note: "Largest revenue division; B2B nutrition ingredients", compliance: "ok" },
+      { name: "Glanbia Performance Nutrition", note: "Optimum Nutrition, BSN, Isopure brands", compliance: "ok" },
+      { name: "Glanbia Ingredients Ireland", note: "Dairy ingredients processing; subject to CCPC merger inquiry re Wexford Creamery", compliance: "mixed" },
+      { name: "Wexford Creamery (70% stake)", note: "Acquired following CCPC Phase 2 investigation; cleared without conditions", compliance: "mixed" }
+    ],
+    shareholders: [
+      { name: "Glanbia Co-operative Society", note: "Farmer-owned co-op; largest single shareholder in listed Glanbia plc", compliance: "ok" },
+      { name: "Institutional investors (NYSE/Euronext)", note: "Publicly listed", compliance: "unclear" }
+    ]
+  },
+  products: [
+    { name: "Optimum Nutrition (protein supplements)", flags: [] },
+    { name: "Dairy ingredients (cheese, whey)", flags: [] },
+    { name: "Avonmore milk brand", flags: [] }
+  ],
+  categories: [
+    {
+      label: "Competition",
+      badgeClass: "badge-political",
+      findings: [
+        {
+          text: "Glanbia (then trading as the Avonmore/Waterford Group) and Sligo Dairies settled High Court proceedings with the Irish Competition Authority in July 2003 over alleged price-fixing of liquid milk between 1995 and 1998. Both companies gave undertakings in the High Court to comply with the Competition Act 2002 and not engage in concerted practices to fix retail milk prices. RTÉ Prime Time had alleged consumers were being ripped off by millions of euro by an illegal milk cartel, with Glanbia identified as the driving force.",
+          source: "Irish Times, July 2003; Irish Competition Authority proceedings",
+          url: "https://www.irishtimes.com/news/glanbia-reaches-settlement-in-price-fixing-row-1.490484"
+        },
+        {
+          text: "The Competition Authority (now CCPC) launched a full Phase 2 investigation into Glanbia Ingredients Ireland's proposed acquisition of 70% of Wexford Creamery in 2014, stating it was 'unable to conclude that the acquisition will not substantially lessen competition' in Irish dairy markets. The deal was ultimately cleared without conditions following the investigation.",
+          source: "Irish Times, 2014; Competition Authority",
+          url: "https://www.irishtimes.com/business/agribusiness-and-food/competition-authority-to-launch-full-investigation-into-glanbia-s-purchase-of-wexford-creamery-1.1717085"
+        }
+      ]
+    }
+  ],
+  alternatives: []
+},
 
 };
