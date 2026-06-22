@@ -1681,5 +1681,38 @@ const DB = {
   ],
   alternatives: []
 },
+,
+
+"iput": {
+  type: "company",
+  tags: ["ireland"],
+  name: "IPUT plc",
+  subtitle: "Commercial Property Fund — Dublin, Ireland",
+  corporate: {
+    parent: null,
+    subsidiaries: [],
+    shareholders: [
+      { name: "Irish pension funds and institutional investors", note: "Ireland's longest-established property fund, founded 1967; ~€2.5bn in assets as of 2020; pension funds and charities are exempt from dividend withholding tax under QIAIF rules", compliance: "unclear" }
+    ]
+  },
+  products: [
+    { name: "Commercial property portfolio (offices, logistics, Dublin)", flags: ["tax structure"] },
+    { name: "Davy Irish Property Fund (QIAIF)", flags: ["tax exempt"] }
+  ],
+  categories: [
+    {
+      label: "Tax",
+      badgeClass: "badge-tax",
+      findings: [
+        {
+          text: "IPUT, Ireland's longest-established property fund with €2.5 billion in assets, paid no tax on reported profits of approximately €60 million in 2020. IPUT operates as a Qualifying Investor Alternative Investment Fund (QIAIF), which under Irish law is exempt from corporation tax on income and gains. This structure was confirmed by Revenue Commissioners data reported by the Irish Times.",
+          source: "Irish Times, May 2021; Revenue Commissioners data",
+          url: "https://www.irishtimes.com/business/commercial-property/tax-take-from-institutional-property-investors-rose-by-171-in-2020-1.4561988"
+        }
+      ]
+    }
+  ],
+  alternatives: []
+},
 
 };
