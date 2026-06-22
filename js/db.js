@@ -2086,5 +2086,58 @@ const DB = {
   ],
   alternatives: []
 },
+,
+
+"axa_ireland": {
+  type: "company",
+  tags: ["ireland"],
+  name: "AXA Ireland",
+  subtitle: "Insurance Group — Dublin, Ireland",
+  corporate: {
+    parent: { name: "AXA SA", note: "French multinational insurer; AXA Ireland comprises AXA Insurance DAC (non-life, motor, home) and AXA Life Europe DAC (life/pensions/cross-border). AXA is the second-largest non-life insurer in Ireland.", compliance: "mixed", link: "https://www.axa.ie" },
+    subsidiaries: [
+      { name: "AXA Insurance DAC", note: "Non-life insurance (motor, home, commercial); authorised by Central Bank of Ireland", compliance: "mixed" },
+      { name: "AXA Life Europe DAC", note: "Dublin-based life insurer operating cross-border into Europe; fined €3.64m in 2022", compliance: "concern" }
+    ],
+    shareholders: [
+      { name: "AXA SA (Paris)", note: "Publicly listed on Euronext Paris", compliance: "mixed" }
+    ]
+  },
+  products: [
+    { name: "Motor insurance", flags: ["CCPC price-signalling investigation"] },
+    { name: "Home insurance", flags: [] },
+    { name: "Life & pensions (cross-border)", flags: ["Central Bank fine 2022"] }
+  ],
+  categories: [
+    {
+      label: "Regulatory Fines — Central Bank",
+      badgeClass: "badge-political",
+      findings: [
+        {
+          text: "The Central Bank of Ireland fined AXA Insurance Limited €675,000 and reprimanded it in July 2016 for breaches of Minimum Competency Requirements and the Consumer Protection Code 2012. The breaches occurred between January 2008 and April 2012, during which more than 58,000 insurance claims were handled by staff not supervised by appropriately accredited individuals and who failed to refer customer requests to qualified staff. A further breach occurred between January and June 2014, when AXA failed to acknowledge, update, or resolve customer complaints within the required timeframes. The €675,000 was the maximum fine the Central Bank could impose at the time.",
+          source: "Central Bank of Ireland Settlement Agreement; Irish Times / The Journal, July 2016",
+          url: "https://www.centralbank.ie/news/article/settlement-agreement-AXA-insurance-limited"
+        },
+        {
+          text: "The Central Bank of Ireland fined AXA Life Europe DAC (ALE) €3,640,000 and reprimanded it in December 2022 for three admitted breaches covering the period 2006–2019: failure to identify and manage risks arising from approximately 30,000 policies sold through its German branch (TwinStar product); failure to establish effective conflict of interest policies and procedures; and failure to conduct an adequate conflict of interest assessment in 2018. The original fine was €5.2 million, reduced by 30% under the early settlement discount scheme.",
+          source: "Central Bank of Ireland enforcement action, December 2022; Irish Times",
+          url: "https://www.centralbank.ie/news/article/enforcement-action-axa-life-europe-dac-fined-3-640-000-and-reprimanded-by-the-central-bank-of-ireland-for-failures-in-corporate-governance-and-risk-management-and-handling-of-conflicts-of-interest-9-december-2022"
+        }
+      ]
+    },
+    {
+      label: "Competition",
+      badgeClass: "badge-political",
+      findings: [
+        {
+          text: "The Competition and Consumer Protection Commission (CCPC) issued preliminary findings in September 2020 to AXA Insurance DAC and five other insurers (AIG, Allianz, Aviva, FBD, AA Ireland) stating it had 'reasonable grounds to suspect' they engaged in anti-competitive price-signalling in the private motor insurance market between January 2015 and September 2016. In August 2021, AXA entered into a legally binding agreement with the CCPC to reform its internal competition law compliance programme, including mandatory annual reporting, independent expert auditing, and compulsory training. The CCPC explicitly stated it was 'not giving the industry a clean bill of health' and wrote to the Central Bank of Ireland raising concerns about 'broader cultural concerns' in the sector.",
+          source: "CCPC enforcement action and final report, August 2021; RTÉ News / Irish Times",
+          url: "https://www.ccpc.ie/business/enforcement/civil-competition-enforcement/closed-investigations/private-motor-insurance/"
+        }
+      ]
+    }
+  ],
+  alternatives: []
+},
 
 };
