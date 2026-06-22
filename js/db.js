@@ -2657,5 +2657,46 @@ const DB = {
   ],
   alternatives: []
 },
+,
+
+"lockheed_martin": {
+  type: "company",
+  name: "Lockheed Martin",
+  subtitle: "Defence Contractor — Bethesda, Maryland, USA",
+  corporate: {
+    parent: null,
+    subsidiaries: [
+      { name: "Lockheed Martin Ireland", note: "Irish-registered entity; Lockheed Martin has had supply chain and Shannon fuel stop relationships with Ireland", compliance: "mixed" }
+    ],
+    shareholders: [
+      { name: "Institutional investors (NYSE: LMT)", note: "Publicly listed; major US defence stock", compliance: "unclear" }
+    ]
+  },
+  products: [
+    { name: "F-35 Lightning II fighter jet", flags: [] },
+    { name: "C-130 Hercules transport", flags: [] },
+    { name: "Missile defence systems", flags: [] },
+    { name: "Satellites & space systems", flags: [] }
+  ],
+  categories: [
+    {
+      label: "Bribery & Anti-Corruption",
+      badgeClass: "badge-political",
+      findings: [
+        {
+          text: "Lockheed Corporation (predecessor to Lockheed Martin) pleaded guilty in January 1995 to conspiracy to violate the anti-bribery and books-and-records provisions of the Foreign Corrupt Practices Act (FCPA), paying a criminal fine of $21.8 million and a civil fine of $3 million for bribing an Egyptian government official to secure a military aircraft sale. This was one of the first major corporate FCPA prosecutions after the statute was strengthened in 1988.",
+          source: "US Department of Justice / FCPA Stanford Database, January 1995",
+          url: "https://fcpa.stanford.edu/enforcement-action.html?id=24"
+        },
+        {
+          text: "Lockheed Martin has faced multiple False Claims Act settlements with the US Department of Defense, including a $19.5 million investor misleading settlement in 2013 and a 2004 settlement for overcharging the government on defence contracts. The company has been one of the most persistent recipients of government fraud and ethics investigations among major defence contractors, according to Good Jobs First Violation Tracker data.",
+          source: "Whistleblower attorneys analysis; Good Jobs First Violation Tracker",
+          url: "https://www.whistleblowerattorneys.com/blog/lockheed-martin-settlement-unlikely-last"
+        }
+      ]
+    }
+  ],
+  alternatives: []
+},
 
 };
