@@ -1714,5 +1714,60 @@ const DB = {
   ],
   alternatives: []
 },
+,
+
+"airbnb_ireland": {
+  type: "company",
+  tags: ["ireland"],
+  name: "Airbnb (Ireland)",
+  subtitle: "Short-Term Letting Platform — EMEA HQ: Dublin, Ireland",
+  corporate: {
+    parent: { name: "Airbnb Inc.", note: "US-listed (NASDAQ: ABNB); Irish entity serves as EMEA headquarters and is central to Airbnb's European tax structure", compliance: "mixed", link: "https://www.airbnb.ie" },
+    subsidiaries: [
+      { name: "Airbnb Ireland UC", note: "Unlimited company registered in Dublin; collects payments from European hosts and guests; subject to Revenue Commissioners income data sharing obligations", compliance: "mixed" }
+    ],
+    shareholders: [
+      { name: "Airbnb Inc. (NASDAQ: ABNB)", note: "US parent", compliance: "mixed" }
+    ]
+  },
+  products: [
+    { name: "Short-term letting platform (Ireland)", flags: ["housing market impact", "planning law non-compliance by hosts"] }
+  ],
+  categories: [
+    {
+      label: "Housing & Planning",
+      badgeClass: "badge-housing",
+      findings: [
+        {
+          text: "Dublin City Council launched enforcement proceedings against 1,600 suspected illegal short-term lets in April 2023, following the introduction of 2019 planning regulations requiring permission for non-primary-residence rentals in Rent Pressure Zones. Fewer than 40 property owners citywide had applied for holiday letting permission under the rules since they came into force, despite Airbnb listings in the thousands.",
+          source: "Irish Times, April 2023",
+          url: "https://www.irishtimes.com/ireland/housing-planning/2023/04/07/dublin-city-council-investigates-1600-suspected-illegal-short-term-lets/"
+        },
+        {
+          text: "A case reported by the Irish Times showed a Dublin landlord who evicted up to 45 tenants on the basis he was selling, and was subsequently found by Dublin City Council to still be using the building (Reuben House, Dublin 8) for unauthorised holiday letting on Airbnb. Dublin City Council issued enforcement proceedings ordering cessation of the unauthorised use.",
+          source: "Irish Times Q&A on short-term rentals, April 2023",
+          url: "https://www.irishtimes.com/ireland/housing-planning/2023/04/03/qa-all-you-need-to-know-about-short-term-rentals/"
+        },
+        {
+          text: "A Housing Agency report commissioned by government and presented to Cabinet in June 2026 found 28,903 short-term lets active in Ireland, using Airbnb data as a proxy for the sector. Dublin alone accounted for 9,186 short-term lets — 32% of the national total — at a time of acute housing crisis. The government introduced a Short-Term Letting Bill described by the Minister for Housing as the strongest such legislation in Europe, requiring all hosts to register with Fáilte Ireland from May 2026.",
+          source: "RTÉ News, June 2026; Housing Agency report",
+          url: "https://www.rte.ie/news/politics/2026/0616/1578639-housing-politics-ireland/"
+        }
+      ]
+    },
+    {
+      label: "Tax",
+      badgeClass: "badge-tax",
+      findings: [
+        {
+          text: "Airbnb is legally required under the Taxes Consolidation Act to share Irish host income data annually with the Revenue Commissioners. The Irish entity, Airbnb Ireland UC, operates as an unlimited company — a structure that historically carried reduced public financial disclosure obligations, though EU directive changes have increased reporting requirements for such entities.",
+          source: "Revenue Commissioners / Airbnb Ireland UC; Irish regulations",
+          url: "https://www.hostaway.com/blog/airbnb-rules-in-ireland/"
+        }
+      ]
+    }
+  ],
+  alternatives: []
+},
 
 };
