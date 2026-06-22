@@ -1201,5 +1201,32 @@ const DB = {
   ],
   alternatives: []
 }
+,
+
+"shell-ireland": {
+  type: "company",
+  tags: ["ireland"],
+  name: "Shell Ireland (Corrib)",
+  subtitle: "Oil & Gas — County Mayo, Ireland",
+  corporate: {
+    parent: { name: "Shell plc", note: "Anglo-Dutch multinational. Withdrew from the Corrib gas field in 2018 after selling its 45% stake to Canada Pension Plan Investment Board for $947 million.", compliance: "concern", link: "https://www.shell.com" },
+    subsidiaries: [],
+    shareholders: []
+  },
+  products: [],
+  categories: [
+    { label: "Environment", badgeClass: "badge-env", findings: [
+      { text: "Shell Ireland was fined €1,000 and ordered to pay €15,000 in legal costs in September 2016 following an EPA prosecution for causing light and noise pollution from a gas flare at the Corrib gas project in County Mayo.", source: "Irish Times — Corrib Gas Timeline", url: "https://www.irishtimes.com/news/ireland/irish-news/corrib-gas-timeline-20-years-of-protests-and-controversy-1.3152744" }
+    ]},
+    { label: "Labour & Human Rights", badgeClass: "badge-labour", findings: [
+      { text: "Five local landowners known as the 'Rossport Five' were jailed for 94 days in 2005 after refusing to allow Shell access to their land for the Corrib gas pipeline. Shell had obtained a court injunction against them. The imprisonment caused national outcry and galvanised the Shell to Sea protest movement.", source: "ScienceDirect — Assessing the Corrib Gas Controversy", url: "https://www.sciencedirect.com/science/article/abs/pii/S2214790X18302260" },
+      { text: "Shell's private security firm was documented engaging in violent actions against protesters during the Corrib gas project, contributing to political controversy over the policing of a peaceful community campaign.", source: "Vice — How Police Brutality Brought Gas Flares to a Peaceful Irish Fishing Village", url: "https://www.vice.com/en/article/rossport-gas-exploitation-protests-209/" }
+    ]},
+    { label: "Political & Lobbying", badgeClass: "badge-political", findings: [
+      { text: "Senior Shell executives obtained a private meeting with Taoiseach Bertie Ahern and other Irish government ministers in 2003 during the planning stages of the Corrib gas project, before public consultation was complete.", source: "MEON Journal — The Curious Case of the Corrib Gas Field", url: "https://meonjournal.com/read/curious-case-of-the-corrib-gas-field" }
+    ]}
+  ],
+  alternatives: []
+}
 
 };
