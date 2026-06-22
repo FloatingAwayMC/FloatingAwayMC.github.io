@@ -2310,5 +2310,54 @@ const DB = {
   ],
   alternatives: []
 },
+,
+
+"an_post": {
+  type: "company",
+  tags: ["ireland"],
+  name: "An Post",
+  subtitle: "Postal & Logistics Services — Dublin, Ireland (Semi-State)",
+  corporate: {
+    parent: { name: "Irish State", note: "100% state-owned commercial semi-state company; regulated by ComReg (communications) and the Commission for Communications Regulation for postal services", compliance: "mixed", link: "https://www.anpost.com" },
+    subsidiaries: [
+      { name: "An Post Commerce", note: "Parcel and e-commerce logistics; competing with private courier market", compliance: "ok" },
+      { name: "One4all (gift cards)", note: "Gift card and payments subsidiary", compliance: "ok" },
+      { name: "An Post Money", note: "Financial services via post office network", compliance: "ok" }
+    ],
+    shareholders: [
+      { name: "Irish State (Minister for Environment)", note: "100% state-owned", compliance: "ok" }
+    ]
+  },
+  products: [
+    { name: "Postal delivery (letters/parcels)", flags: [] },
+    { name: "An Post Commerce (logistics)", flags: [] },
+    { name: "An Post Money (financial services)", flags: [] }
+  ],
+  categories: [
+    {
+      label: "Labour & Industrial Relations",
+      badgeClass: "badge-labour",
+      findings: [
+        {
+          text: "An Post has faced recurring industrial disputes over pay and conditions, including threatened strike action by postal workers represented by the Communications Workers Union (CWU). In 2019, a major restructuring agreement — involving approximately 2,000 redundancies — was agreed under Labour Court oversight following sustained industrial unrest, as the company sought to address losses driven by declining letter volumes and competition in the parcels market.",
+          source: "Irish Times / RTÉ reporting on An Post restructuring, 2019",
+          url: "https://www.rte.ie/news/business/2019/0306/1034268-an-post/"
+        }
+      ]
+    },
+    {
+      label: "Postal Service Regulation",
+      badgeClass: "badge-political",
+      findings: [
+        {
+          text: "ComReg, the Irish communications regulator, monitors An Post's compliance with universal service obligations (USO) — including delivery targets, pricing and accessibility — as Ireland's designated universal postal service provider. An Post has faced criticism from ComReg and the public accounts process over declining delivery standards and post office closures, particularly in rural areas, as the company restructures around parcel volumes.",
+          source: "ComReg Annual Reports; Public Accounts Committee hearings on An Post",
+          url: "https://www.comreg.ie/"
+        }
+      ]
+    }
+  ],
+  alternatives: []
+},
 
 };
