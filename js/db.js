@@ -2262,5 +2262,53 @@ const DB = {
   ],
   alternatives: []
 },
+,
+
+"zurich_ireland": {
+  type: "company",
+  tags: ["ireland"],
+  name: "Zurich Ireland",
+  subtitle: "Insurance & Life Assurance — Dublin, Ireland",
+  corporate: {
+    parent: { name: "Zurich Insurance Group AG", note: "Swiss multinational insurer (SIX: ZURN); Irish operations include Zurich Insurance Europe AG (ZIE, formerly Zurich Insurance plc) and Zurich Life Assurance plc. ZIE is Zurich's EU insurance hub post-Brexit.", compliance: "mixed", link: "https://www.zurich.ie" },
+    subsidiaries: [
+      { name: "Zurich Insurance Europe AG (ZIE)", note: "Non-life insurer; EU hub; renamed from Zurich Insurance plc on 1 January 2024. Authorised by Central Bank of Ireland.", compliance: "mixed" },
+      { name: "Zurich Life Assurance plc", note: "Life, pensions and investments; regulated by Central Bank of Ireland", compliance: "mixed" }
+    ],
+    shareholders: [
+      { name: "Zurich Insurance Group AG (SIX: ZURN)", note: "Swiss-listed global insurer", compliance: "mixed" }
+    ]
+  },
+  products: [
+    { name: "Motor & home insurance", flags: [] },
+    { name: "Life & pensions", flags: [] },
+    { name: "Business insurance", flags: [] }
+  ],
+  categories: [
+    {
+      label: "Competition",
+      badgeClass: "badge-political",
+      findings: [
+        {
+          text: "Zurich Insurance Group, the parent of Zurich Ireland, was among the insurers implicated in the wider Irish motor insurance sector CCPC investigation that resulted in binding commitments from AXA, Aviva, FBD, AIG, Allianz and AA Ireland in 2021 relating to suspected price-signalling between 2015 and 2016. Zurich Ireland's non-life operations were not among the six directly named entities who entered commitments — however the CCPC noted broader 'cultural concerns' in the sector and wrote to the Central Bank of Ireland following the investigation.",
+          source: "CCPC final report on private motor insurance sector, August 2021; Irish Times",
+          url: "https://www.ccpc.ie/business/enforcement/civil-competition-enforcement/closed-investigations/private-motor-insurance/"
+        }
+      ]
+    },
+    {
+      label: "Consumer Protection",
+      badgeClass: "badge-data",
+      findings: [
+        {
+          text: "The Central Bank of Ireland published a warning notice in September 2023 alerting the public that a fraudulent entity calling itself 'Zurich Ireland Plc' was operating as an investment firm without authorisation, cloning the identity of the legitimate Zurich Insurance plc. The Central Bank directed consumers to verify that any firm they deal with is properly authorised, following discovery of the clone firm's activity.",
+          source: "Central Bank of Ireland Warning Notice, September 2023",
+          url: "https://www.centralbank.ie/news/article/warning-notice-central-bank-of-ireland-issues-warning-on-unauthorised-firm-----fraudulent-entity-(zurich-ireland-plc)-clones-authorised-firm-zurich-insurance-plc-21-sep-2023"
+        }
+      ]
+    }
+  ],
+  alternatives: []
+},
 
 };
