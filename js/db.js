@@ -1270,5 +1270,78 @@ const DB = {
   ],
   alternatives: []
 }
+,
+
+"rte": {
+  type: "company",
+  tags: ["ireland"],
+  name: "RTÉ",
+  subtitle: "Public Broadcaster — Dublin, Ireland",
+  corporate: {
+    parent: null,
+    subsidiaries: [
+      { name: "GAAGO", note: "Subscription Gaelic games channel, co-established by former DG Dee Forbes", compliance: "unclear" },
+      { name: "RTÉ Commercial Enterprises", note: "Manages barter accounts implicated in pay scandal", compliance: "concern" }
+    ],
+    shareholders: [
+      { name: "Irish State", note: "Funded via TV licence and Exchequer; Public Accounts Committee oversight", compliance: "ok" }
+    ]
+  },
+  products: [
+    { name: "RTÉ One / Two", flags: ["governance"] },
+    { name: "RTÉ Radio 1", flags: ["governance"] },
+    { name: "RTÉ Player", flags: [] }
+  ],
+  categories: [
+    {
+      label: "Governance & Financial Misconduct",
+      badgeClass: "badge-political",
+      findings: [
+        {
+          text: "RTÉ admitted in June 2023 that it had underdeclared presenter Ryan Tubridy's pay by €345,000 over six years (2017–2022), deliberately understating his annual earnings to keep them below the €500,000 public disclosure threshold. Payments were routed through a UK-based barter agency, Astus, outside normal finance controls.",
+          source: "Oireachtas Public Accounts Committee / RTÉ Board statement",
+          url: "https://www.oireachtas.ie/en/press-centre/press-releases/20230710-committee-of-public-accounts-to-meet-with-ryan-tubridy-and-noel-kelly-regarding-payments-by-rte-to-mr-tubridy-10-july-2023/"
+        },
+        {
+          text: "Forensic accountants Mazars found in August 2023 that RTÉ had no formally approved policy for its barter account, through which €1.2 million of €7.4 million in advertising revenue was spent outside standard procurement and approval processes.",
+          source: "Mazars Interim Report, August 2023",
+          url: "https://en.wikipedia.org/wiki/RT%C3%89_secret_payment_scandal"
+        },
+        {
+          text: "An Oireachtas Media Committee hearing in February 2024 found that former Director General Dee Forbes and former Director of Strategy Rory Coveney 'deliberately circumvented' established oversight in commissioning Toy Show The Musical, which was not brought to the audit and risk committee despite obligations to do so.",
+          source: "Oireachtas Joint Committee on Tourism, Culture, Arts, Sport and Media, February 2024",
+          url: "https://en.wikipedia.org/wiki/RT%C3%89_secret_payment_scandal"
+        },
+        {
+          text: "The Mazars governance report of May 2024 concluded a 'severe breakdown of communications and trust' between RTÉ executives and the board was the primary cause of the scandal, finding that the board had no formal terms of reference, the Director General was not expressly accountable to the board, and there was no central corporate governance handbook.",
+          source: "Mazars Expert Advisory Committee Report, May 2024",
+          url: "https://www.thecorporategovernanceinstitute.com/insights/news-analysis/what-happened-with-the-rte-scandal/"
+        },
+        {
+          text: "RTÉ's Chief Financial Officer Richard Collins initially refused to disclose his salary to the Oireachtas Public Accounts Committee, claiming he 'couldn't remember'. It later emerged that former CFO Breda O'Keeffe received a €450,000 exit package despite assurances the board had no role in approving senior executive exit payments.",
+          source: "Oireachtas PAC hearings, reported by Irish Examiner, July 2023",
+          url: "https://www.irishexaminer.com/news/arid-41207533.html"
+        }
+      ]
+    },
+    {
+      label: "Labour & Pay Practices",
+      badgeClass: "badge-labour",
+      findings: [
+        {
+          text: "Over €2.3 million was paid out to departing senior figures through voluntary exit schemes, with at least one payment reportedly around €400,000, revealed during Oireachtas scrutiny of the broader governance crisis in 2023.",
+          source: "RTÉ disclosures to Oireachtas committees, June–July 2023",
+          url: "https://en.wikipedia.org/wiki/RT%C3%89_secret_payment_scandal"
+        },
+        {
+          text: "Around 200 RTÉ journalists, reporters and correspondents represented by SIPTU and the NUJ staged a protest at RTÉ headquarters in June 2023, citing hurt and anger at the governance failures revealed by the pay scandal and the preferential treatment given to senior contracted presenters.",
+          source: "RTÉ News / NUJ, June 2023",
+          url: "https://en.wikipedia.org/wiki/RT%C3%89_secret_payment_scandal"
+        }
+      ]
+    }
+  ],
+  alternatives: []
+},
 
 };
