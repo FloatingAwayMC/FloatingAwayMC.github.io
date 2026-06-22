@@ -2359,5 +2359,42 @@ const DB = {
   ],
   alternatives: []
 },
+,
+
+"dhl_ireland": {
+  type: "company",
+  tags: ["ireland"],
+  name: "DHL Ireland",
+  subtitle: "Logistics & Courier — Dublin, Ireland",
+  corporate: {
+    parent: { name: "Deutsche Post DHL Group", note: "German multinational (XETRA: DPW); one of the world's largest logistics companies. Irish operations include DHL Express Ireland and DHL Supply Chain Ireland.", compliance: "mixed", link: "https://www.dhl.com/ie-en" },
+    subsidiaries: [
+      { name: "DHL Express Ireland", note: "International courier and express services", compliance: "mixed" },
+      { name: "DHL Supply Chain Ireland", note: "Warehousing, fulfilment, and contract logistics", compliance: "mixed" }
+    ],
+    shareholders: [
+      { name: "Deutsche Post AG (XETRA: DPW)", note: "German state-backed and publicly listed", compliance: "mixed" }
+    ]
+  },
+  products: [
+    { name: "International express delivery", flags: [] },
+    { name: "Supply chain & warehousing", flags: [] },
+    { name: "E-commerce fulfilment", flags: [] }
+  ],
+  categories: [
+    {
+      label: "Labour (Parent Company — Global)",
+      badgeClass: "badge-labour",
+      findings: [
+        {
+          text: "Deutsche Post DHL Group's German operations have faced significant industrial action. The union Ver.di has called repeated strikes at DHL's German parcel sorting centres over pay disputes, including a major round of strike action in 2023 demanding an 15% wage increase as workers faced declining real wages due to inflation. The labour disputes affected parcel delivery across Germany and drew attention to conditions across the DHL Group's logistics workforce more broadly.",
+          source: "Reuters / BBC reporting on DHL Germany strikes, 2023",
+          url: "https://www.reuters.com/business/dhl-workers-strike-germany-pay-talks-2023-03-27/"
+        }
+      ]
+    }
+  ],
+  alternatives: []
+},
 
 };
