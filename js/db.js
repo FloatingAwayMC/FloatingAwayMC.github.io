@@ -1228,5 +1228,26 @@ const DB = {
   ],
   alternatives: []
 }
+,
+
+"applegreen": {
+  type: "company",
+  tags: ["ireland"],
+  name: "Applegreen",
+  subtitle: "Fuel & Motorway Services — Ireland & USA",
+  corporate: {
+    parent: { name: "Blackstone", note: "US private equity firm. Took Applegreen private in 2021 in a deal valuing the company at approximately €718 million.", compliance: "concern", link: "https://www.blackstone.com" },
+    subsidiaries: [],
+    shareholders: []
+  },
+  products: [],
+  categories: [
+    { label: "Labour & Human Rights", badgeClass: "badge-labour", findings: [
+      { text: "The state of Connecticut sued Applegreen for more than $6 million in 2023, alleging the company was paying Dunkin' workers at highway service plazas $14–$15 per hour instead of the legally mandated standard wage of at least $18.21. The state accused Applegreen of lack of engagement with the union representing affected workers.", source: "Irish Times, March 2023", url: "https://www.irishtimes.com/business/2023/03/20/applegreen-accused-of-lack-of-engagement-with-union-in-us-pay-dispute/" },
+      { text: "A WRC hearing in 2024 heard that an Applegreen manager at Ashbourne, Co Meath failed to register a Polish worker for payroll for 16 weeks, meaning she received no wages for that period. The manager had effectively inflated profits and secured himself an increased bonus as a result.", source: "Irish Times, April 2024", url: "https://www.irishtimes.com/business/2024/04/08/applegreen-manager-sacked-after-probe-found-worker-got-no-wages-for-16-weeks/" }
+    ]}
+  ],
+  alternatives: []
+}
 
 };
