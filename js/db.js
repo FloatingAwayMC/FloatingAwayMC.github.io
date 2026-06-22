@@ -2698,5 +2698,46 @@ const DB = {
   ],
   alternatives: []
 },
+,
+
+"l3harris": {
+  type: "company",
+  name: "L3Harris Technologies",
+  subtitle: "Defence & Intelligence Contractor — Melbourne, Florida, USA",
+  corporate: {
+    parent: null,
+    subsidiaries: [
+      { name: "L3Harris Ireland / WESCAM (Ireland-linked operations)", note: "L3Harris has electro-optical and signals intelligence products used by Irish Defence Forces and in European markets; sells tactical communications equipment to Irish military", compliance: "mixed" }
+    ],
+    shareholders: [
+      { name: "Institutional investors (NYSE: LHX)", note: "Publicly listed; major US defence stock", compliance: "unclear" }
+    ]
+  },
+  products: [
+    { name: "Tactical radios & communications", flags: ["ITAR violations"] },
+    { name: "Night vision & electro-optical systems", flags: [] },
+    { name: "Electronic warfare systems", flags: [] },
+    { name: "ISR (intelligence, surveillance, reconnaissance)", flags: [] }
+  ],
+  categories: [
+    {
+      label: "Export Control Violations",
+      badgeClass: "badge-political",
+      findings: [
+        {
+          text: "In September 2019, the US Department of State concluded a $13 million civil settlement with L3Harris Technologies for 131 alleged violations of the Arms Export Control Act (AECA) and International Traffic in Arms Regulations (ITAR) committed by Harris Corporation before its 2019 merger with L3 Technologies. Violations included: unauthorised exports of tactical radios, night vision equipment software, and a remote-controlled vehicle to Canada, Thailand, Singapore and Germany; providing a false Part 130 statement on a Technical Assistance Agreement; and violating the terms and conditions of export authorisations. The DoD had first notified Harris Corp of violations in 2015 but the company failed to stop repeat breaches. L3Harris was required to appoint an external Special Compliance Officer and undergo two external ITAR compliance audits.",
+          source: "US Department of State / Directorate of Defense Trade Controls consent agreement, September 2019; FreightWaves",
+          url: "https://2017-2021.state.gov/u-s-department-of-state-concludes-13-million-settlement-of-alleged-export-violations-by-l3harris-technologies-inc/"
+        },
+        {
+          text: "In 2008, 72 Iraqi civilians filed a civil lawsuit against L3 Services (predecessor company) and CACI alleging torture, cruel and inhuman treatment, war crimes, sexual assault and battery, and intentional infliction of emotional distress linked to their activities at Abu Ghraib prison in Iraq. A settlement was reached in October 2012 — the first positive resolution of a US civil case challenging detainee treatment outside the United States in the broader post-9/11 context.",
+          source: "L3Harris Wikipedia; litigation records, 2012",
+          url: "https://en.wikipedia.org/wiki/L3Harris"
+        }
+      ]
+    }
+  ],
+  alternatives: []
+},
 
 };
