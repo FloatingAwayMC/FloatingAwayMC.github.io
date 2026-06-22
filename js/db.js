@@ -1407,5 +1407,69 @@ const DB = {
   ],
   alternatives: []
 },
+,
+
+"newscorp_ireland": {
+  type: "company",
+  tags: ["ireland"],
+  name: "News Corp (Ireland)",
+  subtitle: "Media Conglomerate — Irish Operations of News Corp / News UK",
+  corporate: {
+    parent: { name: "News Corp", note: "Rupert Murdoch-controlled US media conglomerate; Irish operations include The Irish Sun and Wireless Group radio stations (FM104, Q102, 96FM, LMFM, Live95FM)", compliance: "concern", link: "https://newscorp.com" },
+    subsidiaries: [
+      { name: "News UK and Ireland Trading Ltd", note: "Registered with Irish CRO; provides personnel and admin services to News UK group in ROI", compliance: "concern" },
+      { name: "Wireless Group ROI", note: "Owns FM104, Q102, LMFM, 96FM, C103, Live95FM; acquired 2016", compliance: "unclear" },
+      { name: "Storyful", note: "Dublin-founded social media intelligence company, acquired by News Corp in 2013 for ~€18m", compliance: "unclear" }
+    ],
+    shareholders: [
+      { name: "Murdoch Family Trust", note: "Controls largest single voting block in News Corp", compliance: "concern" }
+    ]
+  },
+  products: [
+    { name: "The Irish Sun", flags: ["phone hacking parent company"] },
+    { name: "FM104 / Q102 / Live95FM", flags: [] },
+    { name: "Storyful", flags: [] }
+  ],
+  categories: [
+    {
+      label: "Phone Hacking & Unlawful Surveillance",
+      badgeClass: "badge-data",
+      findings: [
+        {
+          text: "News Corp's UK subsidiary News Group Newspapers (NGN), publisher of The Sun and the now-closed News of the World, was found to have engaged in systematic, illegal voicemail interception targeting celebrities, politicians, murder victims' families (including Milly Dowler), relatives of deceased British soldiers, and 7/7 bombing victims. By 2016 the scandal had cost News Corp over £100 million in legal settlements. The News of the World was shut down in July 2011 after 168 years of publication as a direct consequence.",
+          source: "Leveson Inquiry (UK, 2011–2012); UK High Court findings; CNN Fast Facts",
+          url: "https://en.wikipedia.org/wiki/News_International_phone_hacking_scandal"
+        },
+        {
+          text: "A May 2012 parliamentary select committee report concluded that Rupert Murdoch 'exhibited wilful blindness to what was going on in his companies and publications.' During his own Leveson Inquiry testimony, Rupert Murdoch admitted a cover-up had taken place within the News of the World to hide the true scale of phone hacking.",
+          source: "UK House of Commons Culture, Media and Sport Committee Report, May 2012",
+          url: "https://en.wikipedia.org/wiki/News_International_phone_hacking_scandal"
+        },
+        {
+          text: "In 2024, High Court proceedings in London brought by 45 individuals (including the Duke of Sussex) included allegations that NGN 'systematically deleted' millions of emails from 2007 to 2011, and that senior executives including Rupert Murdoch and Rebekah Brooks were 'buying the silence' of those who might reveal the true extent of unlawful activity. Barristers argued Murdoch oversaw a 'culture of impunity' at the publisher.",
+          source: "UK High Court, March 2024; The Irish News",
+          url: "https://www.irishnews.com/news/uk/rupert-murdoch-turned-a-blind-eye-to-phone-hacking-at-ngn-high-court-told-5GAAY2O3QFJVDEXT5WJ6XG7PJU/"
+        },
+        {
+          text: "News Group Newspapers settled a phone-hacking claim by Irish singer and presenter Ronan Keating in July 2021, covering alleged hacking for articles published between 1996 and 2011.",
+          source: "CNN UK Phone Hacking Scandal Fast Facts, July 2021",
+          url: "https://www.cnn.com/2013/10/24/world/europe/uk-phone-hacking-scandal-fast-facts"
+        }
+      ]
+    },
+    {
+      label: "Irish Operations & Influence",
+      badgeClass: "badge-political",
+      findings: [
+        {
+          text: "News Corp's acquisition of the Wireless radio group in 2016 gave Rupert Murdoch control over six Irish Republic radio stations (FM104, Q102, LMFM, 96FM, C103, Live95FM) in addition to The Irish Sun print title, representing a significant concentration of Irish media ownership under a foreign proprietor with a documented record of editorial interference in other jurisdictions.",
+          source: "The Irish Times, analysis of News Corp Irish operations, September 2023",
+          url: "https://www.irishtimes.com/business/2023/09/22/murdochs-irish-business-operations-a-shadow-of-their-former-selves/"
+        }
+      ]
+    }
+  ],
+  alternatives: []
+},
 
 };
