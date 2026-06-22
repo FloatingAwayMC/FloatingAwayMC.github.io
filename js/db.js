@@ -2139,5 +2139,53 @@ const DB = {
   ],
   alternatives: []
 },
+,
+
+"aviva_ireland": {
+  type: "company",
+  tags: ["ireland"],
+  name: "Aviva Ireland",
+  subtitle: "Insurance Group — Dublin, Ireland",
+  corporate: {
+    parent: { name: "Aviva plc", note: "UK-listed insurer; Irish operations include Aviva Insurance Ireland DAC (non-life) and Aviva Life and Pensions Ireland DAC", compliance: "mixed", link: "https://www.aviva.ie" },
+    subsidiaries: [
+      { name: "Aviva Insurance Ireland DAC", note: "Non-life; motor, home, commercial", compliance: "mixed" },
+      { name: "Aviva Life and Pensions Ireland DAC", note: "Life, pensions and investment products", compliance: "mixed" }
+    ],
+    shareholders: [
+      { name: "Aviva plc (LSE: AV.)", note: "Publicly listed on London Stock Exchange", compliance: "mixed" }
+    ]
+  },
+  products: [
+    { name: "Motor insurance", flags: ["CCPC price-signalling investigation"] },
+    { name: "Home insurance", flags: [] },
+    { name: "Life & pensions", flags: ["Central Bank fine 2012"] }
+  ],
+  categories: [
+    {
+      label: "Regulatory Fines — Central Bank",
+      badgeClass: "badge-political",
+      findings: [
+        {
+          text: "The Central Bank of Ireland fined Aviva Life and Pensions Ireland Limited €2.45 million in 2012 for breaches of investment regulations relating to its securities lending programme. The Central Bank found that Aviva had outsourced investment activity to its group without maintaining adequate investment policies, procedures or quantitative parameters to manage that activity in a way appropriate to the firm's balance sheet, and without sufficient information to properly monitor and control the outsourced activity. The Central Bank stated: 'It is inadequate and unacceptable for firms to rely on group controls or group limits.' Aviva accepted the findings and stated none of the breaches had affected clients.",
+          source: "Central Bank of Ireland settlement; Securities Finance Times, December 2012",
+          url: "https://www.securitiesfinancetimes.com/securitieslendingnews/regulationarticle.php?article_id=218477"
+        }
+      ]
+    },
+    {
+      label: "Competition",
+      badgeClass: "badge-political",
+      findings: [
+        {
+          text: "The CCPC issued preliminary findings in September 2020 to Aviva Insurance Ireland DAC and five other insurers stating it had reasonable grounds to suspect anti-competitive price-signalling in the private motor insurance market between January 2015 and September 2016. Aviva entered into legally binding commitments with the CCPC in August 2021 to reform its competition law compliance programme. The CCPC wrote to the Central Bank of Ireland outlining concerns about wider 'cultural' issues in the insurance sector following the investigation.",
+          source: "CCPC enforcement action, August 2021; CCPC final report",
+          url: "https://www.ccpc.ie/business/enforcement/civil-competition-enforcement/closed-investigations/private-motor-insurance/"
+        }
+      ]
+    }
+  ],
+  alternatives: []
+},
 
 };
