@@ -2396,5 +2396,46 @@ const DB = {
   ],
   alternatives: []
 },
+,
+
+"deliveroo_ireland": {
+  type: "company",
+  tags: ["ireland"],
+  name: "Deliveroo Ireland",
+  subtitle: "Food Delivery Platform — Dublin, Ireland",
+  corporate: {
+    parent: { name: "Deliveroo plc", note: "UK-listed (LSE: ROO); food delivery platform operating in Ireland and multiple European and Middle Eastern markets.", compliance: "concern", link: "https://www.deliveroo.ie" },
+    subsidiaries: [
+      { name: "Roofoods Ireland Limited", note: "Irish registered entity operating the Deliveroo platform in Ireland", compliance: "concern" }
+    ],
+    shareholders: [
+      { name: "Amazon.com Inc.", note: "Holds significant stake in Deliveroo plc; invested alongside 2021 IPO", compliance: "mixed" },
+      { name: "Public institutional investors (LSE: ROO)", note: "Publicly listed since April 2021", compliance: "unclear" }
+    ]
+  },
+  products: [
+    { name: "Food delivery platform (Ireland)", flags: ["gig worker misclassification concerns"] },
+    { name: "Deliveroo Plus (subscription)", flags: [] }
+  ],
+  categories: [
+    {
+      label: "Labour & Workers' Rights",
+      badgeClass: "badge-labour",
+      findings: [
+        {
+          text: "In November 2023, the UK Supreme Court upheld seven years of Deliveroo's classification of its riders as self-employed independent contractors, not workers (IWGB v CAC [2023] UKSC 43). The court found riders were not 'in an employment relationship' due to an unlimited right of substitution — a contractual clause introduced by Deliveroo shortly before the original Central Arbitration Committee hearing. Academic and union critics noted the substitution clause was inserted specifically to defeat the workers' claim. The ruling denied riders trade union collective bargaining rights under Article 11 of the European Convention on Human Rights. Deliveroo riders in Ireland operate under the same self-employed model and are subject to the same limitations on union recognition, sick pay, minimum wage protections, and collective bargaining.",
+          source: "UK Supreme Court, IWGB v CAC [2023] UKSC 43, November 2023; The Conversation / Dublin Inquirer",
+          url: "https://en.wikipedia.org/wiki/IWGB_v_CAC"
+        },
+        {
+          text: "An Oireachtas Committee on Enterprise, Trade and Employment heard in March 2024 that gig economy delivery workers in Ireland — including those on platforms like Deliveroo — face conditions including no access to bathroom facilities, earnings uncertainty, and being denied future work assignments for taking a day off. SIPTU described the spread of the platform economy as 'an excuse to step back' from workers' rights, and called for wages to be based on hourly rates rather than by task, noting workers spend substantial time waiting for orders without pay.",
+          source: "Oireachtas Committee on Enterprise, Trade and Employment; The Journal, March 2024",
+          url: "https://www.thejournal.ie/gig-platform-workers-oireachtas-committee-6318262-Mar2024/"
+        }
+      ]
+    }
+  ],
+  alternatives: []
+},
 
 };
