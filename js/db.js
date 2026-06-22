@@ -1528,5 +1528,43 @@ const DB = {
   ],
   alternatives: []
 },
+,
+
+"irish_times": {
+  type: "company",
+  tags: ["ireland"],
+  name: "The Irish Times Group",
+  subtitle: "News Publisher — Dublin, Ireland",
+  corporate: {
+    parent: { name: "The Irish Times Trust CLG", note: "Independent charitable trust structure; prevents commercial takeover and mandates editorial independence. Not-for-profit in intent.", compliance: "ok", link: "https://www.irishtimes.com/about-us/the-irish-times-trust/" },
+    subsidiaries: [
+      { name: "Irish Times Limited", note: "Publishing arm; holds majority stake in Gazette Group Newspapers (West Dublin local titles)", compliance: "ok" },
+      { name: "MyHome.ie", note: "Property website acquired for €50m; major commercial revenue stream", compliance: "ok" },
+      { name: "The Irish Examiner", note: "Acquired via Landmark Media Investments deal, completed July 2018", compliance: "ok" }
+    ],
+    shareholders: [
+      { name: "Irish Times Trust CLG", note: "Sole shareholder; prohibits share transfer outside trust structure", compliance: "ok" }
+    ]
+  },
+  products: [
+    { name: "The Irish Times (print & digital)", flags: [] },
+    { name: "The Irish Examiner", flags: [] },
+    { name: "MyHome.ie", flags: [] }
+  ],
+  categories: [
+    {
+      label: "Editorial Standards",
+      badgeClass: "badge-political",
+      findings: [
+        {
+          text: "In July 2010, The Irish Times published an article titled 'The Fighting Irish' about Irish nationals in the British Armed Forces. Current affairs magazine The Phoenix criticised the editor at the time, alleging the article violated the Irish Defence Act, which prohibits military recruitment advertising on behalf of foreign militaries. No regulatory action was taken.",
+          source: "The Phoenix magazine, 2010; Wikipedia – The Irish Times",
+          url: "https://en.wikipedia.org/wiki/The_Irish_Times"
+        }
+      ]
+    }
+  ],
+  alternatives: []
+},
 
 };
