@@ -1993,5 +1993,52 @@ const DB = {
   ],
   alternatives: []
 },
+,
+
+"bord_na_mona": {
+  type: "company",
+  tags: ["ireland"],
+  name: "Bord na Móna",
+  subtitle: "Semi-State Energy & Land Company — Newbridge, Co. Kildare",
+  corporate: {
+    parent: { name: "Irish State (via ESRI holdings)", note: "Semi-state company; majority government-owned. Formerly Ireland's dominant peat extractor; ceased all commercial peat harvesting in 2020 and is transitioning to renewables and land rehabilitation.", compliance: "mixed", link: "https://www.bordnamona.ie" },
+    subsidiaries: [
+      { name: "Bord na Móna Renewables", note: "Wind, solar and biomass energy; core of post-peat transition", compliance: "ok" },
+      { name: "Bord na Móna Horticulture", note: "Sold to Westland Horticulture in 2019", compliance: "unclear" }
+    ],
+    shareholders: [
+      { name: "Irish State", note: "Majority owner via government equity; ESB holds minority stake", compliance: "mixed" }
+    ]
+  },
+  products: [
+    { name: "Wind & solar energy", flags: [] },
+    { name: "Peat briquettes (production ceased 2020)", flags: ["historical — unassessed extraction"] },
+    { name: "Peatland rehabilitation (active)", flags: [] }
+  ],
+  categories: [
+    {
+      label: "Environment",
+      badgeClass: "badge-env",
+      findings: [
+        {
+          text: "The European Commission acknowledged in its June 2026 referral of Ireland to the European Court of Justice (ECJ) that Bord na Móna had, prior to 2020, conducted industrial peat extraction on sites 'without an environmental impact assessment' — in breach of EU EIA Directive requirements. The Commission noted that rehabilitation of Bord na Móna lands is now underway, 'largely funded by the EU through its Recovery and Resilience Facility.'",
+          source: "European Commission / RTÉ News, June 2026; European Court of Justice referral",
+          url: "https://www.rte.ie/news/europe/2026/0604/1576743-eu-ireland/"
+        },
+        {
+          text: "Friends of the Irish Environment (FIE) documented that Bord na Móna continued extracting peat from its 80,000-hectare landbank after a 2019 High Court ruling required planning permission for such extraction, leading FIE to accuse the semi-state of taking an 'enforcement holiday'. The group described Bord na Móna as having 'declared Brexit for its 80,000 hectares' in defiance of the court order, while simultaneously restricting individual turbary rights holders from cutting on Bord na Móna bogs.",
+          source: "Friends of the Irish Environment statement / High Court proceedings, 2019–2020",
+          url: "https://friendsoftheirishenvironment.org/bord-na-mona-enforcement-holiday-flies-in-the-face-of-a-high-court-judgment"
+        },
+        {
+          text: "The EPA's 2025 report on large-scale illegal peat extraction noted that Bord na Móna operated nine peatland complexes under EPA licence until ceasing operations in 2020, and that almost 19,000 hectares (57% of licensed peatlands) had been rehabilitated by end of 2024, with 14,139 hectares still to be rehabilitated. The EPA cited Bord na Móna as a positive example of post-extraction rehabilitation, contrasting it with 38 wholly illegal private operations.",
+          source: "EPA Report: Large Scale Illegal Peat Extraction in Ireland, June 2025",
+          url: "https://www.epa.ie/news-releases/news-releases-2025/operators-engaged-in-large-scale-unauthorised-peat-harvesting-activities-are-in-flagrant-violation-of-environmental-law.php"
+        }
+      ]
+    }
+  ],
+  alternatives: []
+},
 
 };
