@@ -1769,5 +1769,59 @@ const DB = {
   ],
   alternatives: []
 },
+,
+
+"dalata": {
+  type: "company",
+  tags: ["ireland"],
+  name: "Dalata Hotel Group",
+  subtitle: "Hotel Operator — Dublin, Ireland (acquired by Pandox/Eiendomsspar, November 2025)",
+  corporate: {
+    parent: { name: "Pandox AB / Eiendomsspar AS", note: "Scandinavian consortium completed €1.4bn acquisition of Dalata in November 2025; Scandic Hotels Group assumed operational responsibility. Previously independently listed on Euronext Dublin and LSE.", compliance: "unclear", link: "https://dalatahotelgroup.com" },
+    subsidiaries: [
+      { name: "Clayton Hotels", note: "27 hotels Ireland/UK/Europe", compliance: "ok" },
+      { name: "Maldron Hotels", note: "23 hotels Ireland/UK", compliance: "ok" },
+      { name: "DHGL Limited", note: "Subsidiary used for proposed acquisition of CG Hotels (Radisson Blu Dublin Airport), subject to CCPC Phase 2 investigation", compliance: "mixed" }
+    ],
+    shareholders: [
+      { name: "Pandox AB (Sweden)", note: "Majority owner post-November 2025 acquisition", compliance: "unclear" },
+      { name: "Eiendomsspar AS (Norway)", note: "Co-owner in acquisition consortium", compliance: "unclear" }
+    ]
+  },
+  products: [
+    { name: "Clayton Hotels", flags: [] },
+    { name: "Maldron Hotels", flags: [] }
+  ],
+  categories: [
+    {
+      label: "Competition",
+      badgeClass: "badge-political",
+      findings: [
+        {
+          text: "The Competition and Consumer Protection Commission (CCPC) initiated a full Phase 2 investigation in April 2025 into Dalata's proposed €83 million acquisition of CG Hotels Limited, owner of the Radisson Blu Hotel at Dublin Airport. The CCPC determined a detailed investigation was required to assess whether the transaction would result in a substantial lessening of competition in the Irish hotel market. Dalata already operated the Maldron Hotel and Clayton Hotel (one of the largest in the country) at Dublin Airport.",
+          source: "CCPC / Concurrences, April 2025",
+          url: "https://www.concurrences.com/en/bulletin/news-issues/april-2025/the-irish-competition-authority-launches-a-phase-ii-investigation-into-a-hotel"
+        },
+        {
+          text: "The CCPC cleared the proposed Dalata acquisition of CG Hotels, subject to legally binding commitments, following its Phase 2 investigation.",
+          source: "CCPC decision (post-Phase 2), 2025",
+          url: "https://www.concurrences.com/en/bulletin/news-issues/april-2025/the-irish-competition-authority-launches-a-phase-ii-investigation-into-a-hotel"
+        }
+      ]
+    },
+    {
+      label: "Labour",
+      badgeClass: "badge-labour",
+      findings: [
+        {
+          text: "The Workplace Relations Commission (WRC) awarded €50,000 against Dalata Hotel Group in June 2022 for the unfair dismissal of Fergal Ryan, the former general manager of the Clayton Hotel Sligo. The WRC found that Dalata's internal disciplinary investigation failed to consider a 'threatening and patronising' letter Ryan had sent to his line manager seeking a larger settlement, and that the petty cash policy breaches — involving payments of €70–€100 to hotel workers — did not constitute a dismissible offence.",
+          source: "Workplace Relations Commission determination; Irish Times, June 2022",
+          url: "https://www.irishtimes.com/business/2022/06/30/dalata-ordered-to-pay-50000-for-dismissal-of-sligo-hotel-manager/"
+        }
+      ]
+    }
+  ],
+  alternatives: []
+},
 
 };
