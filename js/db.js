@@ -2510,5 +2510,74 @@ const DB = {
   ],
   alternatives: []
 },
+,
+
+"palantir": {
+  type: "company",
+  name: "Palantir Technologies",
+  subtitle: "Data Analytics & Defence AI — Denver, Colorado / Dublin (EMEA)",
+  corporate: {
+    parent: null,
+    subsidiaries: [
+      { name: "Palantir Ireland (EMEA hub)", note: "Irish-registered entity; Palantir has used Ireland as part of its European operations structure", compliance: "concern" }
+    ],
+    shareholders: [
+      { name: "Peter Thiel / Founders", note: "Co-founded by Peter Thiel (PayPal, Founders Fund); Thiel is a prominent Republican donor and Trump ally. CIA's venture arm In-Q-Tel was an early investor.", compliance: "concern" },
+      { name: "Public institutional investors (NYSE: PLTR)", note: "Listed on NYSE", compliance: "unclear" }
+    ]
+  },
+  products: [
+    { name: "Palantir Gotham (military/intelligence targeting)", flags: ["Gaza targeting", "ICE immigration enforcement"] },
+    { name: "Palantir Foundry (data integration platform)", flags: ["NHS data concerns"] },
+    { name: "ImmigrationOS (US deportation tracking)", flags: ["human rights concerns"] }
+  ],
+  categories: [
+    {
+      label: "Military Targeting & Human Rights",
+      badgeClass: "badge-political",
+      findings: [
+        {
+          text: "Palantir's AI tools have reportedly been used by the Israeli Defence Forces (IDF) to identify lists of targets for drone and air strikes in Gaza. In October 2024, Storebrand Asset Management — one of the largest Nordic investors — sold its Palantir holdings over concerns that the company's work for the IDF could put the asset manager at risk of violating international law. Ireland's Swiss Defence Assessment: Switzerland's military completed a 20-page risk assessment in December 2024 concluding that data held by Palantir 'cannot be technically prevented' from being accessed by US intelligence services and recommended finding alternatives.",
+          source: "Irish Times, December 2024; Swiss military risk assessment reported by The Small Business Cybersecurity Guy / Middle East Eye, 2024–2026",
+          url: "https://www.irishtimes.com/business/2024/12/11/palantir-no-stranger-to-controversy-at-home-or-abroad/"
+        },
+        {
+          text: "Palantir signed a deal with Israeli Prime Minister Benjamin Netanyahu's government in early 2024 to provide 'support for war-related missions.' Reports also indicate Palantir technology was used in the 2024 Lebanon pager attacks, which killed dozens and wounded thousands.",
+          source: "Middle East Eye / The Lowdown, 2024–2026",
+          url: "https://www.middleeasteye.net/news/palantir-why-israel-linked-surveillance-firm-embedded-britains-nhs"
+        },
+        {
+          text: "Palantir was awarded a $30 million contract with US Immigration and Customs Enforcement (ICE) in April 2025 to build 'ImmigrationOS,' a system to track self-deportations, select arrest targets and increase deportation efficiency as part of the Trump administration's mass deportation programme. Palantir's US government contracts grew from $541 million in 2024 to $970 million in 2025.",
+          source: "The Hill, 2026",
+          url: "https://thehill.com/policy/technology/5667232-palantir-trump-administration-surveillance/"
+        }
+      ]
+    },
+    {
+      label: "Irish Political Connection",
+      badgeClass: "badge-political",
+      tags: ["ireland"],
+      findings: [
+        {
+          text: "Dublin Bay South TD Eoin Hayes (Social Democrats) was suspended from his parliamentary party in December 2024 after admitting he had misrepresented the timing of the sale of 7,000 Palantir shares worth €199,000. At a press conference Hayes stated he had sold his shares before entering politics; it emerged he had sold them in July 2024, a month after his election to Dublin City Council. Hayes had previously worked for Palantir from 2015 to 2017. The Social Democrats said the matter was 'serious' as media and the public must be able to rely on information from elected representatives.",
+          source: "Irish Times / Irish Examiner, December 2024",
+          url: "https://www.irishtimes.com/politics/2024/12/10/social-democrats-td-sold-shares-in-us-supplier-to-israeli-military-a-month-after-taking-council-seat/"
+        }
+      ]
+    },
+    {
+      label: "Data Privacy & NHS",
+      badgeClass: "badge-data",
+      findings: [
+        {
+          text: "Palantir was awarded a £330 million contract in November 2023 to build and operate the NHS England Federated Data Platform (FDP), connecting data from up to 240 NHS organisations. The contract was heavily redacted — 259 of 272 pages in Part 2 were blacked out. Palantir's Gotham (military targeting) and Foundry (civilian data) platforms share cross-application interoperability, raising concerns among medical professionals about the potential for NHS data to flow through the same infrastructure used for military targeting. In early 2024, NHS England investigated Palantir for a potential breach of contract after it ran a covert influencer campaign against a prominent critic of the FDP.",
+          source: "NHS England contract award; Middle East Eye; Medact briefing, 2024–2026",
+          url: "https://www.medact.org/2026/resources/briefings/briefing-palantir-fdp/"
+        }
+      ]
+    }
+  ],
+  alternatives: []
+},
 
 };
