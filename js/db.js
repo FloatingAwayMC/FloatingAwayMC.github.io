@@ -2437,5 +2437,38 @@ const DB = {
   ],
   alternatives: []
 },
+,
+
+"gls_ireland": {
+  type: "company",
+  tags: ["ireland"],
+  name: "GLS Ireland",
+  subtitle: "Parcel Delivery — Dublin, Ireland",
+  corporate: {
+    parent: { name: "General Logistics Systems B.V. (GLS)", note: "Dutch-registered subsidiary of Royal Mail Group Ltd (UK). GLS operates pan-European parcel network; Irish operations handle domestic and cross-border parcels.", compliance: "mixed", link: "https://gls-ireland.com" },
+    subsidiaries: [],
+    shareholders: [
+      { name: "Royal Mail Group Ltd (UK)", note: "UK-listed postal and logistics company; owns GLS European parcel network", compliance: "mixed" }
+    ]
+  },
+  products: [
+    { name: "Domestic parcel delivery (Ireland)", flags: [] },
+    { name: "Cross-border / European parcel network", flags: [] }
+  ],
+  categories: [
+    {
+      label: "Labour (Parent Company — UK)",
+      badgeClass: "badge-labour",
+      findings: [
+        {
+          text: "GLS Ireland's parent Royal Mail Group has faced sustained industrial disputes in the UK. Between 2022 and 2023, postal workers represented by the Communication Workers Union (CWU) took 18 days of strike action at Royal Mail over pay, job security and working conditions — among the most significant UK postal strikes in decades. The dispute was resolved in July 2023 when members voted to accept a three-year pay deal. GLS's European operations are separate from the Royal Mail domestic network but share ultimate ownership.",
+          source: "Wikipedia – 2022–2023 United Kingdom postal workers' strikes; BBC",
+          url: "https://en.wikipedia.org/wiki/2022%E2%80%932023_United_Kingdom_postal_workers'_strikes"
+        }
+      ]
+    }
+  ],
+  alternatives: []
+},
 
 };
