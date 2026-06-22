@@ -1566,5 +1566,68 @@ const DB = {
   ],
   alternatives: []
 },
+,
+
+"ires_reit": {
+  type: "company",
+  tags: ["ireland"],
+  name: "Ires REIT",
+  subtitle: "Institutional Landlord — Dublin, Ireland",
+  corporate: {
+    parent: { name: "CAPREIT (Canada)", note: "Canadian Apartment Properties REIT founded IRES in 2014; IRES internalised management in January 2022 and is now independently listed on Euronext Dublin", compliance: "concern", link: "https://www.capreit.ca" },
+    subsidiaries: [],
+    shareholders: [
+      { name: "Institutional investors (Euronext Dublin listed)", note: "Publicly traded; Irish Life Assurance and US investment funds among early investors at 2014 IPO", compliance: "unclear" }
+    ]
+  },
+  products: [
+    { name: "3,684 rental apartments (Dublin & Cork)", flags: ["evictions", "invalid tenancy notices", "rent increases"] }
+  ],
+  categories: [
+    {
+      label: "Housing & Tenants' Rights",
+      badgeClass: "badge-housing",
+      findings: [
+        {
+          text: "The Residential Tenancies Board (RTB) found that some notices of termination and rent reviews issued by IRES were invalid. The RTB also ruled specifically against IRES in a case involving Baker's Yard, Dublin, where a parking charge had been unlawfully added to a sitting tenant's rent and counted in arrears calculations.",
+          source: "Residential Tenancies Board determination; Dublin Inquirer investigative reporting",
+          url: "https://www.dublininquirer.com/why-is-one-of-irelands-biggest-landlords-evicting-so-many-of-its-tenants/"
+        },
+        {
+          text: "Research by the Community Action Tenants Union (CATU) found that IRES had the highest number of evictions approved by the RTB of any landlord in Ireland — 128 since 2015 — covering only those cases where tenants formally contested the eviction, representing a small subset of total terminations.",
+          source: "CATU Eviction Nation report / topevictors.ie database",
+          url: "https://topevictors.ie/profiles/IRES.html"
+        },
+        {
+          text: "In 2023, IRES issued notices of termination to 5% of its tenants — a significant proportion at a time when the sector-wide average was 8%. Dublin Inquirer analysis of RTB figures showed IRES had the highest absolute count of RTB-approved evictions among all Irish landlords.",
+          source: "Dublin Inquirer, November 2024; RTB figures",
+          url: "https://www.dublininquirer.com/why-is-one-of-irelands-biggest-landlords-evicting-so-many-of-its-tenants/"
+        },
+        {
+          text: "In March 2025, IRES planned to add a €200 monthly 'common area' fee for new renters at one of its properties — an additional charge layered onto rent, following the RTB's earlier ruling against a similar unlawful parking charge at Baker's Yard.",
+          source: "Wikipedia – Irish Residential Properties REIT",
+          url: "https://en.wikipedia.org/wiki/Irish_Residential_Properties_REIT"
+        },
+        {
+          text: "In February 2026, IRES told investors that new government rental reforms could yield a 25% increase in its rental income over ten years, noting its portfolio was currently 20% below market rent. Sinn Féin's Mary Lou McDonald told the Dáil this represented 'a bonanza' for property funds worth an extra €21 million annually, at the expense of renters facing an average hike of €5,556 per year.",
+          source: "The Journal / RTÉ News, February 2026; Oireachtas Dáil record",
+          url: "https://www.thejournal.ie/rental-sector-ireland-6966431-Feb2026/"
+        }
+      ]
+    },
+    {
+      label: "Tax",
+      badgeClass: "badge-tax",
+      findings: [
+        {
+          text: "As a REIT under Irish legislation introduced in 2013, IRES is exempt from corporation tax on rental income and capital gains from its property rental business — a structure that has been the subject of sustained Oireachtas scrutiny. The Commission on Taxation and Welfare recommended a review of the REIT tax regime in its 2022 report, citing concerns about institutional investment and housing policy objectives.",
+          source: "Oireachtas Written Answer (Deputy Richard Boyd Barrett), September 2023; Commission on Taxation and Welfare 2022",
+          url: "https://www.oireachtas.ie/en/debates/question/2023-09-20/147/"
+        }
+      ]
+    }
+  ],
+  alternatives: []
+},
 
 };
