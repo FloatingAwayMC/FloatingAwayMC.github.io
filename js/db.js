@@ -2040,5 +2040,51 @@ const DB = {
   ],
   alternatives: []
 },
+,
+
+"dawn_meats": {
+  type: "company",
+  tags: ["ireland"],
+  name: "Dawn Meats",
+  subtitle: "Meat Processor — Waterford, Ireland",
+  corporate: {
+    parent: { name: "Dawn Meats Group", note: "Privately held; one of Europe's largest beef and lamb processors with operations in Ireland, UK and continental Europe. CEO: Niall Browne.", compliance: "mixed", link: "https://www.dawnmeats.com" },
+    subsidiaries: [
+      { name: "Dawn Meats (Ireland)", note: "Multiple plants including Waterford (Grannagh) and others", compliance: "mixed" },
+      { name: "Dawn Meats (UK)", note: "UK processing operations", compliance: "mixed" }
+    ],
+    shareholders: [
+      { name: "Private family / management ownership", note: "Privately held; no public shareholding", compliance: "unclear" }
+    ]
+  },
+  products: [
+    { name: "Fresh beef & lamb", flags: [] },
+    { name: "Processed/packaged meat", flags: ["WRC findings re plant conditions"] }
+  ],
+  categories: [
+    {
+      label: "Labour & Workers' Rights",
+      badgeClass: "badge-labour",
+      findings: [
+        {
+          text: "The Workplace Relations Commission (WRC) ruled against Dawn Meats in July 2024, awarding €15,000 to former Waterford plant worker Abdullah Aljaber after finding the company discriminated against him under the Employment Equality Act 1998 on grounds of disability. The WRC found Dawn Meats failed to provide reasonable accommodation after he suffered a back injury sustained while carrying 25kg bags of meat in subzero conditions on a production line. His employment was terminated while he was on medical leave and awaiting surgery.",
+          source: "WRC determination; RTÉ News, July 2024",
+          url: "https://www.rte.ie/news/business/2024/0722/1461230-dawn-meats-ordered-to-pay-worker-15k-for-discrimination/"
+        },
+        {
+          text: "At WRC hearings in 2022 and 2023 relating to the same worker, Dawn Meats twice sought press reporting restrictions — both refused by the WRC adjudicator, who said she had 'no power' to restrict press reporting. The worker had alleged that during the Covid-19 period, production pressure led to burgers being picked up from the floor and returned to packaging lines. The company's former health and safety officer denied this under oath. The worker also made a protected disclosure to the WRC; Dawn Meats' IBEC representative described the disclosure as 'an attempt to defame and embarrass the respondent'.",
+          source: "Irish Times / RTÉ News, December 2022 and November 2023",
+          url: "https://www.irishtimes.com/crime-law/courts/2022/12/01/worker-alleges-fallen-burgers-put-back-on-the-line-at-dawn-meats-as-press-gagging-order-refused/"
+        },
+        {
+          text: "The WRC awarded €12,566 to former Dawn Meats Grannagh plant worker Aeron James in May 2022, finding his dismissal 'both substantively and procedurally unfair'. The WRC found that Dawn Meats had hired a private investigator to conduct covert surveillance of the worker at his family farm while he was on certified sick leave, and that the company had failed to properly inform him of the nature of the gross misconduct allegations before suspending him — in breach of its own disciplinary policy. SIPTU called the outcome a vindication of workers' privacy rights.",
+          source: "Irish Farmers Journal / WRC determination, May 2022",
+          url: "https://www.farmersjournal.ie/news/news/dawn-meats-ordered-to-pay-farmer-ex-worker-over-12-550-695736"
+        }
+      ]
+    }
+  ],
+  alternatives: []
+},
 
 };
