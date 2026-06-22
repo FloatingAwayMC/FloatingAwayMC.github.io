@@ -2579,5 +2579,46 @@ const DB = {
   ],
   alternatives: []
 },
+,
+
+"raytheon": {
+  type: "company",
+  name: "Raytheon / RTX Corporation",
+  subtitle: "Defence Contractor — Arlington, Virginia, USA",
+  corporate: {
+    parent: { name: "RTX Corporation (formerly Raytheon Technologies)", note: "NYSE: RTX; formed by 2020 merger of Raytheon Company and United Technologies Corp. Raytheon Company remains a subsidiary of RTX. RTX has significant Irish operations — its Pratt & Whitney engine division and Collins Aerospace division both operate in Ireland.", compliance: "concern", link: "https://www.rtx.com" },
+    subsidiaries: [
+      { name: "Pratt & Whitney (Ireland)", note: "Engine overhaul operations at Shannon and Dublin; major Irish employer", compliance: "mixed" },
+      { name: "Collins Aerospace (Ireland)", note: "Aerospace systems manufacturing; Irish operations", compliance: "mixed" }
+    ],
+    shareholders: [
+      { name: "Institutional investors (NYSE: RTX)", note: "Publicly listed; major US defence stock", compliance: "unclear" }
+    ]
+  },
+  products: [
+    { name: "Patriot missile systems", flags: ["FCPA — inflated pricing to US DoD"] },
+    { name: "Radar systems", flags: ["FCPA — inflated pricing to US DoD"] },
+    { name: "Missile defence & guided weapons", flags: [] }
+  ],
+  categories: [
+    {
+      label: "Bribery, Fraud & Export Violations",
+      badgeClass: "badge-political",
+      findings: [
+        {
+          text: "In October 2024, Raytheon Company (RTX subsidiary) agreed to pay over $950 million to resolve allegations of FCPA bribery violations, defective pricing fraud against the US Department of Defense, and Arms Export Control Act violations. The DOJ found that Raytheon paid nearly $2 million in bribes to Qatari military officials via sham subcontracts with a supplier between 2011 and 2017 to obtain Qatari military defence contracts. Additionally, Raytheon paid more than $30 million to a Qatari agent who was a relative of the Qatari Emir and who had no prior background in military defence products. Raytheon entered two three-year Deferred Prosecution Agreements and was required to appoint an independent compliance monitor.",
+          source: "SEC enforcement action; DOJ Deferred Prosecution Agreement, October 2024; Venable LLP analysis",
+          url: "https://www.sec.gov/newsroom/press-releases/2024-171"
+        },
+        {
+          text: "In the same October 2024 settlement, Raytheon admitted making false statements to the US Department of Defense about the cost of producing PATRIOT missile systems and a radar system during contract negotiations between approximately 2012 and 2017, netting more than $111 million in inflated contract prices. This formed the basis for the second-largest recorded False Claims Act settlement ($428 million). A whistleblower qui tam plaintiff received $4.2 million.",
+          source: "DOJ Deferred Prosecution Agreement; Venable LLP, October 2024",
+          url: "https://www.venable.com/insights/publications/2025/01/defense-contractor-resolves-doj-and-sec-fcpa"
+        }
+      ]
+    }
+  ],
+  alternatives: []
+},
 
 };
