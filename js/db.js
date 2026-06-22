@@ -1249,5 +1249,26 @@ const DB = {
   ],
   alternatives: []
 }
+,
+
+"top-oil": {
+  type: "company",
+  tags: ["ireland"],
+  name: "Top Oil / Irving Oil",
+  subtitle: "Fuel Distribution & Refining — Ireland",
+  corporate: {
+    parent: { name: "Irving Oil", note: "Canadian oil company, acquired Top Oil in 2018. Also operates Ireland's only oil refinery at Whitegate, Cork Harbour.", compliance: "concern", link: "https://www.irvingoil.com" },
+    subsidiaries: [],
+    shareholders: []
+  },
+  products: [],
+  categories: [
+    { label: "Environment", badgeClass: "badge-env", findings: [
+      { text: "Irving Oil, operator of Ireland's only oil refinery at Whitegate in Cork Harbour, was prosecuted by the EPA following a spill of 14,200 litres of gas oil into Cork Harbour on 22 January 2024. The EPA expressed concern about Polycyclic Aromatic Hydrocarbons (PAHs), described as 'acutely toxic and long lasting', in the spill. Irving Oil avoided conviction after a judge ordered a €2,500 donation to the RNLI.", source: "RTÉ News, February 2025", url: "https://www.rte.ie/news/munster/2025/0221/1498054-irving-oil-whitegate-court/" },
+      { text: "The EPA initiated a formal Compliance Investigation into the January 2024 Whitegate spill to establish root causes and direct Irving Oil to eliminate the risk of a similar incident. Residual oil contamination remained on the Cork Harbour shoreline for weeks after the spill.", source: "EPA Ireland — Spill Incident at Irving Oil Whitegate Refinery", url: "https://www.epa.ie/our-services/compliance--enforcement/whats-happening/incidents-at-epa-regulated-sites/notifications-of-recent-incidents/spill-incident-at-irving-oil-whitegate-refinery/" }
+    ]}
+  ],
+  alternatives: []
+}
 
 };
