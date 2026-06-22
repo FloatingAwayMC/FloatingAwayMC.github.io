@@ -2470,5 +2470,45 @@ const DB = {
   ],
   alternatives: []
 },
+,
+
+"fastway_couriers": {
+  type: "company",
+  tags: ["ireland"],
+  name: "Fastway Couriers Ireland",
+  subtitle: "Courier / Parcel Delivery — Rathcoole, Co. Dublin (in receivership from October 2025)",
+  corporate: {
+    parent: { name: "Nuvion Group (in receivership)", note: "Parent company Nuvion Group — which also owned Parcel Connect and Nügo — entered receivership on 28 October 2025. Mark Degnan and Brendan O'Reilly of Interpath Advisory appointed as receivers. Nuvion acquired Fastway in 2022.", compliance: "concern", link: null },
+    subsidiaries: [
+      { name: "Parcel Connect", note: "Sister brand; also in receivership from October 2025", compliance: "concern" }
+    ],
+    shareholders: [
+      { name: "Nuvion Group (receivers: Interpath Advisory)", note: "In receivership as of October 2025", compliance: "concern" }
+    ]
+  },
+  products: [
+    { name: "Domestic parcel delivery (Ireland)", flags: ["receivership", "franchise payment failures"] },
+    { name: "Parcel Connect (drop-off/collection)", flags: ["receivership"] }
+  ],
+  categories: [
+    {
+      label: "Labour & Corporate Governance",
+      badgeClass: "badge-labour",
+      findings: [
+        {
+          text: "Nuvion Group, parent of Fastway Couriers and Parcel Connect, entered receivership on 28 October 2025, leaving approximately 300 directly employed workers and 700+ franchisee and subcontractor couriers without wages from October onwards and in limbo with no ability to claim social welfare until a 30-day notification period expired. The company cited sustained inflation, rising operating costs and price pressures across the parcels market. Some franchisees had purchased delivery routes and stood to lose their entire investment.",
+          source: "RTÉ News / Irish Examiner, October–November 2025",
+          url: "https://www.rte.ie/news/ireland/2025/1103/1541873-fastway-couriers-protest/"
+        },
+        {
+          text: "Fianna Fáil TD Tony McCormack told the Dáil in November 2025 that franchise operators described invoices going missing, payments being delayed or held back, and commissions not being paid at all in the lead-up to the collapse. Operators also described being required to submit to polygraph (lie detector) tests and make large cash payments as part of franchise purchase processes. McCormack questioned whether 'fraud or serious mismanagement' was involved and whether Nuvion's 2022 acquisition of Fastway was 'a case of vulture capitalism'. Tánaiste Simon Harris said the situation was 'extremely concerning' and committed to raising it with the Enterprise Minister.",
+          source: "Dáil record / Irish Examiner, November 2025",
+          url: "https://www.irishexaminer.com/news/politics/arid-41738289.html"
+        }
+      ]
+    }
+  ],
+  alternatives: []
+},
 
 };
