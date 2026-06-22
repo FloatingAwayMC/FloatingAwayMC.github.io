@@ -1899,5 +1899,54 @@ const DB = {
   ],
   alternatives: []
 },
+,
+
+"ornua": {
+  type: "company",
+  tags: ["ireland"],
+  name: "Ornua (Irish Dairy Board)",
+  subtitle: "Dairy Co-operative — Dublin, Ireland",
+  corporate: {
+    parent: null,
+    subsidiaries: [
+      { name: "Kerrygold (brand)", note: "Ireland's most recognised dairy export brand; sold in 110+ countries", compliance: "mixed" },
+      { name: "Ornua Foods", note: "Consumer brands division including Kerrygold butter and cheese", compliance: "mixed" },
+      { name: "Ornua Ingredients", note: "B2B dairy ingredients, including fat-filled milk powder for African markets", compliance: "concern" }
+    ],
+    shareholders: [
+      { name: "Irish dairy co-operatives (members)", note: "Farmer-owned co-operative structure established by Oireachtas Act (Dairy Produce Marketing Act 1961)", compliance: "ok" }
+    ]
+  },
+  products: [
+    { name: "Kerrygold Butter", flags: [] },
+    { name: "Kerrygold Avantage (fat-filled milk powder)", flags: ["labelling concerns — Global South markets"] },
+    { name: "Dubliner / Pilgrim's Choice cheese", flags: [] }
+  ],
+  categories: [
+    {
+      label: "Supply Chain & Market Conduct",
+      badgeClass: "badge-supply",
+      findings: [
+        {
+          text: "A joint investigation by Noteworthy and Nigerian outlet Premium Times, published in 2024, found that Ornua's Kerrygold Avantage — a fat-filled milk powder (FFMP) product made from vegetable fats and skimmed milk powder rather than whole milk — was being marketed in West Africa alongside full-cream milk products in ways NGOs described as insufficiently transparent. Experts told the investigation that large volumes of cheap EU FFMP exports into West Africa have undercut local dairy farmers, driving many Nigerian dairy farmers out of business. Ornua did not respond to media queries about the advertising of the product at a 'World Milk Day' event in Lagos in June 2024.",
+          source: "Noteworthy / The Journal / Premium Times investigative report, 2024",
+          url: "https://www.thejournal.ie/creamed-off-dairy-exports-6461193-Aug2024/"
+        }
+      ]
+    },
+    {
+      label: "Competition",
+      badgeClass: "badge-political",
+      findings: [
+        {
+          text: "Glanbia (formerly Avonmore/Waterford Group, an Ornua member co-op) and Sligo Dairies settled High Court proceedings with the Irish Competition Authority in 2003 over alleged price-fixing of liquid milk between 1995 and 1998. Both companies gave undertakings in the High Court to comply with the Competition Act 2002 and not engage in concerted practices to fix retail milk prices. RTÉ's Prime Time had alleged consumers were being overcharged by millions of euro by an illegal cartel in the liquid-milk industry, singling out Glanbia as the driving force. While Ornua itself was not a named defendant, its key member co-ops were central to the proceedings.",
+          source: "Irish Times, July 2003; Competition Authority High Court proceedings",
+          url: "https://www.irishtimes.com/news/glanbia-reaches-settlement-in-price-fixing-row-1.490484"
+        }
+      ]
+    }
+  ],
+  alternatives: []
+},
 
 };
