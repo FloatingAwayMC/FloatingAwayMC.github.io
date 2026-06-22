@@ -1178,5 +1178,28 @@ const DB = {
   ],
   alternatives: []
 }
+,
+
+"circle-k": {
+  type: "company",
+  tags: ["ireland"],
+  name: "Circle K Ireland",
+  subtitle: "Fuel & Convenience Retail — Ireland",
+  corporate: {
+    parent: { name: "Alimentation Couche-Tard", note: "Canadian multinational, acquired Topaz Ireland in 2016 and rebranded as Circle K in 2018. Operates 410+ stations in Ireland.", compliance: "mixed", link: "https://corpo.couche-tard.com" },
+    subsidiaries: [],
+    shareholders: []
+  },
+  products: [],
+  categories: [
+    { label: "Labour & Human Rights", badgeClass: "badge-labour", findings: [
+      { text: "A Circle K worker was awarded €1,000 by the Workplace Relations Commission after his manager told him to 'be a man' and supervise the cleaning of a bathroom after a homeless man had picked up human faeces with his bare hands. The WRC found this constituted gender-based harassment.", source: "RTÉ News, July 2025", url: "https://www.rte.ie/news/circle-k/" }
+    ]},
+    { label: "Environment", badgeClass: "badge-env", findings: [
+      { text: "Circle K's parent company Alimentation Couche-Tard operates over 17,000 fuel retail sites globally, making it one of the world's largest fossil fuel retailers by number of locations.", source: "Alimentation Couche-Tard Corporate", url: "https://corpo.couche-tard.com" }
+    ]}
+  ],
+  alternatives: []
+}
 
 };
