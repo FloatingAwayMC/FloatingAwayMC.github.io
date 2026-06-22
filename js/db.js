@@ -2620,5 +2620,42 @@ const DB = {
   ],
   alternatives: []
 },
+,
+
+"bae_systems": {
+  type: "company",
+  name: "BAE Systems",
+  subtitle: "Defence & Aerospace Contractor — London, UK",
+  corporate: {
+    parent: null,
+    subsidiaries: [
+      { name: "BAE Systems Applied Intelligence (Ireland)", note: "Cyber intelligence and analytics operations in Dublin", compliance: "mixed" },
+      { name: "BAE Systems (multiple UK/global)", note: "Largest UK defence contractor; significant Irish supplier relationships and Shannon layover operations", compliance: "mixed" }
+    ],
+    shareholders: [
+      { name: "Institutional investors (LSE: BA.)", note: "Publicly listed on London Stock Exchange", compliance: "unclear" }
+    ]
+  },
+  products: [
+    { name: "Combat aircraft (Eurofighter Typhoon, F-35 components)", flags: [] },
+    { name: "Naval vessels & armour", flags: [] },
+    { name: "Cyber intelligence", flags: ["Ireland operations"] },
+    { name: "Electronic warfare systems", flags: [] }
+  ],
+  categories: [
+    {
+      label: "Bribery & Anti-Corruption",
+      badgeClass: "badge-political",
+      findings: [
+        {
+          text: "BAE Systems pleaded guilty in February 2010 to a US Department of Justice charge of conspiracy to make false statements to the US Department of Defense in a written commitment to maintain an adequate anti-corruption compliance programme, and to omit material facts from export licence applications by failing to identify commissions paid to third parties. The DOJ imposed a $400 million criminal fine — one of the largest anti-corruption penalties at the time. BAE was also fined a separate £30 million by the UK Serious Fraud Office (SFO). The total combined penalty exceeded $445 million. The DOJ established that BAE had made payments through shell companies and third-party intermediaries including in Saudi Arabia, gaining more than $200 million through the false statements and disclosure failures.",
+          source: "US Department of Justice, February 2010; SFO settlement",
+          url: "https://www.justice.gov/archives/opa/pr/bae-systems-plc-pleads-guilty-and-ordered-pay-400-million-criminal-fine"
+        }
+      ]
+    }
+  ],
+  alternatives: []
+},
 
 };
