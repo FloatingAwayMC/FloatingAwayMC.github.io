@@ -171,13 +171,13 @@ const App = (() => {
 
       if (!cards) return;
 
-      html += `
+     html += `
         <div class="cat-block">
-          <button class="cat-toggle" onclick="App.toggleBrowseCat(${ci})" aria-expanded="true">
+          <button class="cat-toggle" onclick="App.toggleBrowseCat(${ci})" aria-expanded="false">
             <div class="cat-toggle-left"><span class="cat-title">${cat.label}</span></div>
-            <svg id="bch-${ci}" class="cat-chevron open" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 6l4 4 4-4"/></svg>
+            <svg id="bch-${ci}" class="cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 6l4 4 4-4"/></svg>
           </button>
-          <div class="cat-body open" id="bg-${ci}">
+          <div class="cat-body" id="bg-${ci}">
             <div class="browse-grid" style="margin-bottom:0">${cards}</div>
           </div>
         </div>`;
