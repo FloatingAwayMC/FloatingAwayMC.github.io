@@ -165,7 +165,7 @@ const App = (() => {
             <svg id="bch-${ci}" class="cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 6l4 4 4-4"/></svg>
           </button>
           <div class="cat-body" id="bg-${ci}">
-            <div class="browse-grid" style="margin-bottom:0">${cards}</div>
+            <div class="browse-grid" style="margin-bottom:0;grid-template-columns:1fr">${cards}</div>
           </div>
         </div>`;
     });
@@ -181,7 +181,7 @@ const App = (() => {
             <div class="cat-toggle-left"><span class="cat-title">Other</span></div>
             <svg id="bch-999" class="cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 6l4 4 4-4"/></svg>
           </button>
-          <div class="cat-body" id="bg-999"><div class="browse-grid" style="margin-bottom:0">${orphans}</div></div>
+          <div class="cat-body" id="bg-999"><div class="browse-grid" style="margin-bottom:0;grid-template-columns:1fr">${orphans}</div></div>
         </div>`;
     }
 
