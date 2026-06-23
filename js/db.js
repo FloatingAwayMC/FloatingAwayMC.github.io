@@ -67,7 +67,6 @@ const DB = {
     "Irish Ferries / Stena Line — Dublin to Holyhead for UK travel"
   ]
 }
-
 ,
 
 "google": {
@@ -204,7 +203,7 @@ const DB = {
     "Cloud storage: Proton Drive or Nextcloud"
   ]
 }
-,
+,
 
 "meta": {
   type: "company", tags: [],
