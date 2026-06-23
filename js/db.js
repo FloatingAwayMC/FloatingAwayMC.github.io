@@ -1497,7 +1497,6 @@ const DB = {
   ],
   alternatives: []
 },
-,
 
 "irish_times": {
   type: "company",
