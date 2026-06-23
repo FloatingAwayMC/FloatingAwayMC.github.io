@@ -131,23 +131,85 @@ const App = (() => {
     if (q && q.value.trim()) _runSearch(q.value.trim());
   }
 
-  // ── Browse grid ─────────────────────────────────────────
+  // ── Category map: defines groups + order. Keys must match DB keys. ──
+  const CATEGORIES = [
+    { label: "Big Tech",               keys: ["google","meta","apple","amazon","microsoft","tiktok"] },
+    { label: "Pharma",                 keys: ["pfizer","johnson-johnson","astrazeneca"] },
+    { label: "Irish Companies",        keys: ["ryanair","aib","bank-of-ireland","dunnes-stores","crh"] },
+    { label: "Political Parties",      keys: ["fianna-fail","fine-gael","sinn-fein"] },
+    { label: "Food & Consumer",        keys: ["nestle","coca-cola","mcdonalds","primark"] },
+    { label: "Fast Fashion",           keys: ["zara","hm","shein"] },
+    { label: "Energy & Fuel",          keys: ["circle-k","shell-ireland","applegreen","top-oil"] },
+    { label: "Media & Publishing",     keys: ["rte","inm","newscorp_ireland","reach_plc","irish_times"] },
+    { label: "Hospitality & Property", keys: ["ires_reit","kennedy_wilson","iput","airbnb_ireland","dalata"] },
+    { label: "Agri-food",              keys: ["abp_food_group","ornua","glanbia","bord_na_mona","dawn_meats"] },
+    { label: "Insurance & Finance",    keys: ["axa_ireland","aviva_ireland","fbd_insurance","irish_life","zurich_ireland"] },
+    { label: "Logistics & Delivery",   keys: ["an_post","dhl_ireland","deliveroo_ireland","gls_ireland","fastway_couriers"] },
+    { label: "Defence / Dual-use",     keys: ["palantir","raytheon","bae_systems","lockheed_martin","l3harris"] },
+    { label: "Irish Construction",     keys: ["cairn_homes","glenveagh","bam_ireland","john_sisk","ardstone_capital"] }
+  ];
+
+  // ── Browse grid (grouped into collapsible categories) ───
   function renderBrowse() {
     const grid = document.getElementById("browse-grid");
     if (!grid) return;
 
-    const entries = Object.entries(DB).filter(([, e]) => {
+    const passesFilter = (e) => {
       if (activeFilter === "all")     return true;
       if (activeFilter === "ireland") return e.tags && e.tags.includes("ireland");
       return e.type === activeFilter;
+    };
+
+    const seen = new Set();
+    let html = "";
+
+    CATEGORIES.forEach((cat, ci) => {
+      const cards = cat.keys
+        .filter(key => DB[key] && passesFilter(DB[key]))
+        .map(key => { seen.add(key); return Render.browseCard(key, DB[key]); })
+        .join("");
+
+      if (!cards) return;
+
+      html += `
+        <div class="cat-block">
+          <button class="cat-toggle" onclick="App.toggleBrowseCat(${ci})" aria-expanded="true">
+            <div class="cat-toggle-left"><span class="cat-title">${cat.label}</span></div>
+            <svg id="bch-${ci}" class="cat-chevron open" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 6l4 4 4-4"/></svg>
+          </button>
+          <div class="cat-body open" id="bg-${ci}">
+            <div class="browse-grid" style="margin-bottom:0">${cards}</div>
+          </div>
+        </div>`;
     });
 
-    grid.innerHTML = entries
-      .map(([key, entry]) => Render.browseCard(key, entry))
+    const orphans = Object.entries(DB)
+      .filter(([key, e]) => !seen.has(key) && passesFilter(e))
+      .map(([key, e]) => Render.browseCard(key, e))
       .join("");
+    if (orphans) {
+      html += `
+        <div class="cat-block">
+          <button class="cat-toggle" onclick="App.toggleBrowseCat(999)" aria-expanded="true">
+            <div class="cat-toggle-left"><span class="cat-title">Other</span></div>
+            <svg id="bch-999" class="cat-chevron open" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 6l4 4 4-4"/></svg>
+          </button>
+          <div class="cat-body open" id="bg-999"><div class="browse-grid" style="margin-bottom:0">${orphans}</div></div>
+        </div>`;
+    }
+
+    grid.innerHTML = html;
   }
 
-  // ── Category toggle ─────────────────────────────────────
+  function toggleBrowseCat(id) {
+    const body = document.getElementById("bg-" + id);
+    const chev = document.getElementById("bch-" + id);
+    if (!body) return;
+    const open = body.classList.toggle("open");
+    if (chev) open ? chev.classList.add("open") : chev.classList.remove("open");
+  }
+
+  // ── Category toggle (entry page findings) ───────────────
   function toggleCat(id) {
     const body = document.getElementById("cb-" + id);
     const chev = document.getElementById("ch-" + id);
@@ -233,7 +295,7 @@ const App = (() => {
     });
   }
 
-  return { init, search, setFilter, toggleCat, toggleDarkMode, subscribeNewsletter, copyLink };
+  return { init, search, setFilter, toggleCat, toggleBrowseCat, toggleDarkMode, subscribeNewsletter, copyLink };
 
 })();
 
