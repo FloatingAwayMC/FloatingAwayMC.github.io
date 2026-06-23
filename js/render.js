@@ -29,6 +29,28 @@ const Render = (() => {
     return `<svg id="ch-${id}" class="cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 6l4 4 4-4"/></svg>`;
   }
 
+  // ── Generic collapsible section wrapper ─────────────────
+  // Every section uses this so they all look and behave identically.
+  function collapsible(id, title, badgeHtml, bodyHtml) {
+    if (!bodyHtml) return "";
+    return `
+      <div class="cat-block">
+        <button class="cat-toggle" onclick="App.toggleCat('${id}')" aria-expanded="false" aria-controls="cb-${id}">
+          <div class="cat-toggle-left">
+            <span class="cat-title">${DOMPurify.sanitize(title)}</span>
+            ${badgeHtml || ""}
+          </div>
+          ${chevronIcon(id)}
+        </button>
+        <div class="cat-body" id="cb-${id}">${bodyHtml}</div>
+      </div>`;
+  }
+
+  function countBadge(n, label) {
+    if (!n) return "";
+    return `<span class="cat-badge" style="background:var(--bg3);color:var(--text2)">${n} ${label}</span>`;
+  }
+
   function browseCard(key, entry) {
     return `
       <a class="browse-card" href="/pages/entry.html?id=${key}">
@@ -38,20 +60,27 @@ const Render = (() => {
       </a>`;
   }
 
+  // ── Header with summary stats ───────────────────────────
   function resultHeader(entry) {
     const typeIcon = entry.type === "government" ? "🏛️" : entry.type === "company" ? "🏢" : "📦";
     const irishTag = entry.tags && entry.tags.includes("ireland")
       ? `<span class="rtag" style="background:var(--accent-bg);color:var(--accent)">🇮🇪 Ireland</span>` : "";
-    const catCount = `<span class="rtag" style="background:var(--bg2);color:var(--text2)">${entry.categories.length} categories</span>`;
-    const subCount = entry.corporate && entry.corporate.subsidiaries && entry.corporate.subsidiaries.length
-      ? `<span class="rtag" style="background:var(--bg2);color:var(--text2)">${entry.corporate.subsidiaries.length} subsidiaries</span>` : "";
+
+    const findingCount = (entry.categories || []).reduce((sum, c) => sum + ((c.findings || []).length), 0);
+    const subCount = entry.corporate && entry.corporate.subsidiaries ? entry.corporate.subsidiaries.length : 0;
+    const catCount = (entry.categories || []).length;
 
     return `
       <div class="result-header">
         <div class="result-type">${typeIcon} ${DOMPurify.sanitize(entry.type)}</div>
         <div class="result-name">${DOMPurify.sanitize(entry.name)}</div>
         <div class="result-sub">${DOMPurify.sanitize(entry.subtitle)}</div>
-        <div class="result-tags">${irishTag}${catCount}${subCount}</div>
+        <div class="result-tags" style="margin-top:.5rem">
+          ${irishTag}
+          <span class="rtag" style="background:var(--bg2);color:var(--text2)">${catCount} categor${catCount !== 1 ? "ies" : "y"}</span>
+          <span class="rtag" style="background:var(--bg2);color:var(--text2)">${findingCount} sourced finding${findingCount !== 1 ? "s" : ""}</span>
+          ${subCount ? `<span class="rtag" style="background:var(--bg2);color:var(--text2)">${subCount} subsidiar${subCount !== 1 ? "ies" : "y"}</span>` : ""}
+        </div>
       </div>`;
   }
 
@@ -63,6 +92,16 @@ const Render = (() => {
       </div>`;
   }
 
+  // ── Expand / collapse all controls ──────────────────────
+  function expandControls() {
+    return `
+      <div style="display:flex;gap:8px;margin-bottom:1rem">
+        <button class="suggest-btn" onclick="App.expandAll()">Expand all</button>
+        <button class="suggest-btn" onclick="App.collapseAll()">Collapse all</button>
+      </div>`;
+  }
+
+  // ── Corporate structure (collapsible) ───────────────────
   function corporateStructure(corporate) {
     if (!corporate) return "";
     const rows = [];
@@ -105,38 +144,38 @@ const Render = (() => {
 
     if (!rows.length) return "";
 
-    return `
-      <div class="structure-section">
-        <div class="section-label">Corporate structure & ownership</div>
-        <div class="structure-grid">${rows.join("")}</div>
-        <div class="compliance-legend">
-          <span><span class="compliance-dot dot-concern"></span>Concerns reported</span>
-          <span><span class="compliance-dot dot-mixed"></span>Mixed record</span>
-          <span><span class="compliance-dot dot-unclear"></span>Unclear / unverified</span>
-          <span><span class="compliance-dot dot-ok"></span>No major concerns found</span>
-        </div>
+    const total = rows.length;
+    const body = `
+      <div class="structure-grid" style="margin-top:.75rem">${rows.join("")}</div>
+      <div class="compliance-legend">
+        <span><span class="compliance-dot dot-concern"></span>Concerns reported</span>
+        <span><span class="compliance-dot dot-mixed"></span>Mixed record</span>
+        <span><span class="compliance-dot dot-unclear"></span>Unclear / unverified</span>
+        <span><span class="compliance-dot dot-ok"></span>No major concerns found</span>
       </div>`;
+
+    return collapsible("structure", "Corporate structure & ownership", countBadge(total, total === 1 ? "entity" : "entities"), body);
   }
 
+  // ── Products (collapsible) ──────────────────────────────
   function productsSection(products) {
     if (!products || !products.length) return "";
     const cards = products.map(p => `
       <div class="product-card">
         <div class="product-name">${DOMPurify.sanitize(p.name)}</div>
-        <div class="product-flags">${p.flags.map(f => `<span class="pflag badge-supply">${DOMPurify.sanitize(f)}</span>`).join("")}</div>
+        <div class="product-flags">${(p.flags || []).map(f => `<span class="pflag badge-supply">${DOMPurify.sanitize(f)}</span>`).join("")}</div>
       </div>`).join("");
 
-    return `
-      <div class="products-section">
-        <div class="section-label">Products & flags</div>
-        <div class="product-grid">${cards}</div>
-      </div>`;
+    const body = `<div class="product-grid" style="margin-top:.75rem">${cards}</div>`;
+    return collapsible("products", "Products & flags", countBadge(products.length, products.length === 1 ? "product" : "products"), body);
   }
 
+  // ── Findings by category (collapsible) ──────────────────
   function categoriesSection(categories) {
     if (!categories || !categories.length) return "";
+
     const blocks = categories.map((cat, i) => {
-      const findings = cat.findings.map(f => `
+      const findings = (cat.findings || []).map(f => `
         <div class="finding">
           <p>${DOMPurify.sanitize(f.text)}</p>
           <a class="finding-source" href="${DOMPurify.sanitize(f.url)}" target="_blank" rel="noopener">
@@ -144,20 +183,27 @@ const Render = (() => {
           </a>
         </div>`).join("");
 
+      const n = (cat.findings || []).length;
+      const id = "cat" + i;
+
       return `
         <div class="cat-block">
-          <button class="cat-toggle" onclick="toggleCat(${i})" aria-expanded="false" aria-controls="cb-${i}">
+          <button class="cat-toggle" onclick="App.toggleCat('${id}')" aria-expanded="false" aria-controls="cb-${id}">
             <div class="cat-toggle-left">
               <span class="cat-title">${DOMPurify.sanitize(cat.label)}</span>
-              <span class="cat-badge ${cat.badgeClass}">${cat.findings.length} finding${cat.findings.length > 1 ? "s" : ""}</span>
+              <span class="cat-badge ${DOMPurify.sanitize(cat.badgeClass)}">${n} finding${n !== 1 ? "s" : ""}</span>
             </div>
-            ${chevronIcon(i)}
+            ${chevronIcon(id)}
           </button>
-          <div class="cat-body" id="cb-${i}">${findings}</div>
+          <div class="cat-body" id="cb-${id}">${findings}</div>
         </div>`;
     }).join("");
 
-    return `<div class="categories-section"><div class="section-label" style="margin-bottom:.75rem">Ethical findings by category</div>${blocks}</div>`;
+    return `
+      <div class="categories-section">
+        <div class="section-label" style="margin-bottom:.75rem">Ethical findings by category</div>
+        ${blocks}
+      </div>`;
   }
 
   function alternativesSection(alternatives) {
@@ -181,6 +227,16 @@ const Render = (() => {
       </div>`;
   }
 
+  // ── Credibility footer ───────────────────────────────────
+  function sourceFooter(entry) {
+    const findingCount = (entry.categories || []).reduce((sum, c) => sum + ((c.findings || []).length), 0);
+    if (!findingCount) return "";
+    return `
+      <div style="font-size:12px;color:var(--text3);text-align:center;padding:1rem 0;border-top:0.5px solid var(--border);margin-top:1.5rem">
+        ${findingCount} finding${findingCount !== 1 ? "s" : ""}, each linked to a primary public source — court judgments, regulatory findings, tribunal reports, or investigative journalism.
+      </div>`;
+  }
+
   function notFound(query) {
     const suggestions = Object.keys(DB).map(k =>
       `<button class="nf-chip" onclick="App.search('${DOMPurify.sanitize(DB[k].name)}')">${DOMPurify.sanitize(DB[k].name)}</button>`
@@ -201,10 +257,12 @@ const Render = (() => {
     return [
       resultHeader(entry),
       resultNotice(),
+      expandControls(),
       corporateStructure(entry.corporate),
       productsSection(entry.products),
       categoriesSection(entry.categories),
       alternativesSection(entry.alternatives),
+      sourceFooter(entry),
       suggestBlock()
     ].join("");
   }
