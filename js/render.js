@@ -146,7 +146,7 @@ const Render = (() => {
 
     const total = rows.length;
     const body = `
-      <div class="structure-grid" style="margin-top:.75rem">${rows.join("")}</div>
+    <div class="structure-grid" style="margin-top:.75rem;grid-template-columns:1fr">${rows.join("")}</div>
       <div class="compliance-legend">
         <span><span class="compliance-dot dot-concern"></span>Concerns reported</span>
         <span><span class="compliance-dot dot-mixed"></span>Mixed record</span>
@@ -160,13 +160,13 @@ const Render = (() => {
   // ── Products (collapsible) ──────────────────────────────
   function productsSection(products) {
     if (!products || !products.length) return "";
-    const cards = products.map(p => `
-      <div class="product-card">
+const cards = products.map(p => `
+      <div class="product-card" style="cursor:pointer" onclick="App.search('${DOMPurify.sanitize(p.name)}')">
         <div class="product-name">${DOMPurify.sanitize(p.name)}</div>
         <div class="product-flags">${(p.flags || []).map(f => `<span class="pflag badge-supply">${DOMPurify.sanitize(f)}</span>`).join("")}</div>
       </div>`).join("");
 
-    const body = `<div class="product-grid" style="margin-top:.75rem">${cards}</div>`;
+    const body = `<div class="product-grid" style="margin-top:.75rem;grid-template-columns:1fr">${cards}</div>`;
     return collapsible("products", "Products & flags", countBadge(products.length, products.length === 1 ? "product" : "products"), body);
   }
 
