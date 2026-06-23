@@ -13,7 +13,6 @@ function applyLight() {
   localStorage.setItem("ethoscheck-theme", "light");
 }
 
-// Apply theme immediately before page renders
 (function() {
   const saved = localStorage.getItem("ethoscheck-theme");
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -26,8 +25,6 @@ const App = (() => {
 
   let activeFilter = "all";
 
-  // ── Build Fuse index from DB ────────────────────────────
-  // Called once on init so it's ready for all searches.
   let _fuse = null;
   function _buildFuse() {
     const items = Object.entries(DB).map(([key, entry]) => ({
@@ -39,16 +36,14 @@ const App = (() => {
     }));
     _fuse = new Fuse(items, {
       keys: ["name", "subtitle", "key"],
-      threshold: 0.4,   // 0 = exact only, 1 = match anything. 0.4 is forgiving but not wild.
+      threshold: 0.4,
       minMatchCharLength: 2
     });
   }
 
-  // ── Dark mode toggle ────────────────────────────────────
   function toggleDarkMode() {
     const btn = document.getElementById("dark-mode-btn");
     const isDark = document.documentElement.classList.contains("dark-mode");
-
     if (isDark) {
       applyLight();
       if (btn) btn.textContent = "🌙 Dark";
@@ -58,7 +53,6 @@ const App = (() => {
     }
   }
 
-  // ── Search ──────────────────────────────────────────────
   function search(query) {
     const input = document.getElementById("search-input");
     if (input) input.value = query;
@@ -80,20 +74,14 @@ const App = (() => {
     if (resultsEl) resultsEl.classList.remove("hidden");
     if (browseEl)  browseEl.classList.add("hidden");
 
-    // Use Fuse for fuzzy matching; fall back to plain key/name check if Fuse isn't ready
     let matchKey = null;
     if (_fuse) {
       const fuseResults = _fuse.search(query);
-      if (fuseResults.length > 0) {
-        matchKey = fuseResults[0].item.key;
-      }
+      if (fuseResults.length > 0) matchKey = fuseResults[0].item.key;
     } else {
-      // Fallback (same logic as before)
       const q = query.toLowerCase();
       matchKey = Object.keys(DB).find(k =>
-        k.includes(q) ||
-        q.includes(k) ||
-        DB[k].name.toLowerCase().includes(q)
+        k.includes(q) || q.includes(k) || DB[k].name.toLowerCase().includes(q)
       );
     }
 
@@ -121,7 +109,6 @@ const App = (() => {
     });
   }
 
-  // ── Filter ──────────────────────────────────────────────
   function setFilter(f, el) {
     activeFilter = f;
     document.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
@@ -131,7 +118,7 @@ const App = (() => {
     if (q && q.value.trim()) _runSearch(q.value.trim());
   }
 
-  // ── Category map: defines groups + order. Keys must match DB keys. ──
+  // ── Category map ─────────────────────────────────────────
   const CATEGORIES = [
     { label: "Big Tech",               keys: ["google","meta","apple","amazon","microsoft","tiktok"] },
     { label: "Pharma",                 keys: ["pfizer","johnson-johnson","astrazeneca"] },
@@ -149,7 +136,7 @@ const App = (() => {
     { label: "Irish Construction",     keys: ["cairn_homes","glenveagh","bam_ireland","john_sisk","ardstone_capital"] }
   ];
 
-  // ── Browse grid (grouped into collapsible categories) ───
+  // ── Browse grid (grouped, collapsed by default) ──────────
   function renderBrowse() {
     const grid = document.getElementById("browse-grid");
     if (!grid) return;
@@ -171,7 +158,7 @@ const App = (() => {
 
       if (!cards) return;
 
-     html += `
+      html += `
         <div class="cat-block">
           <button class="cat-toggle" onclick="App.toggleBrowseCat(${ci})" aria-expanded="false">
             <div class="cat-toggle-left"><span class="cat-title">${cat.label}</span></div>
@@ -190,11 +177,11 @@ const App = (() => {
     if (orphans) {
       html += `
         <div class="cat-block">
-          <button class="cat-toggle" onclick="App.toggleBrowseCat(999)" aria-expanded="true">
+          <button class="cat-toggle" onclick="App.toggleBrowseCat(999)" aria-expanded="false">
             <div class="cat-toggle-left"><span class="cat-title">Other</span></div>
-            <svg id="bch-999" class="cat-chevron open" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 6l4 4 4-4"/></svg>
+            <svg id="bch-999" class="cat-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 6l4 4 4-4"/></svg>
           </button>
-          <div class="cat-body open" id="bg-999"><div class="browse-grid" style="margin-bottom:0">${orphans}</div></div>
+          <div class="cat-body" id="bg-999"><div class="browse-grid" style="margin-bottom:0">${orphans}</div></div>
         </div>`;
     }
 
@@ -209,16 +196,25 @@ const App = (() => {
     if (chev) open ? chev.classList.add("open") : chev.classList.remove("open");
   }
 
-  // ── Category toggle (entry page findings) ───────────────
+  // ── Entry page section toggles ───────────────────────────
   function toggleCat(id) {
     const body = document.getElementById("cb-" + id);
     const chev = document.getElementById("ch-" + id);
     if (!body) return;
     const open = body.classList.toggle("open");
-    if (chev) { open ? chev.classList.add("open") : chev.classList.remove("open"); }
+    if (chev) open ? chev.classList.add("open") : chev.classList.remove("open");
   }
 
-  // ── Newsletter subscribe ────────────────────────────────
+  function expandAll() {
+    document.querySelectorAll(".cat-body").forEach(b => b.classList.add("open"));
+    document.querySelectorAll(".cat-chevron").forEach(c => c.classList.add("open"));
+  }
+
+  function collapseAll() {
+    document.querySelectorAll(".cat-body").forEach(b => b.classList.remove("open"));
+    document.querySelectorAll(".cat-chevron").forEach(c => c.classList.remove("open"));
+  }
+
   function subscribeNewsletter() {
     const email = document.getElementById("nl-email");
     if (!email || !email.value.includes("@")) {
@@ -231,7 +227,6 @@ const App = (() => {
     if (btn) { btn.disabled = true; btn.textContent = "Done"; }
   }
 
-  // ── Copy link ───────────────────────────────────────────
   function copyLink() {
     navigator.clipboard.writeText(window.location.href).then(() => {
       const btns = document.querySelectorAll(".share-btn");
@@ -244,7 +239,6 @@ const App = (() => {
     });
   }
 
-  // ── Entry page ──────────────────────────────────────────
   function loadEntryPage() {
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
@@ -267,9 +261,7 @@ const App = (() => {
     });
   }
 
-  // ── Init ────────────────────────────────────────────────
   function init() {
-    // Set button text based on current state
     const btn = document.getElementById("dark-mode-btn");
     if (btn) {
       const isDark = document.documentElement.classList.contains("dark-mode");
@@ -295,7 +287,7 @@ const App = (() => {
     });
   }
 
-  return { init, search, setFilter, toggleCat, toggleBrowseCat, toggleDarkMode, subscribeNewsletter, copyLink };
+  return { init, search, setFilter, toggleCat, toggleBrowseCat, expandAll, collapseAll, toggleDarkMode, subscribeNewsletter, copyLink };
 
 })();
 
