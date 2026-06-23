@@ -66,8 +66,7 @@ const DB = {
     "Bus Éireann Expressway — nationwide routes",
     "Irish Ferries / Stena Line — Dublin to Holyhead for UK travel"
   ]
-}
-,
+},
 
 "google": {
   type: "company", tags: ["ireland"],
@@ -202,8 +201,7 @@ const DB = {
     "Maps: OpenStreetMap or Apple Maps",
     "Cloud storage: Proton Drive or Nextcloud"
   ]
-}
-,
+},
 
 "meta": {
   type: "company", tags: [],
@@ -257,8 +255,7 @@ const DB = {
     "Mastodon or Bluesky for social networking — decentralised, no single corporate owner",
     "ProtonMail for private email"
   ]
-}
-,
+},
 
 "apple": {
   type: "company", tags: ["ireland"],
@@ -312,8 +309,7 @@ const DB = {
     "Refurbished iPhones via Back Market or Swappie",
     "Repair rather than replace — Apple offers battery replacement programmes"
   ]
-}
-,
+},
 
 "amazon": {
   type: "company", tags: [],
@@ -367,8 +363,7 @@ const DB = {
     "Local retailers and independent Irish shops",
     "Fastly or Cloudflare instead of AWS for developers"
   ]
-}
-,
+},
 
 "microsoft": {
   type: "company", tags: [],
@@ -417,8 +412,7 @@ const DB = {
     "ProtonMail instead of Outlook for private email",
     "Gitea or Codeberg instead of GitHub for code hosting"
   ]
-}
-,
+},
 
 "tiktok": {
   type: "company", tags: [],
@@ -460,8 +454,7 @@ const DB = {
     "Nebula or Vimeo for independent creator content",
     "Instagram Reels — though Meta has its own privacy concerns"
   ]
-}
-,
+},
 
 "pfizer": {
   type: "company", tags: ["ireland"],
@@ -508,8 +501,7 @@ const DB = {
     "Advocate for transparent drug pricing through patient groups",
     "MSF Access Campaign for information on pharmaceutical patent abuse"
   ]
-}
-,
+},
 
 "johnson-johnson": {
   type: "company", tags: [],
@@ -557,8 +549,7 @@ const DB = {
     "Generic equivalents for J&J drugs where available",
     "Independent pharmacies for personal care products"
   ]
-}
-,
+},
 
 "astrazeneca": {
   type: "company", tags: [],
@@ -603,8 +594,7 @@ const DB = {
     "Support MSF Access Campaign for fair medicine pricing",
     "Advocate for public research funding transparency"
   ]
-}
-,
+},
 
 "aib": {
   type: "company", tags: ["ireland"],
@@ -645,8 +635,7 @@ const DB = {
     "An Post Money for basic current accounts",
     "Revolut or N26 for digital-first banking"
   ]
-}
-,
+},
 
 "bank-of-ireland": {
   type: "company", tags: ["ireland"],
@@ -688,8 +677,7 @@ const DB = {
     "An Post Money for basic current accounts",
     "Revolut or N26 for digital-first banking"
   ]
-}
-,
+},
 
 "dunnes-stores": {
   type: "company", tags: ["ireland"],
@@ -730,8 +718,7 @@ const DB = {
     "Local farmers markets for fresh produce",
     "Lidl or Aldi — comparable pricing with more supply chain reporting"
   ]
-}
-,
+},
 
 "crh": {
   type: "company", tags: ["ireland"],
@@ -773,8 +760,7 @@ const DB = {
     "Specify recycled aggregates in construction projects",
     "Support policy requiring carbon disclosure in public procurement"
   ]
-}
-,
+},
 
 "fianna-fail": {
   type: "government", tags: ["ireland"],
@@ -804,8 +790,7 @@ const DB = {
     ]}
   ],
   alternatives: []
-}
-,
+},
 
 "nestle": {
   type: "company", tags: [],
@@ -854,8 +839,7 @@ const DB = {
     "Fair trade certified chocolate — Tony's Chocolonely, Divine Chocolate",
     "Breastfeeding support organisations for infant nutrition information"
   ]
-}
-,
+},
 
 "coca-cola": {
   type: "company", tags: [],
@@ -903,8 +887,7 @@ const DB = {
     "Cawston Press, Belvoir, or Folkington's for soft drinks",
     "Independent coffee shops instead of Costa Coffee"
   ]
-}
-,
+},
 
 "mcdonalds": {
   type: "company", tags: [],
@@ -945,8 +928,7 @@ const DB = {
     "Supermac's — Irish-owned fast food with domestic economic benefit",
     "Home cooking — significantly cheaper and healthier"
   ]
-}
-,
+},
 
 "primark": {
   type: "company", tags: ["ireland"],
@@ -986,8 +968,7 @@ const DB = {
     "Ethical brands: People Tree, Patagonia, Thought Clothing",
     "Buy less, buy better — extend the life of existing clothing"
   ]
-}
-,
+},
 
 "zara": {
   type: "company", tags: [],
@@ -1031,8 +1012,7 @@ const DB = {
     "Ethical brands: People Tree, Patagonia, Thought Clothing",
     "Slow fashion — buy less, choose quality, keep longer"
   ]
-}
-,
+},
 
 "hm": {
   type: "company", tags: [],
@@ -1076,8 +1056,7 @@ const DB = {
     "Ethical brands: People Tree, Patagonia, Thought Clothing",
     "Buy less, buy better — extend the life of existing clothing"
   ]
-}
-,
+},
 
 "shein": {
   type: "company", tags: [],
@@ -1119,8 +1098,7 @@ const DB = {
     "Penneys / Primark for budget fashion — Irish-headquartered, more regulatory accountability",
     "Support independent Irish clothing designers"
   ]
-}
-,
+},
 
 "fine-gael": {
   type: "government", tags: ["ireland"],
@@ -1148,8 +1126,7 @@ const DB = {
     ]}
   ],
   alternatives: []
-}
-,
+},
 
 "sinn-fein": {
   type: "government", tags: ["ireland"],
@@ -1176,8 +1153,7 @@ const DB = {
     ]}
   ],
   alternatives: []
-}
-,
+},
 
 "circle-k": {
   type: "company",
@@ -1226,8 +1202,7 @@ const DB = {
     ]}
   ],
   alternatives: []
-}
-,
+},
 
 "applegreen": {
   type: "company",
@@ -1247,8 +1222,7 @@ const DB = {
     ]}
   ],
   alternatives: []
-}
-,
+},
 
 "top-oil": {
   type: "company",
@@ -1268,8 +1242,7 @@ const DB = {
     ]}
   ],
   alternatives: []
-}
-,
+},
 
 "rte": {
   type: "company",
@@ -1342,7 +1315,6 @@ const DB = {
   ],
   alternatives: []
 },
-,
 
 "inm": {
   type: "company",
@@ -1406,7 +1378,6 @@ const DB = {
   ],
   alternatives: []
 },
-,
 
 "newscorp_ireland": {
   type: "company",
@@ -1470,7 +1441,6 @@ const DB = {
   ],
   alternatives: []
 },
-,
 
 "reach_plc": {
   type: "company",
@@ -1565,7 +1535,6 @@ const DB = {
   ],
   alternatives: []
 },
-,
 
 "ires_reit": {
   type: "company",
@@ -1628,7 +1597,6 @@ const DB = {
   ],
   alternatives: []
 },
-,
 
 "kennedy_wilson": {
   type: "company",
@@ -1680,7 +1648,6 @@ const DB = {
   ],
   alternatives: []
 },
-,
 
 "iput": {
   type: "company",
@@ -1713,7 +1680,6 @@ const DB = {
   ],
   alternatives: []
 },
-,
 
 "airbnb_ireland": {
   type: "company",
@@ -1768,7 +1734,6 @@ const DB = {
   ],
   alternatives: []
 },
-,
 
 "dalata": {
   type: "company",
@@ -1822,7 +1787,6 @@ const DB = {
   ],
   alternatives: []
 },
-,
 
 "abp_food_group": {
   type: "company",
@@ -1898,7 +1862,6 @@ const DB = {
   ],
   alternatives: []
 },
-,
 
 "ornua": {
   type: "company",
@@ -1947,7 +1910,6 @@ const DB = {
   ],
   alternatives: []
 },
-,
 
 "glanbia": {
   type: "company",
@@ -1992,7 +1954,6 @@ const DB = {
   ],
   alternatives: []
 },
-,
 
 "bord_na_mona": {
   type: "company",
@@ -2039,7 +2000,6 @@ const DB = {
   ],
   alternatives: []
 },
-,
 
 "dawn_meats": {
   type: "company",
@@ -2085,7 +2045,6 @@ const DB = {
   ],
   alternatives: []
 },
-,
 
 "axa_ireland": {
   type: "company",
@@ -2138,7 +2097,6 @@ const DB = {
   ],
   alternatives: []
 },
-,
 
 "aviva_ireland": {
   type: "company",
@@ -2186,7 +2144,6 @@ const DB = {
   ],
   alternatives: []
 },
-,
 
 "fbd_insurance": {
   type: "company",
@@ -2222,7 +2179,6 @@ const DB = {
   ],
   alternatives: []
 },
-,
 
 "irish_life": {
   type: "company",
@@ -2261,7 +2217,6 @@ const DB = {
   ],
   alternatives: []
 },
-,
 
 "zurich_ireland": {
   type: "company",
@@ -2309,7 +2264,6 @@ const DB = {
   ],
   alternatives: []
 },
-,
 
 "an_post": {
   type: "company",
@@ -2358,7 +2312,6 @@ const DB = {
   ],
   alternatives: []
 },
-,
 
 "dhl_ireland": {
   type: "company",
@@ -2395,7 +2348,6 @@ const DB = {
   ],
   alternatives: []
 },
-,
 
 "deliveroo_ireland": {
   type: "company",
@@ -2436,7 +2388,6 @@ const DB = {
   ],
   alternatives: []
 },
-,
 
 "gls_ireland": {
   type: "company",
@@ -2469,7 +2420,6 @@ const DB = {
   ],
   alternatives: []
 },
-,
 
 "fastway_couriers": {
   type: "company",
@@ -2509,7 +2459,6 @@ const DB = {
   ],
   alternatives: []
 },
-,
 
 "palantir": {
   type: "company",
@@ -2578,7 +2527,6 @@ const DB = {
   ],
   alternatives: []
 },
-,
 
 "raytheon": {
   type: "company",
@@ -2619,7 +2567,6 @@ const DB = {
   ],
   alternatives: []
 },
-,
 
 "bae_systems": {
   type: "company",
@@ -2656,7 +2603,6 @@ const DB = {
   ],
   alternatives: []
 },
-,
 
 "lockheed_martin": {
   type: "company",
@@ -2697,7 +2643,6 @@ const DB = {
   ],
   alternatives: []
 },
-,
 
 "l3harris": {
   type: "company",
