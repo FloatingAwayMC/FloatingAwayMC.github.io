@@ -1175,8 +1175,7 @@ const DB = {
     ]}
   ],
   alternatives: []
-}
-,
+},
 
 "shell-ireland": {
   type: "company",
