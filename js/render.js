@@ -253,16 +253,16 @@ const cards = products.map(p => `
       </div>`;
   }
 
-  function fullEntry(entry, key) {
+function fullEntry(entry, key) {
     return [
       resultHeader(entry),
-      resultNotice(),
       expandControls(),
       corporateStructure(entry.corporate),
       productsSection(entry.products),
       categoriesSection(entry.categories),
       alternativesSection(entry.alternatives),
       sourceFooter(entry),
+      resultNotice(),
       suggestBlock()
     ].join("");
   }
