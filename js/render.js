@@ -75,6 +75,7 @@ const Render = (() => {
         <div class="result-type">${typeIcon} ${DOMPurify.sanitize(entry.type)}</div>
         <div class="result-name">${DOMPurify.sanitize(entry.name)}</div>
         <div class="result-sub">${DOMPurify.sanitize(entry.subtitle)}</div>
+        ${entry.summary ? `<p style="font-size:14px;color:var(--text2);margin-top:.75rem;line-height:1.65">${DOMPurify.sanitize(entry.summary)}</p>` : ""}
         <div class="result-tags" style="margin-top:.5rem">
           ${irishTag}
           <span class="rtag" style="background:var(--bg2);color:var(--text2)">${catCount} categor${catCount !== 1 ? "ies" : "y"}</span>
