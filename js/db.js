@@ -2524,7 +2524,7 @@ const DB = {
     }
   ],
   alternatives: []
-},,
+},,,
 
 "raytheon": {
   type: "company",
@@ -2564,7 +2564,7 @@ const DB = {
     }
   ],
   alternatives: []
-},,
+},,,
 
 "bae_systems": {
   type: "company",
@@ -2600,7 +2600,7 @@ const DB = {
     }
   ],
   alternatives: []
-},,
+},,,
 
 "lockheed_martin": {
   type: "company",
@@ -2640,7 +2640,7 @@ const DB = {
     }
   ],
   alternatives: []
-},,
+},,,
 
 "l3harris": {
   type: "company",
@@ -2680,6 +2680,6 @@ const DB = {
     }
   ],
   alternatives: []
-},,
+},,,
 
 };
