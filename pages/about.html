@@ -17,11 +17,17 @@
   </a>
   <div class="nav-links">
     <a href="/index.html" class="hide-mobile">Search</a>
-    <a href="/pages/about.html">About</a>
-<a href="/pages/submit.html" class="nav-btn">Submit a finding</a>
+    <a href="/pages/about.html" class="hide-mobile">About</a>
+    <a href="/pages/submit.html" class="nav-btn">Submit a finding</a>
     <button class="dark-mode-btn" onclick="App.toggleDarkMode()" id="dark-mode-btn">🌙 Dark</button>
+    <button class="hamburger" onclick="document.getElementById('mobile-menu').classList.toggle('open')">☰</button>
   </div>
 </nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/index.html">Search</a>
+  <a href="/pages/about.html">About</a>
+  <a href="/pages/submit.html">Submit a finding</a>
+</div>
 <main>
   <div class="static-content">
     <h1>About EthosCheck</h1>
