@@ -217,24 +217,24 @@ const App = (() => {
     if (q && q.value.trim()) _runSearch(q.value.trim());
   }
 
-  // ── Category map ─────────────────────────────────────────
-  const CATEGORIES = [
-    { label: "Big Tech",               keys: ["google","meta","apple","amazon","microsoft","tiktok"] },
-    { label: "Pharma",                 keys: ["pfizer","johnson-johnson","astrazeneca"] },
-    { label: "Irish Companies",        keys: ["ryanair","aib","bank-of-ireland","dunnes-stores","crh"] },
-    { label: "Political Parties",      keys: ["fianna-fail","fine-gael","sinn-fein"] },
-    { label: "Food & Consumer",        keys: ["nestle","coca-cola","mcdonalds","primark"] },
-    { label: "Fast Fashion",           keys: ["zara","hm","shein"] },
-    { label: "Energy & Fuel",          keys: ["circle-k","shell-ireland","applegreen","top-oil"] },
-    { label: "Media & Publishing",     keys: ["rte","inm","newscorp_ireland","reach_plc","irish_times"] },
-    { label: "Hospitality & Property", keys: ["ires_reit","kennedy_wilson","iput","airbnb_ireland","dalata"] },
-    { label: "Agri-food",              keys: ["abp_food_group","ornua","glanbia","bord_na_mona","dawn_meats"] },
-    { label: "Insurance & Finance",    keys: ["axa_ireland","aviva_ireland","fbd_insurance","irish_life","zurich_ireland"] },
-    { label: "Logistics & Delivery",   keys: ["an_post","dhl_ireland","deliveroo_ireland","gls_ireland","fastway_couriers"] },
-    { label: "Defence / Dual-use",     keys: ["palantir","raytheon","bae_systems","lockheed_martin","l3harris"] },
-    { label: "Irish Construction",     keys: ["cairn_homes","glenveagh","bam_ireland","john_sisk","ardstone_capital"] }
-  ];
-
+const CATEGORIES = [
+  { label: "Big Tech",               keys: ["google","meta","apple","amazon","microsoft","tiktok"] },
+  { label: "Pharma",                 keys: ["pfizer","johnson-johnson","astrazeneca"] },
+  { label: "Aviation & Transport",   keys: ["ryanair"] },
+  { label: "Irish Banking",          keys: ["aib","bank-of-ireland"] },
+  { label: "Political Parties",      keys: ["fianna-fail","fine-gael","sinn-fein"] },
+  { label: "Food & Consumer",        keys: ["nestle","coca-cola","mcdonalds","primark","dunnes-stores"] },
+  { label: "Fast Fashion",           keys: ["zara","hm","shein"] },
+  { label: "Energy & Fuel",          keys: ["circle-k","shell-ireland","applegreen","top-oil"] },
+  { label: "Telecoms",               keys: ["vodafone_ireland","eir_ireland","three_ireland"] },
+  { label: "Media & Publishing",     keys: ["rte","inm","newscorp_ireland","reach_plc","irish_times"] },
+  { label: "Hospitality & Property", keys: ["ires_reit","kennedy_wilson","iput","airbnb_ireland","dalata"] },
+  { label: "Agri-food",              keys: ["abp_food_group","ornua","glanbia","bord_na_mona","dawn_meats"] },
+  { label: "Insurance & Finance",    keys: ["axa_ireland","aviva_ireland","fbd_insurance","irish_life","zurich_ireland"] },
+  { label: "Logistics & Delivery",   keys: ["an_post","dhl_ireland","deliveroo_ireland","gls_ireland","fastway_couriers"] },
+  { label: "Defence / Dual-use",     keys: ["palantir","raytheon","bae_systems","lockheed_martin","l3harris"] },
+  { label: "Irish Construction",     keys: ["cairn_homes","glenveagh","bam_ireland","john_sisk","ardstone_capital","crh"] }
+];
   // ── Browse grid (grouped, collapsed by default) ──────────
   function renderBrowse() {
     const grid = document.getElementById("browse-grid");
