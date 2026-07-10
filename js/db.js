@@ -1313,7 +1313,7 @@ const DB = {
     }
   ],
   alternatives: []
-},
+},,
 
 "inm": {
   type: "company",
@@ -1376,7 +1376,7 @@ const DB = {
     }
   ],
   alternatives: []
-},
+},,
 
 "newscorp_ireland": {
   type: "company",
@@ -1439,7 +1439,7 @@ const DB = {
     }
   ],
   alternatives: []
-},
+},,
 
 "reach_plc": {
   type: "company",
@@ -1495,7 +1495,7 @@ const DB = {
     }
   ],
   alternatives: []
-},
+},,
 
 "irish_times": {
   type: "company",
@@ -1532,7 +1532,7 @@ const DB = {
     }
   ],
   alternatives: []
-},
+},,
 
 "ires_reit": {
   type: "company",
@@ -1594,7 +1594,7 @@ const DB = {
     }
   ],
   alternatives: []
-},
+},,
 
 "kennedy_wilson": {
   type: "company",
@@ -1645,7 +1645,7 @@ const DB = {
     }
   ],
   alternatives: []
-},
+},,
 
 "iput": {
   type: "company",
@@ -1677,7 +1677,7 @@ const DB = {
     }
   ],
   alternatives: []
-},
+},,
 
 "airbnb_ireland": {
   type: "company",
@@ -1731,7 +1731,7 @@ const DB = {
     }
   ],
   alternatives: []
-},
+},,
 
 "dalata": {
   type: "company",
@@ -1784,7 +1784,7 @@ const DB = {
     }
   ],
   alternatives: []
-},
+},,
 
 "abp_food_group": {
   type: "company",
@@ -1859,7 +1859,7 @@ const DB = {
     }
   ],
   alternatives: []
-},
+},,
 
 "ornua": {
   type: "company",
@@ -1907,7 +1907,7 @@ const DB = {
     }
   ],
   alternatives: []
-},
+},,
 
 "glanbia": {
   type: "company",
@@ -1951,7 +1951,7 @@ const DB = {
     }
   ],
   alternatives: []
-},
+},,
 
 "bord_na_mona": {
   type: "company",
@@ -1997,7 +1997,7 @@ const DB = {
     }
   ],
   alternatives: []
-},
+},,
 
 "dawn_meats": {
   type: "company",
@@ -2042,7 +2042,7 @@ const DB = {
     }
   ],
   alternatives: []
-},
+},,
 
 "axa_ireland": {
   type: "company",
@@ -2094,7 +2094,7 @@ const DB = {
     }
   ],
   alternatives: []
-},
+},,
 
 "aviva_ireland": {
   type: "company",
@@ -2141,7 +2141,7 @@ const DB = {
     }
   ],
   alternatives: []
-},
+},,
 
 "fbd_insurance": {
   type: "company",
@@ -2176,7 +2176,7 @@ const DB = {
     }
   ],
   alternatives: []
-},
+},,
 
 "irish_life": {
   type: "company",
@@ -2214,7 +2214,7 @@ const DB = {
     }
   ],
   alternatives: []
-},
+},,
 
 "zurich_ireland": {
   type: "company",
@@ -2261,7 +2261,7 @@ const DB = {
     }
   ],
   alternatives: []
-},
+},,
 
 "an_post": {
   type: "company",
@@ -2309,7 +2309,7 @@ const DB = {
     }
   ],
   alternatives: []
-},
+},,
 
 "dhl_ireland": {
   type: "company",
@@ -2345,7 +2345,7 @@ const DB = {
     }
   ],
   alternatives: []
-},
+},,
 
 "deliveroo_ireland": {
   type: "company",
@@ -2385,7 +2385,7 @@ const DB = {
     }
   ],
   alternatives: []
-},
+},,
 
 "gls_ireland": {
   type: "company",
@@ -2417,7 +2417,7 @@ const DB = {
     }
   ],
   alternatives: []
-},
+},,
 
 "fastway_couriers": {
   type: "company",
@@ -2456,7 +2456,7 @@ const DB = {
     }
   ],
   alternatives: []
-},
+},,
 
 "palantir": {
   type: "company",
@@ -2524,7 +2524,7 @@ const DB = {
     }
   ],
   alternatives: []
-},
+},,
 
 "raytheon": {
   type: "company",
@@ -2564,7 +2564,7 @@ const DB = {
     }
   ],
   alternatives: []
-},
+},,
 
 "bae_systems": {
   type: "company",
@@ -2600,7 +2600,7 @@ const DB = {
     }
   ],
   alternatives: []
-},
+},,
 
 "lockheed_martin": {
   type: "company",
@@ -2640,7 +2640,7 @@ const DB = {
     }
   ],
   alternatives: []
-},
+},,
 
 "l3harris": {
   type: "company",
@@ -2680,6 +2680,6 @@ const DB = {
     }
   ],
   alternatives: []
-},
+},,
 
 };
