@@ -25,6 +25,7 @@ const App = (() => {
 
   let activeFilter = "all";
 
+  // ── Fuse index (name/key search) ─────────────────────────
   let _fuse = null;
   function _buildFuse() {
     const items = Object.entries(DB).map(([key, entry]) => ({
@@ -39,6 +40,33 @@ const App = (() => {
       threshold: 0.2,
       minMatchCharLength: 2
     });
+  }
+
+  // ── Full-text search across findings ─────────────────────
+  // Returns array of { key, entry, snippets[] } sorted by match count
+  function _findingsSearch(query) {
+    const q = query.toLowerCase().trim();
+    if (!q || q.length < 3) return [];
+    const results = [];
+    Object.entries(DB).forEach(([key, entry]) => {
+      const snippets = [];
+      (entry.categories || []).forEach(cat => {
+        (cat.findings || []).forEach(f => {
+          if (f.text.toLowerCase().includes(q)) {
+            // Extract a short snippet around the match
+            const idx = f.text.toLowerCase().indexOf(q);
+            const start = Math.max(0, idx - 60);
+            const end = Math.min(f.text.length, idx + q.length + 60);
+            const snippet = (start > 0 ? "…" : "") + f.text.slice(start, end) + (end < f.text.length ? "…" : "");
+            snippets.push({ catLabel: cat.label, snippet });
+          }
+        });
+      });
+      if (snippets.length > 0) results.push({ key, entry, snippets });
+    });
+    // Sort by number of matching findings, most matches first
+    results.sort((a, b) => b.snippets.length - a.snippets.length);
+    return results;
   }
 
   function toggleDarkMode() {
@@ -60,6 +88,12 @@ const App = (() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
+  function _passesFilter(entry) {
+    if (activeFilter === "all") return true;
+    if (activeFilter === "ireland") return entry.tags && entry.tags.includes("ireland");
+    return entry.type === activeFilter;
+  }
+
   function _runSearch(query) {
     query = (query || "").trim();
     const resultsEl = document.getElementById("results");
@@ -74,39 +108,104 @@ const App = (() => {
     if (resultsEl) resultsEl.classList.remove("hidden");
     if (browseEl)  browseEl.classList.add("hidden");
 
-    let matchKey = null;
+    // Step 1: Try name/key match with Fuse
+    let nameMatch = null;
     if (_fuse) {
       const fuseResults = _fuse.search(query);
-      if (fuseResults.length > 0) matchKey = fuseResults[0].item.key;
-    } else {
-      const q = query.toLowerCase();
-      matchKey = Object.keys(DB).find(k =>
-        k.includes(q) || q.includes(k) || DB[k].name.toLowerCase().includes(q)
-      );
+      if (fuseResults.length > 0) nameMatch = fuseResults[0].item.key;
     }
 
-    if (!matchKey) {
-      if (resultsEl) resultsEl.innerHTML = Render.notFound(query);
+    // Step 2: Search findings text
+    const findingsMatches = _findingsSearch(query);
+
+    // Step 3: Decide what to show
+    // If there's a strong name match AND it also appears in findings results → show full entry + related findings below
+    // If name match only → show full entry
+    // If findings matches only → show multi-result list
+    // If nothing → not found
+
+    if (nameMatch && _passesFilter(DB[nameMatch])) {
+      // Show the matched entry in full
+      const entry = DB[nameMatch];
+      let html = Render.fullEntry(entry, nameMatch);
+
+      // If there are also findings matches from OTHER entries, show them below
+      const otherMatches = findingsMatches.filter(r => r.key !== nameMatch && _passesFilter(r.entry));
+      if (otherMatches.length > 0) {
+        html += _renderRelatedFindings(query, otherMatches);
+      }
+
+      if (resultsEl) resultsEl.innerHTML = html;
+      document.querySelectorAll(".struct-card-name[data-search]").forEach(el => {
+        el.addEventListener("click", () => search(el.dataset.search));
+      });
       return;
     }
 
-    const entry = DB[matchKey];
-
-    if (activeFilter !== "all" && activeFilter !== "ireland" && entry.type !== activeFilter) {
-      if (resultsEl) resultsEl.innerHTML = `<div style="padding:2rem 0;font-size:14px;color:var(--text2)">This entry is categorised as <strong>${entry.type}</strong>. Clear the filter to see it.</div>`;
+    // No name match — check findings
+    const filteredFindings = findingsMatches.filter(r => _passesFilter(r.entry));
+    if (filteredFindings.length > 0) {
+      if (resultsEl) resultsEl.innerHTML = _renderFindingsResults(query, filteredFindings);
       return;
     }
 
-    if (activeFilter === "ireland" && (!entry.tags || !entry.tags.includes("ireland"))) {
-      if (resultsEl) resultsEl.innerHTML = `<div style="padding:2rem 0;font-size:14px;color:var(--text2)">This entry is not tagged as Ireland-specific. Clear the filter to see it.</div>`;
-      return;
-    }
+    // Nothing found
+    if (resultsEl) resultsEl.innerHTML = Render.notFound(query);
+  }
 
-    if (resultsEl) resultsEl.innerHTML = Render.fullEntry(entry, matchKey);
+  // ── Render a list of findings search results ─────────────
+  function _renderFindingsResults(query, results) {
+    const cards = results.map(({ key, entry, snippets }) => {
+      const typeIcon = entry.type === "government" ? "🏛️" : entry.type === "company" ? "🏢" : "📦";
+      const irishTag = entry.tags && entry.tags.includes("ireland")
+        ? `<span class="rtag" style="background:var(--accent-bg);color:var(--accent);font-size:11px">🇮🇪 Ireland</span>` : "";
+      const snippetHtml = snippets.slice(0, 2).map(s =>
+        `<div style="font-size:13px;color:var(--text2);margin-top:.5rem;line-height:1.6;padding:.5rem;background:var(--bg2);border-radius:6px">
+          <span style="font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.04em">${DOMPurify.sanitize(s.catLabel)}</span><br>
+          ${DOMPurify.sanitize(s.snippet)}
+        </div>`
+      ).join("");
+      const moreCount = snippets.length > 2 ? `<div style="font-size:12px;color:var(--text3);margin-top:.25rem">+${snippets.length - 2} more finding${snippets.length - 2 > 1 ? "s" : ""}</div>` : "";
 
-    document.querySelectorAll(".struct-card-name[data-search]").forEach(el => {
-      el.addEventListener("click", () => search(el.dataset.search));
-    });
+      return `
+        <div class="cat-block" style="margin-bottom:.75rem;cursor:pointer" onclick="App.search('${DOMPurify.sanitize(entry.name)}')">
+          <div style="padding:1rem">
+            <div style="font-size:12px;color:var(--text3)">${typeIcon} ${DOMPurify.sanitize(entry.type)} ${irishTag}</div>
+            <div style="font-size:17px;font-weight:600;margin-top:.2rem">${DOMPurify.sanitize(entry.name)}</div>
+            <div style="font-size:13px;color:var(--text2)">${DOMPurify.sanitize(entry.subtitle)}</div>
+            <div style="font-size:12px;color:var(--accent);margin-top:.3rem">${snippets.length} finding${snippets.length > 1 ? "s" : ""} matching "${DOMPurify.sanitize(query)}"</div>
+            ${snippetHtml}
+            ${moreCount}
+          </div>
+        </div>`;
+    }).join("");
+
+    return `
+      <div>
+        <div style="font-size:13px;color:var(--text2);margin-bottom:1rem">${results.length} entr${results.length > 1 ? "ies" : "y"} with findings matching "<strong>${DOMPurify.sanitize(query)}</strong>"</div>
+        ${cards}
+      </div>`;
+  }
+
+  // ── Render related findings below a full entry ────────────
+  function _renderRelatedFindings(query, results) {
+    const cards = results.slice(0, 5).map(({ key, entry, snippets }) => {
+      const typeIcon = entry.type === "government" ? "🏛️" : entry.type === "company" ? "🏢" : "📦";
+      return `
+        <div class="cat-block" style="margin-bottom:.5rem;cursor:pointer" onclick="App.search('${DOMPurify.sanitize(entry.name)}')">
+          <div style="padding:.75rem 1rem">
+            <div style="font-size:12px;color:var(--text3)">${typeIcon} ${DOMPurify.sanitize(entry.type)}</div>
+            <div style="font-size:15px;font-weight:600">${DOMPurify.sanitize(entry.name)}</div>
+            <div style="font-size:12px;color:var(--accent);margin-top:.2rem">${snippets.length} related finding${snippets.length > 1 ? "s" : ""}</div>
+          </div>
+        </div>`;
+    }).join("");
+
+    return `
+      <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border)">
+        <div style="font-size:13px;font-weight:600;color:var(--text2);margin-bottom:.75rem">Also found "${DOMPurify.sanitize(query)}" in ${results.length} other entr${results.length > 1 ? "ies" : "y"}:</div>
+        ${cards}
+      </div>`;
   }
 
   function setFilter(f, el) {
@@ -196,7 +295,6 @@ const App = (() => {
     if (chev) open ? chev.classList.add("open") : chev.classList.remove("open");
   }
 
-  // ── Entry page section toggles ───────────────────────────
   function toggleCat(id) {
     const body = document.getElementById("cb-" + id);
     const chev = document.getElementById("ch-" + id);
