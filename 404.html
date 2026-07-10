@@ -17,10 +17,16 @@
   <div class="nav-links">
     <a href="/index.html" class="hide-mobile">Search</a>
     <a href="/pages/about.html" class="hide-mobile">About</a>
-<a href="/pages/submit.html" class="nav-btn"><span class="hide-mobile">Submit a </span>Finding</a>
+    <a href="/pages/submit.html" class="nav-btn">Submit a finding</a>
     <button class="dark-mode-btn" onclick="App.toggleDarkMode()" id="dark-mode-btn">🌙 Dark</button>
+    <button class="hamburger" onclick="document.getElementById('mobile-menu').classList.toggle('open')">☰</button>
   </div>
 </nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/index.html">Search</a>
+  <a href="/pages/about.html">About</a>
+  <a href="/pages/submit.html">Submit a finding</a>
+</div>
 <main>
   <div class="static-content" style="text-align:center;padding:4rem 1rem">
     <h1 style="font-size:4rem;margin-bottom:0.5rem">404</h1>
