@@ -36,7 +36,7 @@ const App = (() => {
     }));
     _fuse = new Fuse(items, {
       keys: ["name", "subtitle", "key"],
-      threshold: 0.4,
+      threshold: 0.2,
       minMatchCharLength: 2
     });
   }
