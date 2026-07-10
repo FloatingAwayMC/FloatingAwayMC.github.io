@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page not found — EthosCheck</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<nav>
+  <a class="logo" href="/index.html">
+    <div class="logo-mark">
+      <svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="5"/><path d="M8 5v3l2 2"/></svg>
+    </div>
+    EthosCheck
+  </a>
+  <div class="nav-links">
+    <a href="/index.html" class="hide-mobile">Search</a>
+    <a href="/pages/about.html" class="hide-mobile">About</a>
+    <a href="/pages/submit.html" class="nav-btn">Submit a finding</a>
+    <button class="dark-mode-btn" onclick="App.toggleDarkMode()" id="dark-mode-btn">🌙 Dark</button>
+  </div>
+</nav>
+<main>
+  <div class="static-content" style="text-align:center;padding:4rem 1rem">
+    <h1 style="font-size:4rem;margin-bottom:0.5rem">404</h1>
+    <h2 style="font-weight:500;margin-bottom:1rem">Page not found</h2>
+    <p style="color:var(--text2);margin-bottom:2rem">The page you're looking for doesn't exist or has moved.<br>Try searching for what you need below.</p>
+    <a href="/index.html" style="display:inline-block;background:var(--accent);color:#fff;padding:0.75rem 1.5rem;border-radius:8px;font-weight:500;text-decoration:none">← Back to search</a>
+  </div>
+</main>
+<footer>
+  <p>EthosCheck — built in Ireland. Track record only — no pledges, no PR.
+    <a href="/pages/about.html">About</a> · <a href="/pages/submit.html">Submit a finding</a>
+  </p>
+</footer>
+<script src="/js/db.js"></script>
+<script src="/js/render.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>
